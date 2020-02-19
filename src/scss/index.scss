@@ -1,0 +1,486 @@
+body {
+	margin: 8px;
+}
+.find-section {
+	padding: 25px 10px;
+	margin-top: 20px;
+	background: rgb(148, 190, 221);
+	color: rgb(5, 10, 53);
+	.location {
+		height: 45px;
+		display: flex;
+		align-items: center;
+		.fa-map-marker-alt {
+			font-size: 1rem;
+		}
+		input {
+			height: 100%;
+			font-size: 1rem;
+			border: solid 1px #f2efef;
+			flex-grow: 1;
+			margin: 0;
+			color: rgb(192, 192, 196);
+			padding: 0;
+			border: 0;
+		}
+		.location-img {
+			height: 20px;
+			width: 20px;
+		}
+		div {
+			width: 45px;
+			height: 100%;
+			background: white;
+		}
+	}
+	.search {
+		width: 100%;
+		height: 45px;
+		background: white;
+		padding: 0 0 0 0px;
+		font-size: 16px;
+		margin: 10px 0;
+		color: rgb(192, 192, 196);
+	}
+	button {
+		background: rgb(5, 10, 53);
+		color: white;
+		margin: 15px 0 20px 0;
+		height: 40px;
+		padding: 0;
+		border: 0;
+		width: 50%;
+	}
+}
+.guide {
+	margin-top: 50px;
+	.facility-container {
+		display: grid;
+		grid-template-columns: auto;
+		.facility-info-container {
+			.facility-box {
+				text-align: left;
+				display: flex;
+				max-width: 400px;
+				border: solid 2px rgba(192, 192, 196,.5);
+				margin: 10px auto;
+				border-radius: 10px;
+				p {
+					display: inline-block;
+					margin: 2rem 0;
+					line-height: 2.4rem;
+					padding: 0 10px;
+					font-size: 2rem;
+					color: rgb(192, 192, 196);
+				}
+            }
+            .highlight{
+                border:solid 3px rgb(11, 11, 114);
+            }
+		}
+		.facility-img {
+			width: 100%;
+			height: 250px;
+		}
+	}
+}
+.intro-to-doctors {
+	color: rgb(212, 212, 212);
+	background: rgb(22, 31, 59);
+	padding: 20px 10px;
+	.doctor-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		.doctors {
+			background: white;
+			margin: 15px 15px;
+			box-shadow: 0 3px rgb(0, 156, 255);
+			max-width: 325px;
+			height: 545px;
+			.doctor-img {
+				width: 100%;
+				max-width: 325px;
+				height: 400px;
+			}
+			.doctor-info {
+				padding: 0 0 0 20px;
+				margin: 0;
+				color: black;
+				text-align: left;
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+.circles-container {
+	display: flex;
+	align-items: center;
+	margin: 3rem 0 0 1rem;
+	display: none;
+}
+.circles {
+	height: 10px;
+	width: 10px;
+	margin: 0 5px;
+	background: rgb(114, 114, 116);
+	border-radius: 100%;
+}
+.circle-highlighted {
+	background: rgb(18, 18, 66);
+	height: 12px;
+	width: 12px;
+	border: solid 3px rgb(21, 21, 187);
+}
+.features {
+	margin: 50px 0;
+	.features-container {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto;
+		grid-row-gap: 20px;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		.even-height {
+			display: grid;
+			grid-template-columns: 100%;
+			grid-template-rows: 400px 400px;
+			grid-row-gap: 20px;
+			justify-content: center;
+			.feature-info-img {
+				width: 100%;
+				height: 400px;
+				text-align: left;
+				margin-left: auto;
+				margin-right: auto;
+				.feature-info-data {
+					position: relative;
+					color: white;
+					top: 350px;
+					padding-left: 20px;
+					p {
+						margin: 0;
+					}
+				}
+			}
+			.feature-info-img-cancer {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)), url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg');
+				background-size: 100% 100%;
+			}
+			.feature-info-img-cardiac {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)), url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg');
+				background-size: 100% 100%;
+			}
+			.feature-info-img-organTransplant {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)),url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg');
+				background-size: 100% 100%;
+			}
+			.feature-info-img-infer {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)), url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--000.jpg');
+				background-size: 100% 100%;
+			}
+			.feature-info-img-orthoped {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)), url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg');
+				background-size: 100% 100%;
+			}
+			.feature-info-img-dentist {
+				background: linear-gradient(to bottom,rgba(255, 255, 255,0),rgba(255, 255, 255,0),rgba(0,0,0,.1),rgba(0,0,0,.4),rgba(0,0,0,1)), url('https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg');
+				background-size: 100% 100%;
+			}
+		}
+	}
+}
+.services {
+	padding: 0 5px 15px;
+	.services-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		.service-container {
+			background: rgba(165, 160, 160,.2);
+			border-radius: 10px;
+			margin: 10px 5px;
+			width: 45%;
+			height: 165px;
+			max-width: 165px;
+			color: rgba(165, 160, 160,1);
+			h3 {
+				margin-top: 1rem;
+			}
+		}
+	}
+}
+
+.desktop-view {
+	display: none;
+}
+@media (min-width:500px) {
+	.find-section {
+		padding: 25px 20%;
+	}
+}
+@media (min-width:700px) {
+	.tablet-view {
+		display: block;
+	}
+	.mobile-view {
+		display: none;
+	}
+	.mobile-cum-tablet-view {
+		display: block;
+	}
+	.find-section {
+		padding: 25px 20%;
+	}
+	.guide {
+		margin: 20px 10px;
+		.facility-container {
+			grid-template-columns: 40% 60%;
+            align-items: center;
+            .facility-img-section{
+                position: relative;
+                bottom: 4rem;
+                margin-left: 1rem;
+                .facility-img {
+                    width: 80%;
+                    height: 500px;
+                }
+                h2{
+                    margin-top: 1rem;
+                }
+                p{
+                    padding: 0 2rem;
+                }
+            }
+		}
+	}
+	.features {
+		.features-container {
+			.even-height {
+				grid-template-columns: 48% 48%;
+				grid-template-rows: 400px;
+				grid-column-gap: 20px;
+			}
+		}
+	}
+	.services {
+		padding: 0 40px 15px;
+	}
+}
+@media (min-width:1000px) {
+	.filters {
+		max-width: 500px;
+	}
+}
+@media (min-width:1200px) {
+	.desktop-view {
+		display: block;
+	}
+	.mobile-cum-tablet-view {
+		display: none;
+	}
+	.mobile-view {
+		display: none;
+	}
+	.find-section {
+		text-align: left;
+		padding: 150px 7%;
+		color: rgb(7, 11, 51);
+		background: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
+		background-size: cover;
+		h1 {
+			font-size: 3rem;
+			margin-block-end: 0;
+		}
+		p {
+			display: inline-block;
+			width: 45%;
+			font-size: 1.3rem;
+		}
+		.search-healthcare-form {
+			margin-top: 2.5rem;
+			width: 65%;
+			height: 4rem;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			.location {
+				height: 100%;
+				width: 35%;
+				border-right: solid 2px rgb(221, 218, 218);
+			}
+		}
+		.search {
+			height: 100%;
+			padding: 0 0 0 20px;
+			width: 45%;
+		}
+		button {
+			font-size: 1.2rem;
+			color: rgb(233, 231, 231);
+			height: 4rem;
+			width: 20%;
+			margin: auto;
+		}
+	}
+	.guide {
+		text-align: left;
+		padding: 80px 0;
+		margin-left: 7%;
+		.facility-container {
+			.facility-info-container {
+				margin-top: 3.5rem;
+				.facility-box {
+					text-align: left;
+					display: flex;
+					max-width: 530px;
+					padding: 0 0 0 40px;
+					border: solid 2px rgba(223, 223, 223, 0.5);
+					height: 130px;
+					margin: 10px 2px;
+					font-weight: bold;
+					align-items: center;
+					border-radius: 10px;
+					.facility-number {
+						color: rgba(192, 192, 196,.5);
+						margin-right: 30px;
+						font-size: 2.5rem;
+					}
+					p {
+						font-size: 1.7rem;
+					}
+                }
+                .highlight{
+                    border:solid 3px rgb(11, 11, 114);
+                }
+			}
+			.facility-img-section {
+				text-align: center;
+				.facility-img {
+					// width: 70%;
+                    // height: 70%;
+                    width:50%;height:50%;
+				}
+				p {
+					display: inline-block;
+					width: 60%;
+				}
+				h2 {
+					margin-top: 1.4rem;
+				}
+			}
+		}
+	}
+	.intro-to-doctors {
+		padding: 50px 4% 50px 7%;
+		text-align: left;
+		.doctor-container {
+			justify-content: flex-start;
+			.doctor-img {
+				width: 100%;
+				max-width: 370px;
+				height: 400px;
+			}
+			.doctors {
+				background: white;
+				margin: 15px 30px 15px 0;
+				box-shadow: 0 3px rgb(0, 156, 255);
+				width: 22%;
+				max-width: 370px;
+				height: 560px;
+			}
+		}
+	}
+	.circles-container {
+		display: flex;
+	}
+	.features {
+		margin: 100px 7%;
+		text-align: left;
+		.features-container {
+			width: 100%;
+			margin-top: 70px;
+			grid-template-columns: 32% 32% 32%;
+			grid-column-gap: 10px;
+			grid-template-rows: auto;
+			justify-content: start;
+			.even-height {
+				.feature-info-img {
+					width: 100%;
+					height: unset;
+					text-align: left;
+					margin-left: auto;
+					margin-right: auto;
+					.feature-info-data {
+						p {
+							font-size: 1rem;
+							&:nth-child(odd) {
+								font-size: 1.2rem;
+								font-weight: bold;
+							}
+						}
+					}
+					.cancer {
+						top: 240px;
+					}
+					.organTransplant {
+						top: 540px;
+					}
+					.dentistry {
+						top: 440px;
+					}
+					.orthoped {
+						top: 340px;
+					}
+					.cardiac {
+						top: 340px;
+					}
+					.infer {
+						top: 440px;
+					}
+				}
+				grid-template-columns: 100%;
+				grid-row-gap: 10px;
+			}
+			.nested-grid1 {
+				grid-template-rows: 300px 600px;
+			}
+			.nested-grid2 {
+				grid-template-rows: 500px 400px;
+			}
+			.nested-grid3 {
+				grid-template-rows: 400px 500px;
+			}
+		}
+	}
+	.services {
+		margin: 0;
+		text-align: left;
+		padding: 50px 7% 7%;
+		background: rgba(233, 231, 231,.8);
+		.services-container {
+			justify-content: flex-start;
+			.service-container {
+				font-size: 1.3rem;
+				text-align: center;
+				max-width: 250px;
+				width: 15%;
+				height: 250px;
+				background: white;
+				img {
+					position: relative;
+					top: 35px;
+				}
+				h3 {
+					position: relative;
+					top: 35px;
+				}
+			}
+		}
+	}
+}

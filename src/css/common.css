@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "nexa-light";
+  src: url("assets/Nexa-Light.otf"); }
+@font-face {
+  font-family: "nexa-bold";
+  src: url("assets/Nexa-Bold.otf"); }
+.body {
+  padding: 0;
+  text-align: center;
+  font-family: 'nexa-light'; }
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: "nexa-bold"; }
+
+h2 {
+  font-size: 1.5rem;
+  font-family: "nexa-bold";
+  font-family: "nexa-bold"; }
+
+p {
+  font-size: 1.2rem;
+  font-family: "nexa";
+  margin-top: 1.5rem;
+  line-height: 1.6rem;
+  margin-bottom: 1rem; }
+
+h3 {
+  font-family: "nexa-bold"; }
+
+h4 {
+  font-family: "nexa-bold"; }
+
+h5 {
+  font-family: "nexa-bold"; }
+
+h6 {
+  font-family: "nexa-bold"; }
+
+button {
+  border: 0; }
+
+input {
+  border: 0; }
+
+.hidden {
+  display: none; }
+
+.show {
+  display: block; }
+
+.nav {
+  margin: 10px 2%; }
+  .nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .nav nav a {
+      text-align: left; }
+    .nav nav .nav-expanded {
+      display: none; }
+    .nav nav .logo {
+      width: 30%;
+      height: 50px; }
+    .nav nav .fa-bars {
+      color: #525659; }
+    .nav nav .nav-btn-container {
+      display: none; }
+      .nav nav .nav-btn-container .nav-button-white {
+        border: solid 2px #050a35;
+        border-radius: 5px;
+        background: white;
+        margin: 0 10px;
+        width: 40%; 
+        height: 55px; }
+      .nav nav .nav-btn-container .nav-button {
+        color: white;
+        width: 35%;
+        height: 55px;
+        border-radius: 5px;
+        background: #050a35; }
+.nav-button{
+    color: white;
+        width: 35%;
+        height: 55px;
+        border-radius: 5px;
+        background: #050a35;
+}
+
+.help {
+  padding: 1rem;
+  color: #021433;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #8fcaf1; }
+  .help h2 {
+    color: white; }
+  .help button {
+    background-color: #0099ff;
+    width: 15rem;
+    font-size: 1.4rem;
+    height: 4rem;
+    color: white;
+    border: 0;
+    border-radius: 5px; }
+
+.footer {
+  padding: 1rem;
+  background-color: #021433; }
+  .footer .footer-p {
+    color: #cccccc;
+    font-size: 1.2rem; }
+  .footer h2 {
+    color: white; }
+  .footer .logo {
+    width: 140px; }
+
+.footer-tablet-end {
+  display: none; }
+  .footer-tablet-end .footer-end {
+    color: #504e5b;
+    font-size: 1rem; }
+
+.footer-tablet {
+  display: none; }
+
+@media (min-width: 700px) {
+  .nav {
+    margin: 10px 2%; }
+
+  .logo {
+    width: 150px;
+    height: 50px; }
+
+  .footer-mobile {
+    display: none; }
+
+  .footer-tablet {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap; }
+
+  .footer-tablet-end {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap; } }
+@media (min-width: 1200px) {
+  body {
+    text-align: left;
+    font-family: nexa; }
+
+  h1 {
+    font-size: 3rem; }
+
+  h2 {
+    font-size: 2rem; }
+
+  p {
+    font-size: 1.3rem; }
+
+  .desktop-view {
+    display: block; }
+
+  .mobile-view {
+    display: none; }
+
+  .nav {
+    margin: 10px 0 20px 7%; }
+    .nav nav .logo {
+      width: 200px; }
+    .nav nav .nav-expanded {
+      display: flex;
+      justify-content: space-between;
+      width: 40%; }
+    .nav nav .nav-btn-container {
+      display: flex;
+      justify-content: center;
+      width: 25%; }
+
+  .help {
+    margin: 0;
+    text-align: left;
+    padding: 60px 100px;
+    color: #fffffe;
+    background: #8fcaf1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .help button {
+      font-size: 1.5rem;
+      height: 60px;
+      width: 250px;
+      background-color: #0099ff; }
+
+  .footer-tablet {
+    padding: 25px 50px 20px 100px;
+    justify-content: space-between;
+    font-size: 1.7rem; }
+    .footer-tablet .logo {
+      width: 13rem; }
+    .footer-tablet p {
+      font-size: 1.3rem; }
+
+  .footer-tablet-end {
+    padding: 25px 50px 20px 100px;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    border-bottom: solid 5px #0099ff; }
+    .footer-tablet-end .footer-end {
+      font-size: 1.3rem; } }
+
+/*# sourceMappingURL=common.css.map */

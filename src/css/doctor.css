@@ -1,0 +1,141 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 55px 10px 12px; }
+  .header p {
+    display: inline-block; }
+  .header button {
+    width: 30%;
+    max-width: 110px;
+    height: 40px;
+    font-size: .9rem; }
+  .header .fa-angle-down {
+    position: relative;
+    left: 5px; }
+
+.list-with-filters {
+  display: flex;
+  margin-left: 40px; }
+  .list-with-filters .filters {
+    flex-grow: .4;
+    width: 20%;
+    max-width: 250px; }
+    .list-with-filters .filters form .filter-form-row {
+      display: flex;
+      margin-top: 3px;
+      align-items: center; }
+      .list-with-filters .filters form .filter-form-row .box {
+        width: 15px;
+        height: 15px;
+        border: solid 1px #bbb8b8;
+        border-radius: 4px; }
+
+.parent-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px; }
+  .parent-container .doctor-container {
+    border: solid 1px #c0c0c4;
+    padding: 0;
+    margin: 0 50px 0 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: space-between; }
+    .parent-container .doctor-container .info-button {
+      text-align: left;
+      display: flex;
+      flex-direction: column; }
+      .parent-container .doctor-container .info-button .info-container {
+        padding: 0 10px;
+        min-height: 10rem;
+        text-align: left; }
+        .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row i {
+          color: rgba(16, 176, 240, 0.959); }
+      .parent-container .doctor-container .info-button .info-container-row {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-top: 1rem;
+        padding-left: 30px; }
+        .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row {
+          display: flex;
+          width: 6.5rem;
+          align-items: center; }
+          .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row p {
+            display: inline-block;
+            padding-left: 15px;
+            margin-block-end: 0;
+            margin-block-start: 0;
+            font-size: .9rem; }
+          .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
+            padding-left: 8px; }
+      .parent-container .doctor-container .info-button .appointment-btn {
+        margin: 55px 0 30px 0;
+        position: relative;/* header section */
+        /* end of header section */
+        /* .show-more{
+            color:rgba(16, 176, 240, 0.959);
+            font-weight: bolder;
+            font-size:1rem;
+            margin-block-end: .8rem;
+            margin-block-start: .5rem;
+        } */
+        left: 35px; }
+    .parent-container .doctor-container .img-container {
+      display: flex;
+      justify-content: flex-end; }
+      .parent-container .doctor-container .img-container .doctor-img {
+        height: 16rem;
+        width: 11.5rem;
+        position: relative;
+        bottom: 20px;
+        left: 50px; }
+
+@media (max-width: 550px) {
+  .header {
+    margin: 15px; }
+
+  .parent-container .doctor-container {
+    display: block;
+    margin: 10px 0; }
+    .parent-container .doctor-container .img-container .doctor-img {
+      max-width: unset;
+      position: unset;
+      width: 100%;
+      height: 400px; }
+    .parent-container .doctor-container .info-button {
+      display: block;
+      text-align: center; }
+      .parent-container .doctor-container .info-button .info-container-row {
+        flex-direction: column;
+        padding-left: 0;
+        width: unset; }
+        .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
+          padding: 1rem 0 0 0; }
+      .parent-container .doctor-container .info-button .appointment-btn {
+        margin: 10px 0 0 0;
+        position: unset; }
+
+  .list-with-filters {
+    margin-left: 0; }
+    .list-with-filters .filters {
+      display: none; } }
+@media only screen and (min-width: 1200px) {
+  .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row {
+    min-width: 20rem; }
+    .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row p {
+      font-size: 1.2rem; }
+
+  .list-with-filters .filters {
+    margin-right: 20px;
+    max-width: 430px; }
+    .list-with-filters .filters form .filter-form-row label {
+      margin-left: 10px;
+      font-size: 1.2rem; }
+    .list-with-filters .filters p {
+      font-size: 1.5rem;
+      margin-block-end: .5rem; } }
+
+/*# sourceMappingURL=doctor.css.map */
