@@ -22,21 +22,21 @@ highlightDefault();
 
 var facilities = document.querySelectorAll('.facility-box');
 
-console.log(facilities);
+// console.log(facilities);
 
 var facilityCount = facilities.length;
 
 for(var i=0;i<facilityCount;i++){
     facilities[i].addEventListener('click',function(){
         var facilityNumber = this.innerText.slice(0,2);
-        console.log('facilityNumber is :'+facilityNumber);
+        // console.log('facilityNumber is :'+facilityNumber);
         highlightFacilityBox(facilityNumber);
     })
 }
 
 function highlightFacilityBox(facilityNumber){
     var highlighted = document.getElementsByClassName('highlight')['0'];
-    console.log("hightlighted is :"+highlighted);
+    // console.log("hightlighted is :"+highlighted);
     highlighted.classList.remove('highlight')
     document.getElementsByClassName(mobileImg)['0'].classList.add('hidden');
     mobileImg = facilityNumber;

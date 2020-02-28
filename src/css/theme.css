@@ -1,48 +1,46 @@
 @font-face {
   font-family: "nexa-light";
-  src: url("assets/Nexa-Light.otf"); }
+  src: url("../../assets/Nexa-Light.otf"); }
 @font-face {
   font-family: "nexa-bold";
-  src: url("assets/Nexa-Bold.otf"); }
+  src: url("../../assets/Nexa-Bold.otf"); }
 .body {
   padding: 0;
   text-align: center;
-  font-family: 'nexa-light'; }
+  font-family: 'nexa'; }
 
 h1 {
   font-size: 2rem;
   line-height: 2rem;
-  font-family: 'nexa-bold'; }
+  font-family: 'nexa-bold';
+  font-weight: bolder; }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 2rem;
   font-family: "nexa-bold";
-  font-family: "nexa-bold"; }
+  font-weight: "bolder"; }
+
+h3 {
+  font-size: 1.5rem;
+  font-family: 'nexa-bold'; }
 
 p {
   font-size: 1.2rem;
   font-family: "nexa";
-  margin-top: 1.5rem;
   line-height: 1.6rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem; }
 
-h3 {
-  font-family: "nexa-bold"; }
-
-h4 {
-  font-family: "nexa-bold"; }
-
-h5 {
-  font-family: "nexa-bold"; }
-
-h6 {
-  font-family: "nexa-bold"; }
-
 button {
-  border: 0; }
+  border: 0;
+  width: fit-content;
+  padding: .5rem 1rem; }
 
 input {
-  border: 0; }
+  border: 0;
+  padding-top: .5rem;
+  padding-bottom: .5rem; }
 
 .hidden {
   display: none; }
@@ -76,6 +74,7 @@ input {
     .nav .logo-and-bar-container .bars:hover {
       background: #94bedd; }
     .nav .logo-and-bar-container .fa-bars {
+      font-size: 1.5rem;
       color: #525659;
       margin-right: 0; }
     .nav .logo-and-bar-container .fa-times {
@@ -138,7 +137,7 @@ input {
   margin-top: 20px;
   text-align: center;
   background-color: #8fcaf1; }
-  .help h2 {
+  .help h3 {
     color: white; }
   .help button {
     background-color: #0099ff;
@@ -156,7 +155,7 @@ input {
     line-height: 1rem;
     color: #cccccc;
     font-size: 1.2rem; }
-  .footer h2 {
+  .footer h3 {
     color: white; }
   .footer .logo {
     width: 140px; }
@@ -209,6 +208,9 @@ input {
     font-size: 3rem; }
 
   h2 {
+    font-size: 3rem; }
+
+  h3 {
     font-size: 2rem; }
 
   p {
@@ -223,7 +225,7 @@ input {
   .nav {
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 0 20px 7%; }
+    margin: 20px 0 20px 7%; }
     .nav .logo-and-bar-container {
       width: 16%; }
       .nav .logo-and-bar-container .logo-container {
@@ -312,4 +314,4 @@ input {
     .footer-tablet-end .footer-end {
       font-size: 1.3rem; } }
 
-/*# sourceMappingURL=common.css.map */
+/*# sourceMappingURL=theme.css.map */

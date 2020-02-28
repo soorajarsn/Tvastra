@@ -6,6 +6,9 @@ app.get('/',(req,res)=>{
 });
 app.get('/doctor',(req,res)=>{
     res.sendFile(__dirname+"/html/doctor.html");
+});
+app.get('/hospitals',(req,res)=>{
+    res.sendFile(__dirname+"/html/hospital.html");
 })
 app.use(express.static(__dirname));
 app.listen(3000,()=>{
