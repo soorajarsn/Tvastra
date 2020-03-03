@@ -11,41 +11,41 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 20px 55px 10px 12px;
+	margin: 1.25rem 3.5rem .6rem .75rem;
 	p {
 		display: inline-block;
 	}
 	button {
 		width: 30%;
-		max-width: 110px;
-		height: 40px;
+		max-width: 6.9rem;
+		height: 2.5rem;
 		font-size: .9rem;
 	}
 	.fa-angle-down {
 		position: relative;
-		left: 5px;
+		left: .312rem;
 	}
 }
 .list-with-filters {
 	display: flex;
-	margin-left: 40px;
+	margin-left: 2.5rem;
 	.filters {
 		// flex-grow: .4;
 		width: 20%;
 		line-height: 1.2rem;
-		max-width: 250px;
-		font-size: 1.1rem;;
+		max-width: 15.6rem;
+		font-size: 1.1rem;
 		form {
 			.filter-form-row {
 				display: grid;
 				grid-template-columns: 10% 90%;
-				margin-top: 3px;
+				margin-top: .19rem;
 				align-items: center;
 				.box {
-					width: 14px;
-					height: 14px;
+					width: .875rem;
+					height: .875rem;
 					border: solid 1px rgb(187, 184, 184);
-					border-radius: 4px;
+					border-radius: .25rem;
 				}
 			}
 		}
@@ -55,18 +55,18 @@
 	// flex-grow: 1;
 	display: flex;
 	flex-direction: column;
-	padding: 10px;
+	padding: .625rem;
 	width:100%;
 	.doctor-container {
 		border: solid 1px rgb(192, 192, 196);
 		padding: 0;
-		margin: 10px 30px 0 10px;
+		margin: .625rem 1.875rem 0 .625rem;
 		display: grid;
 		grid-template-columns: 60% 40%;
 		align-items: space-between;
 		.info-button {
 			.info-container {
-				padding: 0 10px;
+				padding: 0 .625rem;
 				min-height: 10rem;
 				text-align: left;
 				// .info-container-row {
@@ -81,7 +81,7 @@
 				display: flex;
 				flex-wrap: nowrap;
 				// padding-top: 1rem;
-				padding-left: 30px;
+				padding-left: 1.875rem;
 				margin-bottom:1rem;
 				// font-size: 1.2rem;
 				.info-container-sub-row {
@@ -93,14 +93,14 @@
 					}
 					p {
 						display: inline-block;
-						padding-left: 15px;
+						padding-left: 1rem;
 						margin-top: 0;
 						margin-bottom: 0;
 						font-size: 1.2rem;
 						line-height: 1.3rem;
 					}
 					&:nth-child(2) {
-						padding-left: 12px;
+						padding-left: .75rem;
 					}
 				}
 			}
@@ -109,50 +109,44 @@
 			flex-direction: column;
 			justify-content: space-between;
 			.appointment-btn {
-				margin: 30px 0 30px 0;
+				margin: 1.875rem 0 1.875rem 0;
 				position: relative;
-				left: 35px;
+				left: 2.1875rem;
 			}
 			.nav-button {
 				color: rgb(215, 225, 232);
 				width:fit-content;
-				height: 55px;
-				border-radius: 5px;
+				height: 3.5rem;
+				border-radius: .3rem;
 				// padding:0 2rem;
 				background: rgb(5, 10, 53);
 			}
 		}
 		.img-container {
 			.doctor-img {
-				// padding-top:20px;
-				// height: 16rem;
-				// width: 11.5rem;
-				// position: relative;
-				// bottom: 20px;
-				// left: 50px;
 				height:100%;
 				width:100%;
-				max-height: 350px;
+				max-height: 22rem;
 			}
 			display: flex;
 			justify-content: flex-end;
 		}
 	}
 }
-@media (max-width:550px) {
+@media (max-width:34.4rem) {
 	.header {
-		margin: 15px;
+		margin: 1rem;
 	}
 	.parent-container {
 		.doctor-container {
 			display: block;
-			margin: 10px 0;
+			margin: .625rem 0;
 			.img-container {
 				.doctor-img {
 					max-width: unset;
 					position: unset;
 					width: 100%;
-					height: 400px;
+					height: 25rem;
 				}
 			}
 			.info-button {
@@ -168,7 +162,7 @@
 					}
 				}
 				.appointment-btn {
-					margin: 10px 0 10px 0;
+					margin: .625rem 0 .625rem 0;
 					position: unset;
 				}
 				display: block;
@@ -183,35 +177,35 @@
 		margin-left: 0;
 	}
 }
-@media only screen and (min-width:650px){
+@media only screen and (min-width:40.6rem){
 	.list-with-filters{
 		.filters{
 			form{
 				.filter-form-row{
 					.labet-container{
-						margin-left:10px;
+						margin-left:.625rem;
 					}
 				}
 			}
 		}
 	}
 	.header{
-		margin-left:40px;
+		margin-left:2.5rem;
 	}
 }
-@media only screen and (min-width:1200px) {
+@media only screen and (min-width:75rem) {
 	.list-with-filters {
 		.filters {
 			form {
 				.filter-form-row {
-					.labet-container {
-						margin-left: -1px;
+					.label-container {
+						// margin-left: -1px;
 						font-size: 1.2rem;
 					}
 				}
 			}
-			margin-right: 20px;
-			max-width: 430px;
+			margin-right: 1.25rem;
+			max-width: 26.9rem;
 			p {
 				font-size: 1.5rem;
 				margin-block-end: .5rem;

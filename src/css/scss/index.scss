@@ -1,13 +1,13 @@
 body {
-	margin: 8px;
+	margin: .5rem;
 }
 .find-section {
-	padding: 25px 10px;
+	padding: 1.56rem .625rem;
 	// margin-top: 20px;
 	background: rgb(148, 190, 221);
 	color: rgb(5, 10, 53);
 	.location {
-		height: 45px;
+		height: 3rem;
 		display: flex;
 		align-items: center;
 		.fa-map-marker-alt {
@@ -15,45 +15,45 @@ body {
 		}
 		input {
 			height: 100%;
-			font-size: 1rem;
+			// font-size: 1rem;
 			border: solid 1px #f2efef;
 			flex-grow: 1;
 			margin: 0;
-			color: rgb(192, 192, 196);
+			// color: rgb(192, 192, 196);
 			padding: 0;
 			border: 0;
 		}
 		.location-img {
-			height: 20px;
-			width: 20px;
+			height: 1.25rem;
+			width: 1.25rem;
 		}
 		div {
-			width: 45px;
+			width: 3rem;
 			height: 100%;
 			background: white;
 		}
 	}
 	.search {
 		width: 100%;
-		height: 45px;
+		height: 3rem;
 		background: white;
-		padding: 0 0 0 0px;
-		font-size: 16px;
-		margin: 10px 0;
-		color: rgb(192, 192, 196);
+		padding: 0 0 0 0;
+		// font-size: 1rem;
+		margin: .625rem 0;
+		// color: rgb(192, 192, 196);
 	}
 	button {
 		background: rgb(5, 10, 53);
 		color: white;
-		margin: 15px 0 20px 0;
-		height: 40px;
+		margin: 1rem 0 1.25rem 0;
+		height: 2.5rem;
 		padding: 0;
 		border: 0;
 		width: 50%;
 	}
 }
 .how-it-works {
-	margin-top: 50px;
+	margin-top: 3rem;
 	.facility-container {
 		display: grid;
 		grid-template-columns: auto;
@@ -61,16 +61,16 @@ body {
 			.facility-box {
 				text-align: left;
 				display: flex;
-				max-width: 400px;
+				max-width: 25rem;
 				align-items: center;
-				border: solid 2px rgba(192, 192, 196,.5);
-				margin: 10px auto;
-				border-radius: 10px;
+				border: solid .125rem rgba(192, 192, 196,.5);
+				margin: .625rem auto;
+				border-radius: .625rem;
 				p {
 					display: inline-block;
 					margin: 2rem 0;
 					line-height: 2.4rem;
-					padding: 0 0 0 10px;
+					padding: 0 0 0 .625rem;
 					font-size: 2rem;
 					// font-weight: bolder;
 					color: rgb(192, 192, 196);
@@ -79,11 +79,11 @@ body {
 					font-size: 2.5rem;
 				}
 				&:hover{
-					border:solid 3px rgba(17, 17, 156, 0.6);
+					border:solid .19rem rgba(17, 17, 156, 0.6);
 				}
             }
             .highlight{
-				border:solid 3px rgb(11, 11, 114);
+				border:solid .19rem rgb(11, 11, 114);
 				.facility-number{
 					color:rgba(48, 164, 231, 0.5);
 				}
@@ -101,7 +101,7 @@ body {
 .intro-to-doctors {
 	color: rgb(212, 212, 212);
 	background: rgb(22, 31, 59);
-	padding: 20px 10px;
+	padding: 1.25rem .625rem;
 	.doctor-container {
 		display: flex;
 		justify-content: center;
@@ -109,17 +109,17 @@ body {
 		flex-wrap: wrap;
 		.doctors {
 			background: white;
-			margin: 15px 15px;
-			box-shadow: 0 3px rgb(0, 156, 255);
-			max-width: 325px;
-			height: 560px;
+			margin: 1rem 1rem;
+			box-shadow: 0 .19rem rgb(0, 156, 255);
+			max-width: 20.3rem;
+			height: 35rem;
 			.doctor-img {
 				width: 100%;
-				max-width: 325px;
-				height: 400px;
+				max-width: 20.3rem;
+				height: 25rem;
 			}
 			.doctor-info {
-				padding: 0 0 0 20px;
+				padding: 0 0 0 1.25rem;
 				margin: 0;
 				color: black;
 				text-align: left;
@@ -137,45 +137,45 @@ body {
 	display: none;
 }
 .circles {
-	height: 10px;
-	width: 10px;
-	margin: 0 5px;
+	height: .62rem;
+	width: .625rem;
+	margin: 0 .31rem;
 	background: rgb(114, 114, 116);
 	border-radius: 100%;
 }
 .circle-highlighted {
 	background: rgb(18, 18, 66);
-	height: 12px;
-	width: 12px;
-	border: solid 3px rgb(21, 21, 187);
+	height: .75rem;
+	width: .75rem;
+	border: solid .19rem rgb(21, 21, 187);
 }
 .features {
-	margin: 50px 0;
+	margin: 3rem 0;
 	.features-container {
 		display: grid;
 		grid-template-columns: 100%;
 		grid-template-rows: auto auto auto;
-		grid-row-gap: 20px;
+		grid-row-gap: 1.25rem;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
 		.even-height {
 			display: grid;
 			grid-template-columns: 100%;
-			grid-template-rows: 400px 400px;
-			grid-row-gap: 20px;
+			grid-template-rows: 25rem 25rem;
+			grid-row-gap: 1.25rem;
 			justify-content: center;
 			.feature-info-img {
 				width: 100%;
-				height: 400px;
+				height: 25rem;
 				text-align: left;
 				margin-left: auto;
 				margin-right: auto;
 				.feature-info-data {
 					position: relative;
 					color: white;
-					top: 340px;
-					padding-left: 20px;
+					top: 21.2rem;
+					padding-left: 1.25rem;
 					p {
 						margin: 0;
 					}
@@ -209,7 +209,7 @@ body {
 	}
 }
 .services {
-	padding: 0 5px 15px;
+	padding: 0 .3rem 1rem;
 	.services-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -217,11 +217,11 @@ body {
 		align-items: center;
 		.service-container {
 			background: rgba(165, 160, 160,.2);
-			border-radius: 10px;
-			margin: 10px 5px;
+			border-radius: .625rem;
+			margin: .625rem .31rem;
 			width: 45%;
-			height: 165px;
-			max-width: 165px;
+			height: 10.3rem;
+			max-width: 10.3rem;
 			color: rgba(165, 160, 160,1);
 			h4 {
 				margin-top: 1rem;
@@ -235,12 +235,12 @@ body {
 .desktop-view {
 	display: none;
 }
-@media (min-width:500px) {
+@media (min-width:31.25rem) {
 	.find-section {
-		padding: 25px 20%;
+		padding: 1.56rem 20%;
 	}
 }
-@media (min-width:700px) {
+@media (min-width:43.75rem) {
 	.tablet-view {
 		display: block;
 	}
@@ -251,10 +251,10 @@ body {
 		display: block;
 	}
 	.find-section {
-		padding: 25px 20%;
+		padding: 1.56rem 20%;
 	}
 	.how-it-works {
-		margin: 20px 10px;
+		margin: 1.25rem .625rem;
 		.facility-container {
 			grid-template-columns: 40% 60%;
             align-items: center;
@@ -264,7 +264,7 @@ body {
                 margin-left: 1rem;
                 .facility-img {
                     width: 80%;
-                    height: 500px;
+                    height: 31.25rem;
                 }
                 h2{
                     margin-top: 1rem;
@@ -279,21 +279,21 @@ body {
 		.features-container {
 			.even-height {
 				grid-template-columns: 48% 48%;
-				grid-template-rows: 400px;
-				grid-column-gap: 20px;
+				grid-template-rows: 25rem;
+				grid-column-gap: 1.25rem;
 			}
 		}
 	}
 	.services {
-		padding: 0 40px 15px;
+		padding: 0 2rem 1rem;
 	}
 }
-@media (min-width:1000px) {
+@media (min-width:62.5rem) {
 	.filters {
-		max-width: 500px;
+		max-width: 31.25rem;
 	}
 }
-@media (min-width:1200px) {
+@media (min-width:75rem) {
 	.desktop-view {
 		display: block;
 	}
@@ -305,7 +305,7 @@ body {
 	}
 	.find-section {
 		text-align: left;
-		padding: 150px 7%;
+		padding: 9.3rem 7%;
 		color: rgb(7, 11, 51);
 		background: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
 		background-size: cover;
@@ -327,12 +327,12 @@ body {
 			.location {
 				height: 100%;
 				width: 35%;
-				border-right: solid 2px rgb(221, 218, 218);
+				border-right: solid .125rem rgb(221, 218, 218);
 			}
 		}
 		.search {
 			height: 100%;
-			padding: 0 0 0 20px;
+			padding: 0 0 0 1.25rem;
 			width: 45%;
 		}
 		button {
@@ -345,7 +345,7 @@ body {
 	}
 	.how-it-works {
 		text-align: left;
-		padding: 80px 0;
+		padding: 5rem 0;
 		margin-left: 7%;
 		.facility-container {
 			.facility-info-container {
@@ -353,17 +353,17 @@ body {
 				.facility-box {
 					text-align: left;
 					display: flex;
-					max-width: 530px;
-					padding: 0 0 0 40px;
-					border: solid 2px rgba(223, 223, 223, 0.5);
-					height: 130px;
-					margin: 10px 2px;
+					max-width: 33.1rem;
+					padding: 0 0 0 2.5rem;
+					border: solid .125rem rgba(223, 223, 223, 0.5);
+					height: 8.1rem;
+					margin: .625rem .125rem;
 					font-weight: bold;
 					align-items: center;
-					border-radius: 10px;
+					border-radius: .625rem;
 					.facility-number {
 						color: rgba(192, 192, 196,.5);
-						margin-right: 30px;
+						margin-right: 2rem;
 						font-size: 2.5rem;
 					}
 					p {
@@ -371,7 +371,7 @@ body {
 					}
                 }
                 .highlight{
-					border:solid 3px rgb(11, 11, 114);
+					border:solid .19rem rgb(11, 11, 114);
 					.facility-number{
 						color:rgba(48, 164, 231, 0.5);
 					}
@@ -395,22 +395,22 @@ body {
 		}
 	}
 	.intro-to-doctors {
-		padding: 50px 4% 50px 7%;
+		padding: 3rem 4% 3rem 7%;
 		text-align: left;
 		.doctor-container {
 			justify-content: flex-start;
 			.doctor-img {
 				width: 100%;
-				max-width: 370px;
-				height: 400px;
+				max-width: 23rem;
+				height: 25rem;
 			}
 			.doctors {
 				background: white;
-				margin: 15px 30px 15px 0;
-				box-shadow: 0 3px rgb(0, 156, 255);
+				margin: 1rem 2rem 1rem 0;
+				box-shadow: 0 .18rem rgb(0, 156, 255);
 				width: 22%;
-				max-width: 370px;
-				height: 560px;
+				max-width: 23.1rem;
+				height: 35rem;
 			}
 		}
 	}
@@ -418,13 +418,13 @@ body {
 		display: flex;
 	}
 	.features {
-		margin: 100px 7%;
+		margin: 6.25rem 7%;
 		text-align: left;
 		.features-container {
 			width: 100%;
-			margin-top: 70px;
+			margin-top: 4.3rem;
 			grid-template-columns: 32% 32% 32%;
-			grid-column-gap: 10px;
+			grid-column-gap: .625rem;
 			grid-template-rows: auto;
 			justify-content: start;
 			.even-height {
@@ -444,55 +444,55 @@ body {
 						}
 					}
 					.cancer {
-						top: 240px;
+						top: 15rem;
 					}
 					.organTransplant {
-						top: 540px;
+						top: 33.75rem;
 					}
 					.dentistry {
-						top: 440px;
+						top: 27.5rem;
 					}
 					.orthoped {
-						top: 340px;
+						top: 21.25rem;
 					}
 					.cardiac {
-						top: 340px;
+						top: 21.25rem;
 					}
 					.infer {
-						top: 440px;
+						top: 27.5rem;
 					}
 				}
 				grid-template-columns: 100%;
-				grid-row-gap: 10px;
+				grid-row-gap: .625rem;
 			}
 			.nested-grid1 {
-				grid-template-rows: 300px 600px;
+				grid-template-rows: 18.75rem 37.5rem;
 			}
 			.nested-grid2 {
-				grid-template-rows: 500px 400px;
+				grid-template-rows: 31.25rem 25rem;
 			}
 			.nested-grid3 {
-				grid-template-rows: 400px 500px;
+				grid-template-rows: 25rem 31.25rem;
 			}
 		}
 	}
 	.services {
 		margin: 0;
 		text-align: left;
-		padding: 50px 7% 7%;
+		padding: 3rem 7% 7%;
 		// background: rgba(233, 231, 231,.8);
 		.services-container {
 			justify-content: flex-start;
 			.service-container {
 				font-size: 1.3rem;
 				text-align: center;
-				max-width: 250px;
+				max-width: 15.62rem;
 				width: 15%;
-				height: 250px;
+				height: 15.62rem;
 				// background: white;
 				img {
 					position: relative;
-					top: 35px;
+					top: 2.19rem;
 				}
 				h4 {
 					position: relative;

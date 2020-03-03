@@ -1,3 +1,5 @@
+// import { json, response } from "express";
+
 var facilityImages = {
     '01':'https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png',
     '02':'https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img2.png',

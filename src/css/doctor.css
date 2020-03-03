@@ -11,46 +11,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 55px 10px 12px; }
+  margin: 1.25rem 3.5rem .6rem .75rem; }
   .header p {
     display: inline-block; }
   .header button {
     width: 30%;
-    max-width: 110px;
-    height: 40px;
+    max-width: 6.9rem;
+    height: 2.5rem;
     font-size: .9rem; }
   .header .fa-angle-down {
     position: relative;
-    left: 5px; }
+    left: .312rem; }
 
 .list-with-filters {
   display: flex;
-  margin-left: 40px; }
+  margin-left: 2.5rem; }
   .list-with-filters .filters {
     width: 20%;
     line-height: 1.2rem;
-    max-width: 250px;
+    max-width: 15.6rem;
     font-size: 1.1rem; }
     .list-with-filters .filters form .filter-form-row {
       display: grid;
       grid-template-columns: 10% 90%;
-      margin-top: 3px;
+      margin-top: .19rem;
       align-items: center; }
       .list-with-filters .filters form .filter-form-row .box {
-        width: 14px;
-        height: 14px;
+        width: .875rem;
+        height: .875rem;
         border: solid 1px #bbb8b8;
-        border-radius: 4px; }
+        border-radius: .25rem; }
 
 .parent-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: .625rem;
   width: 100%; }
   .parent-container .doctor-container {
     border: solid 1px #c0c0c4;
     padding: 0;
-    margin: 10px 30px 0 10px;
+    margin: .625rem 1.875rem 0 .625rem;
     display: grid;
     grid-template-columns: 60% 40%;
     align-items: space-between; }
@@ -60,13 +60,13 @@
       flex-direction: column;
       justify-content: space-between; }
       .parent-container .doctor-container .info-button .info-container {
-        padding: 0 10px;
+        padding: 0 .625rem;
         min-height: 10rem;
         text-align: left; }
       .parent-container .doctor-container .info-button .info-container-row {
         display: flex;
         flex-wrap: nowrap;
-        padding-left: 30px;
+        padding-left: 1.875rem;
         margin-bottom: 1rem; }
         .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row {
           display: flex;
@@ -76,22 +76,22 @@
             color: rgba(16, 176, 240, 0.959); }
           .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row p {
             display: inline-block;
-            padding-left: 15px;
+            padding-left: 1rem;
             margin-top: 0;
             margin-bottom: 0;
             font-size: 1.2rem;
             line-height: 1.3rem; }
           .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
-            padding-left: 12px; }
+            padding-left: .75rem; }
       .parent-container .doctor-container .info-button .appointment-btn {
-        margin: 30px 0 30px 0;
+        margin: 1.875rem 0 1.875rem 0;
         position: relative;
-        left: 35px; }
+        left: 2.1875rem; }
       .parent-container .doctor-container .info-button .nav-button {
         color: #d7e1e8;
         width: fit-content;
-        height: 55px;
-        border-radius: 5px;
+        height: 3.5rem;
+        border-radius: .3rem;
         background: #050a35; }
     .parent-container .doctor-container .img-container {
       display: flex;
@@ -99,20 +99,20 @@
       .parent-container .doctor-container .img-container .doctor-img {
         height: 100%;
         width: 100%;
-        max-height: 350px; }
+        max-height: 22rem; }
 
-@media (max-width: 550px) {
+@media (max-width: 34.4rem) {
   .header {
-    margin: 15px; }
+    margin: 1rem; }
 
   .parent-container .doctor-container {
     display: block;
-    margin: 10px 0; }
+    margin: .625rem 0; }
     .parent-container .doctor-container .img-container .doctor-img {
       max-width: unset;
       position: unset;
       width: 100%;
-      height: 400px; }
+      height: 25rem; }
     .parent-container .doctor-container .info-button {
       display: block;
       text-align: center; }
@@ -125,25 +125,24 @@
           .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
             padding: 1rem 0 0 0; }
       .parent-container .doctor-container .info-button .appointment-btn {
-        margin: 10px 0 10px 0;
+        margin: .625rem 0 .625rem 0;
         position: unset; }
 
   .list-with-filters {
     margin-left: 0; }
     .list-with-filters .filters {
       display: none; } }
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 40.6rem) {
   .list-with-filters .filters form .filter-form-row .labet-container {
-    margin-left: 10px; }
+    margin-left: .625rem; }
 
   .header {
-    margin-left: 40px; } }
-@media only screen and (min-width: 1200px) {
+    margin-left: 2.5rem; } }
+@media only screen and (min-width: 75rem) {
   .list-with-filters .filters {
-    margin-right: 20px;
-    max-width: 430px; }
-    .list-with-filters .filters form .filter-form-row .labet-container {
-      margin-left: -1px;
+    margin-right: 1.25rem;
+    max-width: 26.9rem; }
+    .list-with-filters .filters form .filter-form-row .label-container {
       font-size: 1.2rem; }
     .list-with-filters .filters p {
       font-size: 1.5rem;
