@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Our Doctors</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/theme.css"> -->
+        <link rel="stylesheet" href="../css/doctor.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="body">
+        <nav class="nav">
+            <div class="logo-and-bar-container">
+                <div class="logo-container">
+                    <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
+                </div>
+                <!-- <div class="bars"> -->
+                    <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
+                <!-- </div>   -->
+            </div>    
+            <div class="nav-open">
+                <div class="nav-expanded">
+                    <a href="/doctor">Doctors</a>
+                    <hr>
+                    <a href="/hospitals">Hospitals</a>
+                    <hr>
+                    <a href="/">Treatment</a>
+                    <hr>
+                    <a href="/">Other Services</a>
+                    <hr>
+                   <a href="/">About</a>
+                   <hr>
+                </div>
+                <div class="nav-btn-container">
+                    <button class='nav-button-white'>Login / Sign Up</button>
+                    <button class='nav-button'>Get a Quote</button>
+                </div>
+            </div>        
+        </nav>
+        <div class="location">
+            <h1>Cardiac Surgeons in <a href="">Delhi</a></h1>
+        </div>
+        <div class="color">
+
+        </div>
+        <div class="body-container">
+        <script src="../js/navigation.js"></script>
+        <div class="header">
+            <p><a href="/" Style="text-decoration: none;color:unset;">Home</a> / Doctor List</p>
+            <button>Sort by<i class="fas fa-angle-down"></i></button>
+        </div>
+        <div class="list-with-filters">
+            <div class="filters" style="text-align: left;padding-top:.5rem;">
+                <div class="aplied-filters-container">
+                    <div class="heading-container" style="background: rgb(230, 228, 228);width: 100%;">
+                        <h2>Filter By</h2>
+                    </div>
+                    <div class="applied-filters">
+                        <!-- <div>DLF Cyber City <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div>
+                        <div>Multi Organ Transplant <span style="color:rgba(5, 154, 253,.5)";><i class="fas fa-times"></i></span></div>
+                        <div>Apollo Hospital <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div>
+                        <div>30+ <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div> -->
+                    </div>
+                </div>
+                <div class="filters-container">
+                <div style="border-bottom:solid 2px rgb(241, 241, 241);margin-top:1rem;">
+                    <div class="filter-title-container">
+                        <h3>Location</h3>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="DLF Cyber City" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">DLF Cyber City</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class='box'>
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Dwaraka" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Dwaraka</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Lajpat Nagar" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Lajpat Nagar</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Palam Vihar" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Palam Vihar</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box"> 
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Punjabi Baag" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Punjabi Baag</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Pusa Road" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Pusa Road</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <button class="show-more">+ Show more</button>
+                    </div>
+                </div>
+              
+                <div style="border-bottom:solid 2px rgb(241, 241, 241);margin-top:1rem;">
+                    <div class="filter-title-container">
+                        <h3 style="display:inline-block;margin-right: 10px;min-width:100px;">Treatment</h3>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                  <input type="checkbox" value="Multi Organ Transplant" style="opacity:0;">
+                                </div>
+                              <div class="labet-container">
+                                  <label for="">Multi Organ Transplant</label>
+                              </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Orthopedic Surgery" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Orthopedic Surgery</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Infertility Treatment" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Infertility Treatment</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Dentistry" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Dentistry</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Cardiology" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Cardiology</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Cancer" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Cancer</label>
+                                </div>
+                            </div>
+                           <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <h3 class="show-more" >+ Show more</h3>
+                    </div>
+                </div>
+                <div style="border-bottom:solid 2px rgb(241, 241, 241);margin-top:1rem;">
+                    <div class="filter-title-container">
+                        <h3 style="display:inline-block;margin-right: 10px;min-width:100px;">Hospitals</h3>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                              <div class="filter-form-row">
+                              <div class="box">
+                                <i class="fas fa-check unchecked checked"></i>
+                                <input type="checkbox" value="Apollo Hospital" style="opacity:0;">
+                            </div>
+                              <div class="labet-container">
+                                  <label for="">Apollo Hospital</label>
+                              </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Manipal North Side Hospital" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Manipal Hospital</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="AIIMs" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">AIIMs</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Fortis Hospital" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Fortis Hospital</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Elbit Diagnostics" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Elbit Diagnostics</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <h3 class="show-more">+ Show more</h3>
+                    </div>
+                </div>
+                <div style="border-bottom:solid 2px rgb(241, 241, 241);margin-top:1rem;">
+                    <div class="filter-title-container">
+                        <h3 style="display:inline-block;margin-right: 10px;min-width:100px;">Years of Experience</h3>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search" ></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                              <div class="filter-form-row">
+                              <div class="box">
+                                  <i class="fas fa-check unchecked checked"></i>
+                                  <input type="checkbox" value="30+" style="opacity:0;">
+                                </div>
+                              <div class="labet-container">
+                                  <label for="">30+</label>
+                              </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="25+" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">25+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="20+" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">20+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="15+" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">15+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="10+" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">10+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="5+" style="opacity:0;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">5+</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div >
+                        <h3 class="show-more">+ Show more</h3>
+                    </div>
+                  
+                </div>
+            </div>
+            </div>
+            <div class="parent-container">    
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>___ </span>Shubham Shinde</h2>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                        <p>k</p>
+                                    </div>
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <p >k</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <p >1 Years of Experience</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-notes-medical"></i>
+                                        </div>
+                                        <p ></p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt fa-map-marker-alt-doctor"></i>
+                                        </div>
+                                        <p>k</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class='appointment-btn'>Book an appointment</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class='doctor-img  img1' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>___ </span>Shubham Shinde</h3>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                        <p>code</p>
+                                    </div>
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <p >b.tech</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <p >3 Years of Experience</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-notes-medical"></i>
+                                        </div>
+                                        <p ></p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <p>Varanasi</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class='appointment-btn'>Book an appointment</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class='doctor-img  img1' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" alt="img-duke-samson">
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>___ </span>Duke Samsan</h2>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                        <p>MBA, MBBS</p>
+                                    </div>
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <p >MBA, MBBS</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <p >8 Years of Experience</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-notes-medical"></i>
+                                        </div>
+                                        <p ></p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <p>Greater noida</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class='appointment-btn' >Book an appointment</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class='doctor-img  img1' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>___ </span>Prakhar</h2>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                        <p>Nothing</p>
+                                    </div>
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <p >No degree</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="far fa-clock"></i> 
+                                        </div>
+                                        <p >0 Years of Experience</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-notes-medical"></i>
+                                        </div>
+                                        <p ></p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <p>Vasant Vihar</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class='appointment-btn'>Book an appointment</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class='doctor-img  img1' src='https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg' alt="img-duke-samson">
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>___ </span>Duke Samsan</h2>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-certificate"></i>
+                                        </div>
+                                        <p>dentist</p>
+                                    </div>
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <p >not yet</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <p >1 Years of Experience</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-notes-medical"></i>
+                                        </div>
+                                       <p>Nothing</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <div class="icon-container">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <p>Mathura</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <button class='appointment-btn'>Book an appointment</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class='doctor-img  img1' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+    
+            </div>    
+        </div>
+    </div>
+        <div class="help">
+            <div>
+                <h1>Need Help?</h1>
+                <p>Just let us know. We will be happy to assist you</p>
+            </div>
+            <button>Submit your query</button>
+        </div>
+        <footer>
+            <div class='footer-tablet'>
+                <div class="article-container" style="display:flex;">
+                    <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
+                    <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
+                    <div style="margin:0 10px;"><a href="">Treatment</a></div>
+                    <div style="margin:0 10px;"><a href="">Other Services</a></div>
+                    <div style="margin:0 10px;"><a href="">FAQs</a></div>
+                </div>
+                <div class="logo-container">
+                    <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
+                </div>
+             </div>
+             <div class='footer-tablet-end'>
+                 <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
+                 <div>
+                     <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
+                     <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
+                     <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                     <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
+                     <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                 </div>
+             </div>
+            </footer>
+        <script src = "../js/filter.js"></script>
+    </body>
+</html>

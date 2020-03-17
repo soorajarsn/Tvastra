@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hospitals</title>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" type="text/css" href="../css/theme.css"> -->
+        <!-- <link rel="stylesheet" href="../css/doctor.css"> -->
+        <link rel="stylesheet" href="../css/hospital.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body class="body">
+        <nav class="nav">
+            <div class="logo-and-bar-container">
+                <div class="logo-container">
+                    <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
+                </div>
+                <!-- <div class="bars"> -->
+                    <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
+                <!-- </div>   -->
+            </div>    
+            <div class="nav-open">
+                <div class="nav-expanded">
+                    <a href="/doctor">Doctors</a>
+                    <hr>
+                    <a href="/hospitals">Hospitals</a>
+                    <hr>
+                    <a href="/">Treatment</a>
+                    <hr>
+                    <a href="/">Other Services</a>
+                    <hr>
+                   <a href="/">About</a>
+                   <hr>
+                </div>
+                <div class="nav-btn-container">
+                    <button class='nav-button-white'>Login / Sign Up</button>
+                    <button class='nav-button'>Get a Quote</button>
+                </div>
+            </div>        
+        </nav>
+        <script src="../js/navigation.js"></script>
+        <div class="location">
+            <h1>You are viewing Hospitals in <a href="">Delhi</a></h1>
+        </div>
+        <div class="color">
+
+        </div>
+       
+        <div class="body-container">
+            <div class="header">
+                <p><a href="/" Style="text-decoration: none;color:unset;">Home</a> / Hospital List</p>
+                <button>Sort by<i class="fas fa-angle-down"></i></button>
+            </div> 
+        <div class="list-with-filters">
+            <div class="filters" style="text-align: left;padding-top:.6rem;">
+                <div class="aplied-filters-container">
+                    <div class="heading-container" style="background: rgb(230, 228, 228);width: 100%;">
+                        <h2>Filter By</h2>
+                    </div>
+                    <div class="applied-filters">
+                        <!-- <div>DLF Cyber City <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div>
+                        <div>Multi Organ Transplant <span style="color:rgba(5, 154, 253,.5)";><i class="fas fa-times"></i></span></div>
+                        <div>Apollo Hospital <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div>
+                        <div>30+ <span style="color:rgba(5, 154, 253,.5);"><i class="fas fa-times"></i></span></div> -->
+                    </div>
+                </div>
+                <div class="filters-container">
+                <div style="border-bottom:solid 2px rgb(223, 220, 220);">
+                    <div class="filter-title-container" style="display:flex;justify-content: space-between;align-items: center;">
+                        <h3 style="display:inline-block;margin-right: 10px;min-width:100px;">Location</h3>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search" style="color:rgba(16, 176, 240, 0.959);margin:0 20px 5px 0;"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="DLF Cyber City" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">DLF Cyber City</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class='box'>
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Dwaraka" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Dwaraka</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Lajpat Nagar" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Lajpat Nagar</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Palam Vihar" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Palam Vihar</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box"> 
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Punjabi Baag" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Punjabi Baag</label>
+                                </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Pusa Road" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Pusa Road</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <button class="show-more">+ Show more</button>
+                    </div>
+                </div>
+              
+                <div style="border-bottom:solid 2px rgb(223, 220, 220);">
+                    <div style="display:flex;justify-content: space-between;align-items: center;">
+                        <p style="display:inline-block;margin-right: 10px;min-width:100px;">Treatment</p>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search" style="color:rgba(16, 176, 240, 0.959);margin:0 20px 5px 0;"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                  <input type="checkbox" value="Multi Organ Transplant" style="display:none;">
+                                </div>
+                              <div class="labet-container">
+                                  <label for="">Multi Organ Transplant</label>
+                              </div>
+                            </div>
+                            <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Orthopedic Surgery" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Orthopedic Surgery</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Infertility Treatment" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Infertility Treatment</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Dentistry" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Dentistry</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Cardiology" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Cardiology</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Cancer" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Cancer</label>
+                                </div>
+                            </div>
+                           <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <button class="show-more">+ Show more</button>
+                    </div>
+                </div>
+                <div style="border-bottom:solid 2px rgb(223, 220, 220);">
+                    <div style="display:flex;justify-content: space-between;align-items: center;">
+                        <p style="display:inline-block;margin-right: 10px;min-width:100px;">Hospitals</p>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search" style="color:rgba(16, 176, 240, 0.959);margin:0 20px 5px 0;"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                              <div class="filter-form-row">
+                              <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Apollo Hospital" style="display:none;">
+                                </div>
+                              <div class="labet-container">
+                                  <label for="">Apollo Hospital</label>
+                              </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Manipal North Side Hospital" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Manipal Hospital</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="AIIMs" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">AIIMs</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Fortis Hospital" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Fortis Hospital</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="Elbit Diagnostics" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">Elbit Diagnostics</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div >
+                        <button class="show-more">+ Show more</button>
+                    </div>
+                </div>
+                <div style="border-bottom:solid 2px rgb(223, 220, 220);">
+                    <div style="display:flex;justify-content: space-between;align-items: center;">
+                        <p style="display:inline-block;margin-right: 10px;min-width:100px;">Years of Experience</p>
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+                            <i class="fas fa-search" style="color:rgba(16, 176, 240, 0.959);margin:0 20px 5px 0;"></i>
+                            <i class="fas fa-minus" style="margin-top: 5px;color:grey"></i>
+                        </div>
+                    </div>
+                    <div style="text-align:left;">
+                        <form action="/">
+                              <div class="filter-form-row">
+                              <div class="box">
+                                  <i class="fas fa-check unchecked checked"></i>
+                                  <input type="checkbox" value="30+" style="display:none;">
+                                </div>
+                              <div class="labet-container">
+                                  <label for="">30+</label>
+                              </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="25+" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">25+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="20+" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">20+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="15+" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">15+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="10+" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">10+</label>
+                                </div>
+                            </div>
+                              <div class="filter-form-row">
+                                <div class="box">
+                                    <i class="fas fa-check unchecked checked"></i>
+                                    <input type="checkbox" value="5+" style="display:none;">
+                                </div>
+                                <div class="labet-container">
+                                    <label for="">5+</label>
+                                </div>
+                            </div>
+                            <div style="display:none;">
+
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div >
+                        <button class="show-more">+ Show more</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="parent-container">    
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>____ </span>Apollo Hospital</h2>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-bed"></i>
+                                        <p >100 beds</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-stethoscope"></i>
+                                        <p>Famous Treatments</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="features">
+                            <div><p>MultiOrgan Transplant</p></div>
+                            <div><p>Orthopedic Surgery</p></div>
+                            <div><p>Infertility Treatment</p></div>
+                            <div><p>Dentistry</p></div>
+                            <div><p>Cardiology</p></div>
+                            <div><p>Cancer</p></div>
+                            <div><p>+40 more</p></div>
+                        </div>
+                        <button class='appointment-btn'>Call Now</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class="doctor-img  tablet-view" src="../assets/Apolo-HospitalCropped.jpg" alt="">
+                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/Apolo-Hospital.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>____ </span>Fortis Hospital</h2>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-bed"></i>
+                                        <p >100 beds</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-stethoscope"></i>
+                                        <p>Famous Treatments</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="features">
+                            <div><p>MultiOrgan Transplant</p></div>
+                            <div><p>Orthopedic Surgery</p></div>
+                            <div><p>Infertility Treatment</p></div>
+                            <div><p>Dentistry</p></div>
+                            <div><p>Cardiology</p></div>
+                            <div><p>Cancer</p></div>
+                            <div><p>+40 more</p></div>
+                        </div>
+                        <button class='appointment-btn'>Call Now</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class="doctor-img tablet-view" src="../assets/fortisCropped.jpg" alt="">
+                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/Fortis-Hospital-la-shalimar-bagh.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>____ </span>Rockland Hospital</h2>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-bed"></i>
+                                        <p >100 beds</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-stethoscope"></i>
+                                        <p>Famous Treatments</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="features">
+                            <div><p>MultiOrgan Transplant</p></div>
+                            <div><p>Orthopedic Surgery</p></div>
+                            <div><p>Infertility Treatment</p></div>
+                            <div><p>Dentistry</p></div>
+                            <div><p>Cardiology</p></div>
+                            <div><p>Cancer</p></div>
+                            <div><p>+40 more</p></div>
+                        </div>
+                        <button class='appointment-btn'>Call Now</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class="doctor-img tablet-view"src="../assets/rocklandCropped.jpg" alt="">
+                        <img class='doctor-img mobile-cum-desktop-view' src="../assets/rockland.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>____ </span>Super Speciality Hospital</h2>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-bed"></i>
+                                        <p >100 beds</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-stethoscope"></i>
+                                        <p>Famous Treatments</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="features">
+                            <div><p>MultiOrgan Transplant</p></div>
+                            <div><p>Orthopedic Surgery</p></div>
+                            <div><p>Infertility Treatment</p></div>
+                            <div><p>Dentistry</p></div>
+                            <div><p>Cardiology</p></div>
+                            <div><p>Cancer</p></div>
+                            <div><p>+40 more</p></div>
+                        </div>
+                        <button class='appointment-btn'>Call Now</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class="doctor-img tablet-view" src="../assets/primusCropped.jpg" alt="">
+                        <img class='doctor-img mobile-cum-desktop-view' src="../assets/primus.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+                <div class="doctor-container">
+                    <div class="info-button">
+                        <div class="info-container">
+                            <h2><span>____ </span>AIIMS</h2>
+                                <div class="info-container-row" >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
+                                    </div >
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-bed"></i>
+                                        <p >100 beds</p>
+                                    </div>
+                                </div>
+                                <div class="info-container-row">
+                                    <div class="info-container-sub-row">
+                                        <i class="fas fa-stethoscope"></i>
+                                        <p>Famous Treatments</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="features">
+                            <div><p>MultiOrgan Transplant</p></div>
+                            <div><p>Orthopedic Surgery</p></div>
+                            <div><p>Infertility Treatment</p></div>
+                            <div><p>Dentistry</p></div>
+                            <div><p>Cardiology</p></div>
+                            <div><p>Cancer</p></div>
+                            <div><p>+40 more</p></div>
+                        </div>
+                        <button class='appointment-btn'>Call Now</button>    
+                    </div>
+                    <div class='img-container'>
+                        <img class="doctor-img tablet-view" src="../assets/aiimsCropped.jpg" alt="">
+                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/aiims.jpg" alt="img-duke-samson" >
+                    </div>
+                </div>
+    
+            </div>    
+        </div>
+    </div>
+        <div class="help">
+            <div>
+                <h1>Need Help?</h1>
+                <p>Just let us know. We will be happy to assist you</p>
+            </div>
+            <button>Submit your query</button>
+        </div>
+        <footer>
+            <div class='footer-tablet'>
+                <div class="article-container" style="display:flex;">
+                    <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
+                    <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
+                    <div style="margin:0 10px;"><a href="">Treatment</a></div>
+                    <div style="margin:0 10px;"><a href="">Other Services</a></div>
+                    <div style="margin:0 10px;"><a href="">FAQs</a></div>
+                </div>
+                <div class="logo-container">
+                    <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
+                </div>
+             </div>
+             <div class='footer-tablet-end'>
+                 <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
+                 <div>
+                     <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
+                     <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
+                     <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                     <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
+                     <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                 </div>
+             </div>
+            </footer>
+            <script src="../js/filter.js"></script>
+    </body>
+</html>
