@@ -8,6 +8,10 @@ function login(req,res){
         res.redirect('/');
     }
 }
+function signup(req,res){
+    res.redirect('/');
+}
 module.exports = { 
-    login:login
+    login:login,
+    signup
 };

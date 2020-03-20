@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/signup.css">
-    <link rel="stylesheet" href="../css/login.css">
     <title>login</title>
 </head>
 <body>
@@ -38,18 +37,17 @@
     </nav>  
     <div class="main-container">
         <div class="form-container">
-            <h1>Login</h1>
+            <h1>Sign Up</h1>
             <hr>
             <form action="/signup" method="post">
                 <div class="field-set">
                     <div class="input-container">
-                        <input type="text" name="mobileNumber" placeholder="Enter Mobile Number" required>
-                        <i class="fas fa-question-circle"></i>
+                        <input type="text" name="name" placeholder="Enter Name" required>
                     </div>
                     <div class="input-container">
-                        <input type="text" name="otp" placeholder="Enter OTP" required>
+                        <input type="email" name="email" placeholder="Enter Email" required>
                     </div>
-                    <!-- <div class="input-container">
+                    <div class="input-container">
                         <input type="password" name="password" placeholder="Enter Password" required>
                     </div>
                     <div class="input-container select-container">
@@ -82,14 +80,14 @@
                             <option value="china">China</option>
                             <option value="russia">Russia</option>
                         </select>
-                    </div> -->
+                    </div>
                     <div class="btn-container">
-                        <button type="submit">LOGIN</button>
+                        <button type="submit">SIGN UP</button>
                         <i class="fas fa-arrow-right"></i>
                     </div>
                 </div>
             </form>
-            <p class="redirect">Not Registered?<a href="/signup">Sign Up</a> </p>
+            <p class="redirect">Already Registered?<a href="/login">Login</a> </p>
         </div>
     </div>
     <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>

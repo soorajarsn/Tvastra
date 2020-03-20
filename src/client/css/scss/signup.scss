@@ -1,0 +1,119 @@
+@import "theme";
+body{
+    background:$opaqueBlue;
+    text-align: center;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:3rem;
+    @media (min-width:700px){
+        margin-top:4rem;
+    }
+    @media (min-width:1000px){
+        margin-top:6rem;
+    }
+    width: 100%;
+    .form-container{
+        display:flex;
+        background: $white;
+        align-items: center;
+        box-shadow: 0px 0px 28px -2px $darkBlue;
+        justify-content: center;
+        flex-direction: column;
+        padding:.2rem;
+        width: 80%;
+        max-width:25rem;
+        @media (min-width:650px){
+            max-width:28rem;
+        }
+        @media (min-width:1000px){
+            max-width:31rem;
+        }
+        h1{
+            color:$blue;
+            margin-bottom:1rem;
+            margin-top: 1rem;
+            @media (min-width:1200px){
+                font-size:1.7rem;
+                line-height:1.7rem;
+            }
+        }
+        hr{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border:2px solid $lightGrey;
+        }
+        form{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:1rem;
+            margin:auto;
+            .field-set{
+                width:99%;
+                text-align:center;
+                margin:auto;
+                .input-container{
+                    border:solid 2px $lightGrey;
+                    overflow: hidden;
+                    margin:.6rem 0;
+                    input,select{
+                        border:0;
+                        width:100%;
+                        margin:0;
+                        padding:.5rem 1rem;
+                        background: transparent;
+                        color:$grey;
+                    }
+                }
+                .city-state-input-container{
+                    border:0;
+                }
+                .btn-container{
+                    position: relative;
+                    button{
+                        width:100%;
+                        background: $darkBlue;
+                        color:$white;
+                        font-family: "nexa-light";
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-size: 1.1rem;
+                        border-radius:0;
+                        padding:.8rem 0;
+                        margin:0;
+                    }
+                    .fa-arrow-right{
+                        position: absolute;
+                        right:1rem;
+                        top:.75rem;
+                        color:$white;
+                    }
+                }
+            }
+        }
+        .redirect{
+            font-size:.9rem;
+            padding:0;
+            margin:1rem 0 .8rem 0;
+            color:$darkGrey;
+            a{
+                color:$blue;
+            }
+        }
+    }
+}
+.copyright{
+    margin-top:3rem;
+    margin-bottom: 1.5rem;
+    font-size:.9rem;
+    font-family:"nexa-bold";
+    @media (min-width:1000px){
+        margin-top: 8rem;
+    }
+}

@@ -395,293 +395,108 @@ footer {
       footer .footer-tablet-end .footer-end {
         margin: 0; } }
 body {
-  font-weight: 600; }
+  background: rgba(122, 176, 212, 0.8);
+  text-align: center; }
 
-.location {
-  width: 100%;
-  height: 150px;
-  background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png);
-  background-size: 100% 500px;
-  background-position: center;
-  display: flex;
-  align-items: center; }
-  .location h1 {
-    margin-left: .756rem;
-    font-size: 1.2rem;
-    position: relative;
-    z-index: 1; }
-
-.color {
-  width: 100%;
-  height: 150px;
-  background-color: rgba(122, 176, 212, 0.8);
-  position: absolute;
-  top: 3.96rem; }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.625rem; }
-  .header p {
-    font-size: 1.1rem;
-    display: inline-block; }
-  .header button {
-    width: fit-content;
-    padding: .8rem 1.7rem;
-    font-size: .9rem; }
-  .header .fa-angle-down {
-    position: relative;
-    left: .312rem; }
-
-.list-with-filters {
-  display: grid; }
-  .list-with-filters .filters {
-    display: none;
-    margin-left: 0;
-    line-height: 1.2rem; }
-    .list-with-filters .filters .aplied-filters-container {
-      margin-left: 1.5rem; }
-      .list-with-filters .filters .aplied-filters-container h2 {
-        font-size: 1rem;
-        margin-left: .8rem;
-        line-height: 2.5rem; }
-      .list-with-filters .filters .aplied-filters-container .applied-filters {
-        margin-top: .4rem;
-        display: flex;
-        flex-wrap: wrap; }
-        .list-with-filters .filters .aplied-filters-container .applied-filters div {
-          border: 2px solid #ebebeb;
-          font-size: .8rem;
-          border-radius: 1rem;
-          padding: .2rem .3rem;
-          width: fit-content;
-          font-family: "nexa-light";
-          font-weight: 600;
-          margin-top: .3rem;
-          margin-right: .3rem; }
-          .list-with-filters .filters .aplied-filters-container .applied-filters div span {
-            vertical-align: middle; }
-            .list-with-filters .filters .aplied-filters-container .applied-filters div span i {
-              color: #7ab0d4;
-              padding: 0 .3rem; }
-    .list-with-filters .filters .filters-container {
-      margin-left: 2rem; }
-      .list-with-filters .filters .filters-container .filter-title-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1rem 0; }
-        .list-with-filters .filters .filters-container .filter-title-container h3 {
-          display: inline-block;
-          margin-right: 10px;
-          min-width: 100px;
-          font-size: 1.2rem;
-          font-weight: 600;
-          font-family: "nexa-light"; }
-        .list-with-filters .filters .filters-container .filter-title-container .fa-search {
-          color: #0173b2;
-          margin: 0 20px 5px 0; }
-      .list-with-filters .filters .filters-container form .filter-form-row {
-        display: grid;
-        grid-template-columns: 10% 90%;
-        margin-top: .19rem;
-        align-items: center; }
-        .list-with-filters .filters .filters-container form .filter-form-row .box {
-          width: .875rem;
-          height: .875rem;
-          border: solid 1px #acacac;
-          border-radius: .25rem; }
-          .list-with-filters .filters .filters-container form .filter-form-row .box input {
-            display: inline; }
-          .list-with-filters .filters .filters-container form .filter-form-row .box .unchecked {
-            display: none;
-            font-size: .8rem;
-            position: relative;
-            bottom: .1rem; }
-        .list-with-filters .filters .filters-container form .filter-form-row .selected .checked {
-          display: inline-block;
-          color: #7ab0d4; }
-        .list-with-filters .filters .filters-container form .filter-form-row .selected input {
-          display: none; }
-        .list-with-filters .filters .filters-container form .filter-form-row .labet-container {
-          margin-left: .625rem; }
-          .list-with-filters .filters .filters-container form .filter-form-row .labet-container label {
-            font-size: .9rem; }
-      .list-with-filters .filters .filters-container .show-more {
-        font-family: "nexa-bold";
-        color: #0173b2;
-        font-size: 1rem;
-        margin: 1rem 0;
-        background: none;
-        border: 0;
-        padding: 0; }
-
-.parent-container {
+.main-container {
   display: flex;
   flex-direction: column;
-  padding: .625rem 1.625rem; }
-  .parent-container .doctor-container {
-    border: solid 2px #ebebeb;
-    padding: 0;
-    display: block;
-    margin: .625rem 0;
-    grid-template-columns: 70% 30%;
-    align-items: space-between; }
-    .parent-container .doctor-container .info-button .info-container {
-      padding: 0 .625rem;
-      text-align: left;
-      text-align: left;
-      display: block; }
-      .parent-container .doctor-container .info-button .info-container h2 {
-        display: inline-block;
-        position: relative;
-        right: 10px;
-        margin-block-end: 1rem;
-        margin-top: 1rem;
-        color: #0173b2;
-        font-size: 1.3rem; }
-        .parent-container .doctor-container .info-button .info-container h2 span {
-          position: relative;
-          bottom: 8px;
-          color: #0173b2;
-          letter-spacing: 0;
-          font-weight: bold; }
-      .parent-container .doctor-container .info-button .info-container .info-container-row {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        padding-left: .4rem;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-        letter-spacing: .05rem; }
-        .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row {
-          display: flex;
-          align-items: center; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row i {
-            color: #0173b2; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row p {
-            display: inline-block;
-            padding-left: 1rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            line-height: 1.5rem; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row:nth-child(2) {
-            margin-top: 1rem; }
-    .parent-container .doctor-container .info-button .features {
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%; }
+  @media (min-width: 700px) {
+    .main-container {
+      margin-top: 4rem; } }
+  @media (min-width: 1000px) {
+    .main-container {
+      margin-top: 6rem; } }
+  .main-container .form-container {
+    display: flex;
+    background: white;
+    align-items: center;
+    box-shadow: 0px 0px 28px -2px #2a2d3e;
+    justify-content: center;
+    flex-direction: column;
+    padding: .2rem;
+    width: 80%;
+    max-width: 25rem; }
+    @media (min-width: 650px) {
+      .main-container .form-container {
+        max-width: 28rem; } }
+    @media (min-width: 1000px) {
+      .main-container .form-container {
+        max-width: 31rem; } }
+    .main-container .form-container h1 {
+      color: #0173b2;
+      margin-bottom: 1rem;
+      margin-top: 1rem; }
+      @media (min-width: 1200px) {
+        .main-container .form-container h1 {
+          font-size: 1.7rem;
+          line-height: 1.7rem; } }
+    .main-container .form-container hr {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 2px solid #ebebeb; }
+    .main-container .form-container form {
       display: flex;
-      padding-left: 3rem;
-      flex-wrap: wrap;
-      align-items: center; }
-      .parent-container .doctor-container .info-button .features div {
-        border: solid 1px #acacac;
-        border-radius: 3rem;
-        width: fit-content;
-        margin: .25rem .25rem; }
-        .parent-container .doctor-container .info-button .features div p {
-          letter-spacing: 1px;
-          padding: .35rem .8rem;
-          font-size: .9rem;
-          margin: 0; }
-    .parent-container .doctor-container .info-button .appointment-btn {
-      margin: 1.25rem 0 1.8rem 0;
-      color: white;
-      width: fit-content;
-      background: #2a2d3e; }
-    .parent-container .doctor-container .img-container {
-      display: flex;
-      justify-content: flex-end; }
-      .parent-container .doctor-container .img-container .doctor-img {
-        height: 25rem;
-        width: 100%; }
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      margin: auto; }
+      .main-container .form-container form .field-set {
+        width: 99%;
+        text-align: center;
+        margin: auto; }
+        .main-container .form-container form .field-set .input-container {
+          border: solid 2px #ebebeb;
+          overflow: hidden;
+          margin: .6rem 0; }
+          .main-container .form-container form .field-set .input-container input, .main-container .form-container form .field-set .input-container select {
+            border: 0;
+            width: 100%;
+            margin: 0;
+            padding: .5rem 1rem;
+            background: transparent;
+            color: #acacac; }
+        .main-container .form-container form .field-set .city-state-input-container {
+          border: 0; }
+        .main-container .form-container form .field-set .btn-container {
+          position: relative; }
+          .main-container .form-container form .field-set .btn-container button {
+            width: 100%;
+            background: #2a2d3e;
+            color: white;
+            font-family: "nexa-light";
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            border-radius: 0;
+            padding: .8rem 0;
+            margin: 0; }
+          .main-container .form-container form .field-set .btn-container .fa-arrow-right {
+            position: absolute;
+            right: 1rem;
+            top: .75rem;
+            color: white; }
+    .main-container .form-container .redirect {
+      font-size: .9rem;
+      padding: 0;
+      margin: 1rem 0 .8rem 0;
+      color: #727272; }
+      .main-container .form-container .redirect a {
+        color: #0173b2; }
 
-.tablet-view {
-  display: none; }
+.copyright {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+  font-family: "nexa-bold"; }
+  @media (min-width: 1000px) {
+    .copyright {
+      margin-top: 8rem; } }
 
-@media only screen and (min-width: 700px) {
-  .tablet-view {
-    display: block; }
-
-  .mobile-cum-desktop-view {
-    display: none; }
-
-  .location h1 {
-    margin-left: 2.8rem;
-    font-size: 1.3rem; }
-
-  .color {
-    top: 4.38rem; }
-
-  .header {
-    margin: 1.25rem 3.4rem .625rem 3.8rem; }
-    .header button {
-      margin-right: .3rem; }
-
-  .list-with-filters {
-    margin-left: 2.5rem; }
-
-  .parent-container {
-    padding: .625rem; }
-    .parent-container .doctor-container {
-      margin: 0 3.1rem 1.25rem .625rem;
-      display: grid; }
-      .parent-container .doctor-container .info-button {
-        position: relative; }
-        .parent-container .doctor-container .info-button .appointment-btn {
-          padding: .6rem 2.5rem;
-          position: absolute;
-          bottom: 0;
-          left: 3.4rem; } }
-@media only screen and (min-width: 1200px) {
-  .tablet-view {
-    display: none; }
-
-  .mobile-cum-desktop-view {
-    display: unset; }
-
-  .body-container {
-    padding: 0  4% 0 5%; }
-
-  .location {
-    height: 14rem; }
-    .location h1 {
-      font-size: 1.5rem;
-      font-family: "nexa-bold";
-      margin-left: 7.2rem; }
-
-  .color {
-    height: 14rem;
-    top: 5.9rem; }
-
-  .header {
-    margin-left: 2.3rem; }
-
-  .list-with-filters {
-    grid-template-columns: 20% 80%;
-    margin-left: 0; }
-    .list-with-filters .filters {
-      display: block; }
-      .list-with-filters .filters .filters-container {
-        margin-left: 2.4rem; }
-
-  .parent-container {
-    margin-bottom: 3rem; }
-    .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row {
-      min-width: 20rem; }
-      .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row p {
-        font-size: 1rem; }
-      .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
-        padding-left: 0rem; }
-
-  .list-with-filters {
-    grid-template-columns: 25% 75%; }
-    .list-with-filters .filters {
-      margin-right: 1.25rem;
-      max-width: 27rem; }
-      .list-with-filters .filters form .filter-form-row .labet-container {
-        font-size: 1.2rem; }
-      .list-with-filters .filters p {
-        font-size: 1.4rem;
-        margin-block-end: .5rem; } }
-
-/*# sourceMappingURL=hospital.css.map */
+/*# sourceMappingURL=signup.css.map */

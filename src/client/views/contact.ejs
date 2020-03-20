@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/doctorDetails.css"> -->
+    <link rel="stylesheet" href="../css/contact.css">
+    <title>Get in touch</title>
+</head>
+<body>
+    <nav class="nav" style="box-shadow: 0px 1px 4px 0px rgba(173,170,173,0.58);">
+        <div class="logo-and-bar-container">
+            <div class="logo-container">
+                <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
+            </div>
+            <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
+        </div>    
+        <div class="nav-open">
+            <div class="nav-expanded">
+                <a href="/doctor">Doctors</a>
+                <hr>
+                <a href="/hospitals">Hospitals</a>
+                <hr>
+                <a href="/treatment">Treatment</a>
+                <hr>
+                <a href="/">Other Services</a>
+                <hr>
+               <a href="/">About</a>
+               <hr>
+            </div>
+            <div class="nav-btn-container">
+                <button class='nav-button-white' onclick="location.href='/login';">Login / Sign Up</button>
+                <button class='nav-button'>Get a Quote</button>
+            </div>
+        </div>        
+    </nav>
+    <div class="contactUs-container">
+        <h1>Contact Us</h1>
+        <p><a href="/">Home</a> / Contact Us</p>
+    </div>
+    <div id="map">
+
+    </div>
+    <div class="main-container">
+        <div class="address-container">
+            <div class="info-container">
+                <i class="fas fa-home"></i>
+                <div style="text-align: left;margin-left:1rem;">
+                    <h2>Noida, India</h2>
+                    <p>Sector 45</p>
+                </div>
+            </div>
+            <div class="info-container">
+                <i class="fas fa-phone"></i>
+                <div style="text-align:left;margin-left:1rem;">
+                    <h2>00 (440) 9865 562</h2>
+                    <p>Mon to Fri 9am to 6pm</p>
+                </div>
+            </div>
+            <div class="info-container">
+                <i class="fas fa-home"></i>
+                <div style="text-align:left;margin-left:1rem;">
+                    <h2>support@tvastral.com</h2>
+                    <p>Send us your query anytime!</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="input-fieldset">
+                <div>
+                    <div class="input-container">
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" name="email" placeholder="Enter email address" required>
+                    </div >
+                    <div class="input-container">
+                        <input type="text" name="subject" placeholder="Enter subject" required>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="text" name="message" placeholder="Enter Message">
+                </div>
+            </div>
+            <div class="btn-container">
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class='footer-tablet'>
+            <div class="article-container" style="display:flex;">
+                <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
+                <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
+                <div style="margin:0 10px;"><a href="">Treatment</a></div>
+                <div style="margin:0 10px;"><a href="">Other Services</a></div>
+                <div style="margin:0 10px;"><a href="">FAQs</a></div>
+            </div>
+            <div class="logo-container">
+                <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
+            </div>
+         </div>
+         <div class='footer-tablet-end'>
+             <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
+             <div>
+                 <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
+                 <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
+                 <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                 <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
+                 <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+             </div>
+         </div>
+        </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB6gkF7PPpdYZ_2rQQuRhIYLYsLAeuPs4&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB6gkF7PPpdYZ_2rQQuRhIYLYsLAeuPs4&libraries=places&callback=initMap" async defer></script>
+    <script src="../js/contact.js"></script>
+   <script src="../js/navigation.js"></script>
+   <script src="../js/doctorDetails.js"></script>
+</body>
+</html>

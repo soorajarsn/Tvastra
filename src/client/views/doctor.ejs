@@ -24,7 +24,7 @@
                     <hr>
                     <a href="/hospitals">Hospitals</a>
                     <hr>
-                    <a href="/">Treatment</a>
+                    <a href="/treatment">Treatment</a>
                     <hr>
                     <a href="/">Other Services</a>
                     <hr>
@@ -32,7 +32,7 @@
                    <hr>
                 </div>
                 <div class="nav-btn-container">
-                    <button class='nav-button-white'>Login / Sign Up</button>
+                    <button class='nav-button-white' onclick="location.href='/login';">Login / Sign Up</button>
                     <button class='nav-button'>Get a Quote</button>
                 </div>
             </div>        
@@ -46,7 +46,7 @@
         <div class="body-container">
         <script src="../js/navigation.js"></script>
         <div class="header">
-            <p><a href="/" Style="text-decoration: none;color:unset;">Home</a> / Doctor List</p>
+            <p><a href="/">Home</a> / <a href="/doctorDetail">Doctor List</a></p>
             <button>Sort by<i class="fas fa-angle-down"></i></button>
         </div>
         <div class="list-with-filters">
@@ -596,7 +596,7 @@
                 <h1>Need Help?</h1>
                 <p>Just let us know. We will be happy to assist you</p>
             </div>
-            <button>Submit your query</button>
+            <button onclick="location.href='/contactUs';">Submit your query</button>
         </div>
         <footer>
             <div class='footer-tablet'>

@@ -395,293 +395,203 @@ footer {
       footer .footer-tablet-end .footer-end {
         margin: 0; } }
 body {
-  font-weight: 600; }
-
-.location {
-  width: 100%;
-  height: 150px;
-  background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png);
-  background-size: 100% 500px;
-  background-position: center;
-  display: flex;
-  align-items: center; }
-  .location h1 {
-    margin-left: .756rem;
-    font-size: 1.2rem;
-    position: relative;
-    z-index: 1; }
-
-.color {
-  width: 100%;
-  height: 150px;
-  background-color: rgba(122, 176, 212, 0.8);
-  position: absolute;
-  top: 3.96rem; }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.625rem; }
-  .header p {
-    font-size: 1.1rem;
-    display: inline-block; }
-  .header button {
-    width: fit-content;
-    padding: .8rem 1.7rem;
-    font-size: .9rem; }
-  .header .fa-angle-down {
-    position: relative;
-    left: .312rem; }
-
-.list-with-filters {
-  display: grid; }
-  .list-with-filters .filters {
-    display: none;
-    margin-left: 0;
-    line-height: 1.2rem; }
-    .list-with-filters .filters .aplied-filters-container {
-      margin-left: 1.5rem; }
-      .list-with-filters .filters .aplied-filters-container h2 {
-        font-size: 1rem;
-        margin-left: .8rem;
-        line-height: 2.5rem; }
-      .list-with-filters .filters .aplied-filters-container .applied-filters {
-        margin-top: .4rem;
-        display: flex;
-        flex-wrap: wrap; }
-        .list-with-filters .filters .aplied-filters-container .applied-filters div {
-          border: 2px solid #ebebeb;
-          font-size: .8rem;
-          border-radius: 1rem;
-          padding: .2rem .3rem;
-          width: fit-content;
-          font-family: "nexa-light";
-          font-weight: 600;
-          margin-top: .3rem;
-          margin-right: .3rem; }
-          .list-with-filters .filters .aplied-filters-container .applied-filters div span {
-            vertical-align: middle; }
-            .list-with-filters .filters .aplied-filters-container .applied-filters div span i {
-              color: #7ab0d4;
-              padding: 0 .3rem; }
-    .list-with-filters .filters .filters-container {
-      margin-left: 2rem; }
-      .list-with-filters .filters .filters-container .filter-title-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1rem 0; }
-        .list-with-filters .filters .filters-container .filter-title-container h3 {
-          display: inline-block;
-          margin-right: 10px;
-          min-width: 100px;
-          font-size: 1.2rem;
-          font-weight: 600;
-          font-family: "nexa-light"; }
-        .list-with-filters .filters .filters-container .filter-title-container .fa-search {
-          color: #0173b2;
-          margin: 0 20px 5px 0; }
-      .list-with-filters .filters .filters-container form .filter-form-row {
-        display: grid;
-        grid-template-columns: 10% 90%;
-        margin-top: .19rem;
-        align-items: center; }
-        .list-with-filters .filters .filters-container form .filter-form-row .box {
-          width: .875rem;
-          height: .875rem;
-          border: solid 1px #acacac;
-          border-radius: .25rem; }
-          .list-with-filters .filters .filters-container form .filter-form-row .box input {
-            display: inline; }
-          .list-with-filters .filters .filters-container form .filter-form-row .box .unchecked {
-            display: none;
-            font-size: .8rem;
-            position: relative;
-            bottom: .1rem; }
-        .list-with-filters .filters .filters-container form .filter-form-row .selected .checked {
-          display: inline-block;
-          color: #7ab0d4; }
-        .list-with-filters .filters .filters-container form .filter-form-row .selected input {
-          display: none; }
-        .list-with-filters .filters .filters-container form .filter-form-row .labet-container {
-          margin-left: .625rem; }
-          .list-with-filters .filters .filters-container form .filter-form-row .labet-container label {
-            font-size: .9rem; }
-      .list-with-filters .filters .filters-container .show-more {
-        font-family: "nexa-bold";
-        color: #0173b2;
-        font-size: 1rem;
-        margin: 1rem 0;
-        background: none;
-        border: 0;
-        padding: 0; }
-
-.parent-container {
-  display: flex;
-  flex-direction: column;
-  padding: .625rem 1.625rem; }
-  .parent-container .doctor-container {
-    border: solid 2px #ebebeb;
-    padding: 0;
-    display: block;
-    margin: .625rem 0;
-    grid-template-columns: 70% 30%;
-    align-items: space-between; }
-    .parent-container .doctor-container .info-button .info-container {
-      padding: 0 .625rem;
-      text-align: left;
-      text-align: left;
-      display: block; }
-      .parent-container .doctor-container .info-button .info-container h2 {
-        display: inline-block;
-        position: relative;
-        right: 10px;
-        margin-block-end: 1rem;
-        margin-top: 1rem;
-        color: #0173b2;
-        font-size: 1.3rem; }
-        .parent-container .doctor-container .info-button .info-container h2 span {
-          position: relative;
-          bottom: 8px;
-          color: #0173b2;
-          letter-spacing: 0;
-          font-weight: bold; }
-      .parent-container .doctor-container .info-button .info-container .info-container-row {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        padding-left: .4rem;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-        letter-spacing: .05rem; }
-        .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row {
-          display: flex;
-          align-items: center; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row i {
-            color: #0173b2; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row p {
-            display: inline-block;
-            padding-left: 1rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            line-height: 1.5rem; }
-          .parent-container .doctor-container .info-button .info-container .info-container-row .info-container-sub-row:nth-child(2) {
-            margin-top: 1rem; }
-    .parent-container .doctor-container .info-button .features {
-      display: flex;
-      padding-left: 3rem;
-      flex-wrap: wrap;
-      align-items: center; }
-      .parent-container .doctor-container .info-button .features div {
-        border: solid 1px #acacac;
-        border-radius: 3rem;
-        width: fit-content;
-        margin: .25rem .25rem; }
-        .parent-container .doctor-container .info-button .features div p {
-          letter-spacing: 1px;
-          padding: .35rem .8rem;
-          font-size: .9rem;
-          margin: 0; }
-    .parent-container .doctor-container .info-button .appointment-btn {
-      margin: 1.25rem 0 1.8rem 0;
-      color: white;
-      width: fit-content;
-      background: #2a2d3e; }
-    .parent-container .doctor-container .img-container {
-      display: flex;
-      justify-content: flex-end; }
-      .parent-container .doctor-container .img-container .doctor-img {
-        height: 25rem;
-        width: 100%; }
+  text-align: center; }
 
 .tablet-view {
   display: none; }
 
-@media only screen and (min-width: 700px) {
-  .tablet-view {
-    display: block; }
+.mobile-view {
+  display: flex; }
 
-  .mobile-cum-desktop-view {
+.header {
+  text-align: left;
+  font-size: 1.3rem;
+  margin: 2rem 1.625rem 1rem 1.625rem;
+  color: #727272; }
+  .header a {
+    color: #727272;
+    font-size: 1.2rem;
+    text-decoration: none; }
+
+.main-container {
+  border: solid 2px #ebebeb;
+  margin: .5rem 1.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem; }
+  .main-container .info-container {
+    text-align: left; }
+    .main-container .info-container h2 {
+      display: inline-block;
+      position: relative;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #0173b2;
+      font-size: 1.4rem; }
+      .main-container .info-container h2 span {
+        display: inline;
+        position: relative;
+        bottom: 8px;
+        font-weight: bold;
+        color: #0173b2;
+        letter-spacing: 0; }
+    .main-container .info-container p {
+      margin-top: 0;
+      padding-left: 2.4rem;
+      font-size: .85rem;
+      letter-spacing: .05rem;
+      line-height: 1.4rem;
+      text-align: justify; }
+      @media (max-width: 649px) {
+        .main-container .info-container p {
+          padding-right: .8rem; } }
+  .main-container .img-button {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; }
+    .main-container .img-button .appointment-btn {
+      margin: .625rem 0 .625rem 0;
+      color: white;
+      width: fit-content;
+      background: #2a2d3e;
+      border-radius: 0;
+      padding: .6rem 2rem; }
+    .main-container .img-button .img-container {
+      width: 100%;
+      height: 25rem;
+      overflow: hidden; }
+      .main-container .img-button .img-container img {
+        width: 100%;
+        height: 30rem; }
+  .main-container .accordian-container .accordian {
+    background-color: white;
+    border-top: solid 2px #ebebeb;
+    cursor: pointer;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 1.3rem;
+    transition: 0.4s;
+    font-family: "nexa-bold";
+    color: #0173b2; }
+    .main-container .accordian-container .accordian .active, .main-container .accordian-container .accordian:hover {
+      background: #7ab0d4; }
+    .main-container .accordian-container .accordian .btn-content {
+      display: flex;
+      justify-content: space-between; }
+      .main-container .accordian-container .accordian .btn-content .icon-and-content .icon-container {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        padding-right: 1rem; }
+        .main-container .accordian-container .accordian .btn-content .icon-and-content .icon-container i {
+          vertical-align: middle;
+          font-size: 1.5rem; }
+      .main-container .accordian-container .accordian .btn-content .drop-down {
+        border: solid 2px #ebebeb;
+        color: #0173b2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .5rem;
+        border-radius: 100%;
+        width: 1.2rem;
+        height: 1.2rem;
+        text-align: center; }
+  .main-container .accordian-container .active {
+    background: #7ab0d4; }
+  .main-container .accordian-container .panel {
+    max-height: 0;
+    text-align: left;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0 .5rem; }
+    .main-container .accordian-container .panel p {
+      font-size: .94rem; }
+
+@media only screen and (min-width: 650px) {
+  .mobile-view {
     display: none; }
 
-  .location h1 {
-    margin-left: 2.8rem;
-    font-size: 1.3rem; }
-
-  .color {
-    top: 4.38rem; }
-
-  .header {
-    margin: 1.25rem 3.4rem .625rem 3.8rem; }
-    .header button {
-      margin-right: .3rem; }
-
-  .list-with-filters {
-    margin-left: 2.5rem; }
-
-  .parent-container {
-    padding: .625rem; }
-    .parent-container .doctor-container {
-      margin: 0 3.1rem 1.25rem .625rem;
-      display: grid; }
-      .parent-container .doctor-container .info-button {
-        position: relative; }
-        .parent-container .doctor-container .info-button .appointment-btn {
-          padding: .6rem 2.5rem;
-          position: absolute;
-          bottom: 0;
-          left: 3.4rem; } }
-@media only screen and (min-width: 1200px) {
   .tablet-view {
-    display: none; }
+    display: flex; }
 
-  .mobile-cum-desktop-view {
+  .mobile-cum-tablet-view {
     display: unset; }
 
-  .body-container {
-    padding: 0  4% 0 5%; }
+  .header {
+    font-size: 1.3rem;
+    margin: 2rem 2.75rem 1rem 2.75rem; }
 
-  .location {
-    height: 14rem; }
-    .location h1 {
-      font-size: 1.5rem;
-      font-family: "nexa-bold";
-      margin-left: 7.2rem; }
-
-  .color {
-    height: 14rem;
-    top: 5.9rem; }
+  .main-container {
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0 2.75rem;
+    margin-bottom: 2rem;
+    align-items: flex-start; }
+    .main-container .info-accordian {
+      width: 65%; }
+    .main-container .info-container {
+      padding: 0 1%;
+      width: 100%; }
+      .main-container .info-container h2 {
+        right: 1.4rem;
+        margin-top: .5rem; }
+      .main-container .info-container p {
+        padding: 0;
+        font-size: .9rem; }
+    .main-container .accordian-container {
+      padding: 0 1%;
+      margin: 2.5rem 0;
+      width: 100%; }
+    .main-container .img-button {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      width: 29%; }
+      .main-container .img-button .img-container {
+        height: 16rem;
+        width: 100%; }
+        .main-container .img-button .img-container img {
+          height: 18rem; }
+      .main-container .img-button .appointment-btn {
+        width: 100%; } }
+@media (min-width: 1200px) {
+  .mobile-cum-tablet-view {
+    display: none; }
 
   .header {
-    margin-left: 2.3rem; }
+    margin: 2rem 7%; }
 
-  .list-with-filters {
-    grid-template-columns: 20% 80%;
-    margin-left: 0; }
-    .list-with-filters .filters {
-      display: block; }
-      .list-with-filters .filters .filters-container {
-        margin-left: 2.4rem; }
+  .main-container {
+    margin: 0 7%;
+    margin-bottom: 2rem; }
+    .main-container .info-accordian {
+      width: 70%; }
+    .main-container .info-container {
+      padding: 0 2rem;
+      width: 100%; }
+      .main-container .info-container h2 {
+        right: 3rem; }
+      .main-container .info-container p {
+        padding: 0;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        line-height: 1.5rem; }
+    .main-container .accordian-container {
+      padding: 0 2rem;
+      width: 100%; }
+    .main-container .img-button {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      width: 24%; }
+      .main-container .img-button .img-container {
+        height: 20rem; }
+        .main-container .img-button .img-container img {
+          height: 20rem; }
+      .main-container .img-button .appointment-btn {
+        width: 100%; } }
 
-  .parent-container {
-    margin-bottom: 3rem; }
-    .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row {
-      min-width: 20rem; }
-      .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row p {
-        font-size: 1rem; }
-      .parent-container .doctor-container .info-button .info-container-row .info-container-sub-row:nth-child(2) {
-        padding-left: 0rem; }
-
-  .list-with-filters {
-    grid-template-columns: 25% 75%; }
-    .list-with-filters .filters {
-      margin-right: 1.25rem;
-      max-width: 27rem; }
-      .list-with-filters .filters form .filter-form-row .labet-container {
-        font-size: 1.2rem; }
-      .list-with-filters .filters p {
-        font-size: 1.4rem;
-        margin-block-end: .5rem; } }
-
-/*# sourceMappingURL=hospital.css.map */
+/*# sourceMappingURL=doctorDetails.css.map */
