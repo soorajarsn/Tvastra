@@ -22,6 +22,9 @@ function contactUs(req,res){
 function treatment(req,res){
     return res.render('treatment');
 }
+function bookAppointment(req,res){
+    return res.render('bookAppointment');
+}
 module.exports={
     home:home,
     doctor:doctor,
@@ -30,5 +33,6 @@ module.exports={
     login:login,
     signup,
     contactUs,
-    treatment
+    treatment,
+    bookAppointment
 };

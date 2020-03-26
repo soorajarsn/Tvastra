@@ -1,0 +1,108 @@
+@import "theme";
+body{
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    background: $opaqueBlue;
+    text-align:center;
+    // align-items: center;
+}
+.main-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    background: $white;
+    width:90%;
+    box-shadow: 0px 0px 28px -2px $darkBlue;
+    max-width:28rem;
+    @media (min-width:700px){
+        max-width:32rem;
+    }
+    @media (min-width:1000px){
+        max-width:40rem;
+    }
+    margin-top:2rem;
+    h1{
+        font-size:1.5rem;
+        color:$blue;
+        margin:1.1rem 0 .8rem 0;
+    }
+    hr{
+        width:100%;
+        margin:0;
+    }
+    form{
+        text-align:left;
+        padding:0 1rem;
+        p{
+            font-family: "nexa-bold";
+            font-size:1rem;
+            margin:1.3rem 0 .7rem 0;
+        }
+        .input-container{
+            border:solid 2px $lightGrey;
+            overflow: hidden;
+            margin: 0;
+            input,select,textarea{
+                border:0;
+                width:100%;
+                margin:0;
+                padding:.5rem 1rem;
+                background: transparent;
+                color:$darkGrey;
+                &::placeholder{
+                    color:$grey;
+                }
+            }
+            textarea{
+                height:3rem;
+                font-size:1.1rem;
+            }
+            input[type~=date]{
+                width:95%;
+                @media(min-width:700px){
+                    width:97%;
+                }
+            }
+        }
+       .radio-label-container{
+           margin:.5rem 0;
+           label{
+               font-family:"nexa-light";
+               font-weight: 600;
+               font-size:.9rem;
+               letter-spacing: .1rem;
+           }
+       }
+        // textarea{
+        //     width:97.5%;
+        //     // height:29rem;
+
+        // }
+        .btn-container{
+            position: relative;
+            margin:1rem 0;
+            button{
+                width:100%;
+                background: $darkBlue;
+                color:$white;
+                font-family: "nexa-light";
+                font-weight: 600;
+                letter-spacing: 3px;
+                font-size: 1.1rem;
+                border-radius:0;
+                padding:.8rem 0;
+                margin:0;
+            }
+            .fa-arrow-right{
+                position: absolute;
+                right:1rem;
+                top:.75rem;
+                color:$white;
+            }
+        }
+    }
+}

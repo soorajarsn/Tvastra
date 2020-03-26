@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link rel="stylesheet" href="../css/theme.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bookAppointment.css">
+    <title>Book Appointment</title>
+</head>
+<body>
+   <nav class="nav">
+        <div class="logo-and-bar-container">
+            <div class="logo-container">
+                <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
+            </div>
+                <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
+        </div>    
+        <div class="nav-open">
+            <div class="nav-expanded">
+                <a href="/doctor">Doctors</a>
+                <hr>
+                <a href="/hospitals">Hospitals</a>
+                <hr>
+                <a href="/treatment">Treatment</a>
+                <hr>
+                <a href="/">Other Services</a>
+                <hr>
+               <a href="/">About</a>
+               <hr>
+            </div>
+            <div class="nav-btn-container">
+                <button class='nav-button-white' onclick="location.href='/login';">Login / Sign Up</button>
+                <button class='nav-button'>Get a Quote</button>
+            </div>
+        </div>        
+    </nav>
+    <script src="../js/navigation.js"></script>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Book an Appointment</h1>
+            <hr>
+            <form action="/signup" method="post">
+                <!-- <div class="field-set"> -->
+                    <p>Select Appointment Date*</p>
+                    <div class="input-container">
+                        <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01">
+                    </div>
+                    <p>Time Interval*</p>
+                    <div class="radio-label-container">
+                        <input type="radio" id="morning" name="timeInterval" value="morning">
+                        <label for="morning">Morning</label><br>
+                    </div>
+                    <div class="radio-label-container">
+                        <input type="radio" name="timeInterval" id="afternoon" value="afternoon">
+                        <label for="afternoon">Afternoon</label><br>
+                    </div>
+                    <div class="radio-label-container">
+                        <input type="radio" name="timeInterval" id="evening" value="evening">
+                        <label for="evening">Evening</label><br>
+                    </div>
+                    <p>Appointment Status/Urgency*</p>
+                    <div class="radio-label-container">
+                        <input type="radio" id="routine" name="urgency" value="routine_check_up">
+                        <label for="routine">Routine Check-up</label><br>
+                    </div>
+                    <div class="radio-label-container">
+                        <input type="radio" name="urgency" id="non-urgent" value="non_urgent_check_up">
+                        <label for="non-urgent">Non Urgent Check-up</label><br>
+                    </div>
+                    <div class="radio-label-container">
+                        <input type="radio" name="urgency" id="urgent" value="urgent_check_up">
+                        <label for="urgent">Urgent Check-up</label><br>
+                    </div>
+                    <div class="radio-label-container">
+                        <input type="radio" name="urgency" id="surgical" value="surgical">
+                        <label for="surgical">Surgical Appointment</label><br>
+                    </div>
+                    <p>Upload Previous Health Record</p>
+                    <input type="file" name="healthRecord">
+                    <p>Appointment Details</p>
+                    <div class="input-container">
+                        <textarea name="appointmentDetails"></textarea>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit">BOOK APPOINTMENT</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                <!-- </div> -->
+            </form>
+            <!-- <p class="redirect">Not Registered?<a href="/signup">Sign Up</a> </p> -->
+        </div>
+    </div>
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+</body>
+</html>

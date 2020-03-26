@@ -12,6 +12,7 @@ router.route('/login').get(getPages.login);
 router.route('/signup').get(getPages.signup);
 router.route('/contactUs').get(getPages.contactUs);
 router.route('/treatment').get(getPages.treatment);
+router.route('/bookAppointment').get(getPages.bookAppointment);
 //post routes
 router.route('/login').post(postPages.login);
 router.route('/signup').post(postPages.signup);
