@@ -1,0 +1,123 @@
+.body-container .main-container .doctor-container h2 {
+  margin: 1rem 0; }
+.body-container .main-container .doctor-container .doctor-cards {
+  display: block; }
+  .body-container .main-container .doctor-container .doctor-cards .table-container {
+    overflow: auto;
+    position: relative;
+    display: block;
+    width: 100%; }
+    .body-container .main-container .doctor-container .doctor-cards .table-container table {
+      min-width: 100%; }
+      .body-container .main-container .doctor-container .doctor-cards .table-container table thead tr {
+        text-align: left;
+        font-family: "nexa-bold";
+        font-size: .9rem;
+        background: #e7e6e6;
+        letter-spacing: 0;
+        border-bottom: 2px solid white; }
+        @media (min-width: 1000px) {
+          .body-container .main-container .doctor-container .doctor-cards .table-container table thead tr {
+            font-size: 1rem; } }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table thead tr th {
+          padding: .9rem .5rem;
+          vertical-align: middle; }
+          .body-container .main-container .doctor-container .doctor-cards .table-container table thead tr th:first-child {
+            padding-left: 1rem; }
+      .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr {
+        text-align: left;
+        background: #f8f8f8;
+        font-size: .72rem;
+        line-height: 1rem;
+        border-bottom: 2px solid white; }
+        @media (min-width: 1000px) {
+          .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr {
+            font-size: .9rem; } }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr:hover {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.22);
+          transform: scale(1);
+          border-bottom: 0.2rem solid white; }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td {
+          padding: .9rem .5rem;
+          white-space: nowrap;
+          vertical-align: middle; }
+          .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td:first-child {
+            padding-left: 1rem; }
+          .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td:last-child {
+            padding-right: 1rem; }
+          .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .img-container {
+            height: 2rem;
+            width: 2rem;
+            overflow: hidden;
+            border-radius: 100%; }
+            .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .img-container img {
+              width: 100%;
+              height: 100%; }
+          .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container {
+            display: flex; }
+            .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container .round {
+              width: 2rem;
+              height: 2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 100%;
+              margin-right: .3rem; }
+              .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container .round:last-child {
+                margin-right: 0; }
+            .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container .edit {
+              background: #349ef3;
+              color: #0b2134; }
+            .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container .delete {
+              background: #a80000;
+              color: white; }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr .name {
+          font-family: "nexa-bold"; }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr .blue {
+          color: #2759fa; }
+        .body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr .gray {
+          color: #7c7c7c; }
+  .body-container .main-container .doctor-container .doctor-cards .button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1.3rem 0;
+    font-size: .9rem;
+    line-height: 1.2rem; }
+    .body-container .main-container .doctor-container .doctor-cards .button-container .show-new {
+      height: 1.8rem;
+      width: 1.8rem;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: #cccccc;
+      margin-right: .3rem; }
+      .body-container .main-container .doctor-container .doctor-cards .button-container .show-new:hover {
+        background: #2759fa;
+        cursor: pointer; }
+      .body-container .main-container .doctor-container .doctor-cards .button-container .show-new:first-child:hover {
+        background: #cccccc; }
+      .body-container .main-container .doctor-container .doctor-cards .button-container .show-new:last-child:hover {
+        background: #cccccc; }
+    .body-container .main-container .doctor-container .doctor-cards .button-container .active {
+      background: #2759fa; }
+
+::-webkit-scrollbar {
+  height: .2rem;
+  width: .2rem;
+  background-color: white; }
+
+::-webkit-scrollbar-track {
+  border: 1px solid white;
+  border-radius: .3rem; }
+
+::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: .3rem; }
+
+.version-101 .main-container .doctor-container .doctor-cards {
+  margin-left: 0; }
+
+/*# sourceMappingURL=adminAppointments.css.map */

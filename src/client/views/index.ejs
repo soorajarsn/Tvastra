@@ -8,45 +8,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="body">
-        <nav class="nav">
-                <div class="logo-and-bar-container">
-                    <div class="logo-container">
-                        <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
-                    </div>
-                    <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
-                </div>    
-                <div class="nav-open">
-                    <div class="nav-expanded">
-                        <a href="/doctor">Doctors</a>
-                        <hr>
-                        <a href="/hospitals">Hospitals</a>
-                        <hr>
-                        <a href="/treatment">Treatment</a>
-                        <hr>
-                        <a href="/">Other Services</a>
-                        <hr>
-                       <a href="/">About</a>
-                       <hr>
-                    </div>
-                    <div class="nav-btn-container">
-                        <button class='nav-button-white' onclick="location.href='/login';">Login / Sign Up</button>
-                        <button class='nav-button'>Get a Quote</button>
-                    </div>
-                </div>        
-            </nav>
-        <script src="../js/navigation.js"></script>
+        <%- include ('partials/navigation.ejs') %>
+        <% if(signUpOrLoginSuccess){ %>
+           <div class="login-success">
+                <div>
+                    <i class="far fa-check-circle" style="margin-right:.5rem;"></i>
+                </div>
+                <div>
+                    <h4><%= signUpOrLoginSuccess %></h4>
+                </div>
+           </div>
+           <script>
+               setTimeout(() => {
+                    document.querySelector('body').removeChild(document.querySelector('.login-success'));
+               }, 2000);
+           </script>
+        <% } %>
         <div class='find-section'>
             <h1>Find  Affordable Healthcare</h1>
             <p>Join the thousands of others who have exercised their right to quality healthcare at a price you can afford.</p>
-            <form class='search-healthcare-form'>
+            <form class='search-healthcare-form' method="post" action="/">
                 <div class='location'>
-                    <div style="display:flex;align-items: center;justify-content: center;"><i class="fas fa-map-marker-alt"></i></div>
-                    <input type="text" list = "places" placeholder="Ahmedabad">
-                    <datalist id = "places" style = "position: absolute;">
-                        </datalist>
-                    <div style="display:flex;align-items: center;justify-content: center;"><img class='location-img' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/gps.png" alt="gps"></div>
+                    <div><i class="fas fa-map-marker-alt"></i></div>
+                    <input type="text" list = "places" name = "location" placeholder="Ahmedabad">
+                    <section id = "places">
+                    </section>
+                    <div><img class='location-img' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/gps.png" alt="gps"></div>
                 </div>
-                <input class="search" type="text"  placeholder="Search for doctors, hospitals and treatment">
+                <div class="search">
+                    <input class="search-input" type="text" name="searchFor"  placeholder="Search for doctors, hospitals and treatment">
+                    <section id = "search-for-doctors-and-all">
+                    </section>
+                </div>
                 <button type='submit'>Search</button>
             </form>
         </div>
@@ -280,30 +273,7 @@
             </div>
             <button onclick="location.href='/contactUs';">Submit your query</button>
         </div>
-      <footer>
-        <div class='footer-tablet'>
-            <div class="article-container" style="display:flex;">
-                <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
-                <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
-                <div style="margin:0 10px;"><a href="">Treatment</a></div>
-                <div style="margin:0 10px;"><a href="">Other Services</a></div>
-                <div style="margin:0 10px;"><a href="">FAQs</a></div>
-            </div>
-            <div class="logo-container">
-                <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
-            </div>
-         </div>
-         <div class='footer-tablet-end'>
-             <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
-             <div>
-                 <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
-                 <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
-                 <i class="fab fa-twitter" style="margin:auto 5px;"></i>
-                 <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
-                 <i class="fab fa-instagram" style="margin:auto 5px;"></i>
-             </div>
-         </div>
-        </footer>
+        <%- include ('partials/footer.ejs') %>
          <script src="../js/index.js"></script>
          <script src="../js/suggestion.js"></script>
     </body>

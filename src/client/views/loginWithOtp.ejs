@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>login</title>
+    <style>
+        body{
+            position:relative;
+        }
+        .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <%- include('partials/navigation.ejs') %>
+    
+    
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Login</h1>
+            <hr>
+
+            <form id="login-form" action="/loginWithOtp" method="post">
+                <div class="field-set">  
+
+
+                    <!-- login with otp -->
+                    <div class="input-container login-with-otp">
+                        <input type="tel" pattern="[0-9]{10}||[0-9]{11}||[0-9]{12}" name="mobileNumber" placeholder="Enter Mobile Number">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    
+
+                  
+                    <!-- to show alternative login method -->
+                    <div>
+                        <p id="try-another" onclick="location.href='/login/?method=email';">Try Another Method?</p>
+                    </div>
+                    
+                    
+                    <div class="btn-container">
+                        <button type="submit">Get the Code</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </form>
+            
+
+            <p class="redirect">Not Registered?<a href="/signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+    
+    <% if(errorMsg) { %>
+        <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'login-error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Failure:</h4>
+                                    <p>Something went wrong, Please try again!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 3000);
+        </script>
+    <% } else if(userNotFoundMsg) { %>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>Something went wrong, Please try again!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);    
+        </script>
+    <% } %>
+
+    <script src="../js/loginWithOtp.js"></script>
+    
+
+</body>
+</html>

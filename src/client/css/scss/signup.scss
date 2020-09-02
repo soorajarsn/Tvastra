@@ -2,7 +2,54 @@
 body{
     background:$opaqueBlue;
     text-align: center;
-    // height:100vh;
+}
+.login-error{
+    padding:1.2rem 1rem;
+    width:fit-content;
+    background: white;
+    font-size:1.2rem;
+    font-family: "nexa-bold";
+    color:red;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 1rem;
+    top:4rem;
+    box-shadow: -.3rem 0 0 0 red;
+    text-align: left;
+    h4{
+        line-height:unset;
+    }
+    p{
+        line-height:unset;
+        margin:.5rem  0 0 0;
+        margin-top:.5rem;
+    }
+    i{
+        font-size:2rem;
+    }
+    @media (min-width:375px){
+        left:.625rem;
+        top:4.5rem;
+    }
+    @media (min-width:425px){
+        top:5rem;
+    }
+    @media (min-width:700px){
+        left:2.8rem;
+        top:6rem;
+    }
+    @media (min-width:1000px){
+        font-size: 1.3rem;
+        left:unset;
+        top:8rem;
+        right:1rem;
+    }
+}
+.green{
+    color:green;
+    box-shadow: -.3rem 0 0 0 green;
 }
 .main-container{
     display: flex;
@@ -17,6 +64,10 @@ body{
         margin-top:6rem;
     }
     width: 100%;
+    .error{
+        color:red;
+        font-size:1.1rem;
+    }
     .form-container{
         display:flex;
         background: $white;
@@ -25,13 +76,19 @@ body{
         justify-content: center;
         flex-direction: column;
         padding:.2rem;
-        width: 80%;
-        max-width:25rem;
+        width: 18rem;
+        // max-width:25rem;
+        @media (min-width:375px){
+            width:20rem;
+        }
+        @media (min-width:425px){
+            width:21.25rem;
+        }
         @media (min-width:650px){
-            max-width:28rem;
+            width:28rem;
         }
         @media (min-width:1000px){
-            max-width:31rem;
+            width:31rem;
         }
         h1{
             color:$blue;
@@ -59,21 +116,81 @@ body{
                 width:99%;
                 text-align:center;
                 margin:auto;
+                .error{
+                    margin:0;
+                    text-align:right;
+                    font-size:.9rem;
+                }
                 .input-container{
                     border:solid 2px $lightGrey;
                     overflow: hidden;
                     margin:.6rem 0;
+                    position: relative;
                     input,select{
                         border:0;
                         width:100%;
                         margin:0;
                         padding:.5rem 1rem;
                         background: transparent;
+                        // color:$grey;
+                    }
+                    .eye{
+                        position:absolute;
+                        right:1rem;
+                        top:.65rem;
                         color:$grey;
+                        color:$blue;
+                        display:none;
+                        &:hover{
+                            cursor:pointer;
+                            transform: scale(1.2);
+                            transition-duration: 100ms;
+                            transition-timing-function: ease-in;
+                        }
+                    }
+                    .active{
+                        display:unset;
+                    }
+                }
+                .checkbox-input{
+                    position: relative;
+                    display:inline-block;
+                    margin:.5rem .2rem 1rem 0;
+                    input{
+                        z-index: 1;
+                        position: relative;
+                        opacity: 0;
+                    }
+                    .checkbox{
+                        height:.7rem;
+                        width:.7rem;
+                        background: $white;
+                        border:2px solid $darkGrey;
+                        border-radius: .2rem;
+                        position: absolute;
+                        top:0;
+                        .fa-check{
+                            position:relative;
+                            top:-.15rem;
+                            font-size:.7rem;
+                            display:none;
+                        }
+                        .active{
+                            display:unset;
+                        }
                     }
                 }
                 .city-state-input-container{
                     border:0;
+                    input{
+                        border:2px solid rgb(235, 235, 235);
+                        &:first-child{
+                            margin-right:.15rem;
+                        }
+                        &:last-child{
+                            margin-left:.15rem;
+                        }
+                    }
                 }
                 .btn-container{
                     position: relative;
@@ -111,7 +228,7 @@ body{
 }
 .copyright{
     margin-top:3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
     font-size:.9rem;
     font-family:"nexa-bold";
     @media (min-width:1000px){

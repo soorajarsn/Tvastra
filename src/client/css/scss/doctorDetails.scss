@@ -8,63 +8,76 @@ body{
 .mobile-view{
     display:flex;
 }
-.header{
-    text-align:left;
-    font-size:1.3rem;
-    margin:2rem 1.625rem 1rem 1.625rem;
-    color:$darkGrey;
-    a{
-        color:$darkGrey;
-        font-size:1.2rem;
-        text-decoration: none;
+.hero-section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:20rem;
+    background: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png);
+    background-size: cover;
+    background-position: top;
+    h1{
+        color:$white;
+    }
+    span{
+        margin-top:1rem;
+        font-size:1.1rem;
+        font-family: "nexa-light";
+        font-weight:600;
+        color: $white;
+        a{
+            color:$white;
+            text-decoration: none;
+        }
     }
 }
 .main-container{
     border:solid 2px $lightGrey;
-    margin:.5rem 1.625rem;
-    display:flex;
-    flex-wrap:wrap;
-    margin-bottom:2rem;
+    margin:2rem 1.625rem;
+    padding:1rem 1rem;
     .info-container{
         text-align: left;
         h2{
             display: inline-block;
             position:relative;
-            // right:10px;
+            right:1rem;
             margin-top:1rem;
             margin-bottom: 1rem;
             color:$blue;
             font-size:1.4rem;
-            span{
-                display:inline;
-                position:relative;
-                bottom:8px;
-                font-weight:bold;
-                color:$blue;
-                letter-spacing:0;
+            &::before{
+                display: inline-block;
+                content:"";
+                width:2rem;
+                height:2px;
+                background: $blue;
+                border-radius:1rem;
+                margin-right:.5rem;
+                transform: translateY(-.1rem);
+                vertical-align: middle;
             }
         }
         p{
             margin-top:0;
-            padding-left:2.4rem;
+            padding-left:1.6rem;
             font-size:.85rem;
             letter-spacing: .05rem;
             line-height: 1.4rem;
             text-align:justify;
-            @media (max-width:649px){
-                padding-right:.8rem;
-            }
+            // @media (max-width:649px){
+            //     padding-right:.8rem;
+            // }
         }
     }
     .img-button{
-        // text-align: center;
         flex-direction: column;
         align-items: center;
         width: 100%;
         .appointment-btn {
             margin: .625rem 0 .625rem 0;
             color: $white;
-            width:fit-content;
+            width:100%;
             background: $darkBlue;
             border-radius:0;
             padding:.6rem 2rem;
@@ -121,6 +134,7 @@ body{
                    width:1.2rem;
                    height:1.2rem;
                    text-align:center;
+                   background-color: rgb(229, 241, 247);
                }
            }
        }
@@ -133,16 +147,15 @@ body{
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             padding:0 .5rem;
+            // margin:1rem 0;
+            background: rgb(229, 241, 247);
             p{
                 font-size:.94rem;
             }
         }
-        // .show-panel{
-        //     display:block;
-        // }
     }
 }
-@media only screen and (min-width:650px){
+@media only screen and (min-width:700px){
     .mobile-view{
         display:none;
     }
@@ -152,19 +165,12 @@ body{
     .mobile-cum-tablet-view{
         display:unset;
     }
-    .header{
-        font-size:1.3rem;
-        margin:2rem 2.75rem 1rem 2.75rem;
-    }
     .main-container{
-        justify-content: space-between;
+        display:grid;
+        grid-template-columns: 2fr 1fr;
         padding:1rem;
-        margin:0 2.75rem;
-        margin-bottom:2rem;
+        margin:2rem 2.75rem;
         align-items: flex-start;
-        .info-accordian{
-            width:65%;
-        }
         .info-container{
             padding:0 1%;
             width:100%;
@@ -173,7 +179,7 @@ body{
                 margin-top:.5rem;
             }
             p{
-                padding:0;
+                padding:0 1.5rem;
                 font-size:.9rem;
             }
         }
@@ -183,10 +189,10 @@ body{
             width:100%;
         }
         .img-button{
+            margin-top:1rem;
             flex-direction: column-reverse;
             align-items: center;
             justify-content: flex-end;
-            width:29%;
             .img-container{
                 height: 16rem;
                 width:100%;
@@ -195,6 +201,8 @@ body{
                 }
             }
             .appointment-btn{
+                padding-left:0;
+                padding-right:0;
                 width:100%;
             }
         }
@@ -204,15 +212,17 @@ body{
     .mobile-cum-tablet-view{
         display:none;
     }
-    .header{
-        margin:2rem 7%;
+    .hero-section{
+        padding:0 7%;
+        align-items: flex-start;
     }
     .main-container{
-        margin:0 7%;
-        margin-bottom:2rem;
-        .info-accordian{
-            width:70%;
-        }
+        margin:2rem 7%;
+        grid-template-columns: 3fr 1fr;
+        grid-column-gap: 3rem;
+        // .info-accordian{
+        //     width:70%;
+        // }
         .info-container{
             padding:0 2rem; 
             width:100%;
@@ -231,11 +241,10 @@ body{
             width:100%;
         }
         .img-button{
-            // display:flex;
             flex-direction: column-reverse;
             align-items: center;
             justify-content: flex-end;
-            width:24%;
+            // width:24%;
             .img-container{
                 height:20rem;
                 img{

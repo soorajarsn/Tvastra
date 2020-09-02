@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminAppointments.css">
+    <link rel="stylesheet" href="../css/adminPatients.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="body-container">
+
+
+        <!-- <div class="menu-container">
+            <div class="icon-and-name-container">
+                <div class="icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h1>Medic<sup style="color:dodgerblue;">app</sup></h1>
+            </div>
+            <ul class="button-container">
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-thermometer"></i>Dashboard</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-stethoscope"></i>Appointments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-md"></i>Doctors</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-nurse"></i>Departments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-wheelchair"></i>Patients</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-hand-holding-usd"></i>Payments</a>
+                </li>
+            </ul>
+            <button class="add-patients">
+                <i class="fas fa-plus"></i>Add Patients
+            </button>
+        </div> -->
+
+        <%- include('partials/admin/menu.ejs') %>
+
+        <div class="main-container">
+
+
+            <%- include('partials/admin/adminNav.ejs') %>
+
+
+            <div class="doctor-container">
+                <h2>Patients</h2>
+                <div class="doctor-cards">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                 <tr>
+                                     <th>Photo</th>
+                                     <th>Name</th>
+                                     <th>ID</th>
+                                     <th>Age</th>
+                                     <th>Address</th>
+                                     <th>Number</th>
+                                     <th>Last visit</th>
+                                     <!-- <th>Status</th> -->
+                                     <th>Actions</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                 <% for(var i = 0; i < response.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <div class="img-container">
+                                                <img src="<%= response[i].imgAddress %>" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="name">
+                                           <%= response[i].name %>
+                                        </td>
+                                        <td class="gray">
+                                            <%= response[i].id %>
+                                        </td>
+                                        <td class="gray">
+                                            <%= response[i].age %>
+                                        </td>
+                                        <td style="white-space: normal;min-width:10rem;">
+                                            <%= response[i].address %>
+                                        </td>
+                                        <td class="blue">
+                                            <i class="fas fa-mobile" style="margin-right:.3rem;"></i><%= response[i].mobileNumber %>
+                                        </td>
+                                        <td class="gray">
+                                           10 Feb 2018
+                                        </td>
+                                        <!-- <td>
+                                            <div class="status approved">
+                                               Approved
+                                            </div>
+                                        </td> -->
+                                        <td>
+                                            <div class="action-container">
+                                                <button class="round profile" id="<%= response[i]._id %>">
+                                                   <i class="fas fa-external-link-alt"></i>
+                                                </button>
+                                                <button class="round edit">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </button>
+                                                <button class="round delete">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                                 <!-- <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user2.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Emma
+                                     </td>
+                                     <td class="gray">
+                                         10022
+                                     </td>
+                                     <td class="gray">
+                                         21
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        10 Dec 2018
+                                     </td>
+                                     <td>
+                                         <div class="status pending">
+                                            Pending
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user3.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Olivia
+                                     </td>
+                                     <td class="gray">
+                                         10023
+                                     </td>
+                                     <td class="gray">
+                                         25
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        14 Oct 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user4.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Ava
+                                     </td>
+                                     <td class="gray">
+                                         10024
+                                     </td>
+                                     <td class="gray">
+                                         28
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        14 Oct 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user5.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Noah
+                                     </td>
+                                     <td class="gray">
+                                         10025
+                                     </td>
+                                     <td class="gray">
+                                         35
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        14 Nov 2018
+                                     </td>
+                                     <td>
+                                         <div class="status pending">
+                                            Pending
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user6.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Isabella
+                                     </td>
+                                     <td class="gray">
+                                         10026
+                                     </td>
+                                     <td class="gray">
+                                         24
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        18 Oct 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user7.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Sophia
+                                     </td>
+                                     <td class="gray">
+                                         10027
+                                     </td>
+                                     <td class="gray">
+                                         23
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        10 Aug 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user8.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Mia
+                                     </td>
+                                     <td class="gray">
+                                         10028
+                                     </td>
+                                     <td class="gray">
+                                         27
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        14 Mar 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user9.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         William
+                                     </td>
+                                     <td class="gray">
+                                         10029
+                                     </td>
+                                     <td class="gray">
+                                         30
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        28 Feb 2018
+                                     </td>
+                                     <td>
+                                         <div class="status new">
+                                            New
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user10.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         James
+                                     </td>
+                                     <td class="gray">
+                                         10030
+                                     </td>
+                                     <td class="gray">
+                                         33
+                                     </td>
+                                     <td style="white-space: normal;min-width:10rem;">
+                                         71 Pligrim Avenue Chevy Chase, MD 20185
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td class="gray">
+                                        14 Sep 2018
+                                     </td>
+                                     <td>
+                                         <div class="status approved">
+                                            Approved
+                                         </div>
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round profile">
+                                                <i class="fas fa-external-link-alt"></i>
+                                             </button>
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr> -->
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="button-container">
+                        <div class="show-new">
+                            <i class="fas fa-angle-left"></i>
+                        </div>
+                        <div class="show-new active">1</div>
+                        <div class="show-new">2</div>
+                        <div class="show-new">3</div>
+                        <div class="show-new">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('partials/admin/adminFooter.ejs') %>
+            <script src="../js/adminPatients.js"></script>
+
+        </div>
+    </div>
+</body>
+</html>

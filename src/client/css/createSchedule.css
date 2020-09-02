@@ -1,0 +1,362 @@
+.submit-error {
+  padding: 1.2rem 1rem;
+  width: fit-content;
+  background: white;
+  box-shadow: inset 0 0 3rem 0 red;
+  font-size: 1.2rem;
+  font-family: "nexa-bold";
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+  top: 4rem;
+  box-shadow: -.3rem 0 0 0 red;
+  text-align: left;
+  z-index: 4; }
+  .submit-error h4 {
+    line-height: unset; }
+  .submit-error p {
+    line-height: unset;
+    margin: .5rem  0 0 0;
+    margin-top: .5rem; }
+  .submit-error i {
+    font-size: 2rem; }
+  @media (min-width: 375px) {
+    .submit-error {
+      left: .625rem;
+      top: 4.5rem; } }
+  @media (min-width: 425px) {
+    .submit-error {
+      top: 5rem; } }
+  @media (min-width: 700px) {
+    .submit-error {
+      left: 2.8rem;
+      top: 6rem; } }
+  @media (min-width: 1000px) {
+    .submit-error {
+      font-size: 1.3rem;
+      left: unset;
+      top: 8rem;
+      right: 1rem; } }
+
+.fields-container::-webkit-scrollbar {
+  width: .2rem; }
+
+.fields-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3); }
+
+.fields-container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey; }
+
+.slots-container {
+  padding: .5rem 1rem;
+  background: white;
+  padding-bottom: .5rem; }
+  .slots-container .slots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .1rem;
+    grid-row-gap: .5rem;
+    justify-items: center; }
+    @media (max-width: 320px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr; } }
+    @media (min-width: 375px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 700px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr; } }
+    @media (min-width: 850px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr 1fr; } }
+    @media (min-width: 1050px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; } }
+    @media (min-width: 1200px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr 1fr; } }
+    @media (min-width: 1400px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; } }
+    @media (min-width: 1600px) {
+      .slots-container .slots {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; } }
+    .slots-container .slots .slot-checkbox-container {
+      display: flex;
+      align-items: center; }
+      .slots-container .slots .slot-checkbox-container .slot {
+        color: #077007;
+        width: 10.2rem;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "nexa-light";
+        border: 2px solid green; }
+        @media (max-width: 425px) {
+          .slots-container .slots .slot-checkbox-container .slot {
+            width: 6.5rem;
+            height: 2.5rem; } }
+      .slots-container .slots .slot-checkbox-container form {
+        margin-left: .2rem; }
+        .slots-container .slots .slot-checkbox-container form input {
+          box-shadow: none; }
+        .slots-container .slots .slot-checkbox-container form input[type="text"] {
+          display: none; }
+    .slots-container .slots .disabled-slot .slot {
+      color: red;
+      border: 2px solid red; }
+
+.hide-slots {
+  display: none; }
+
+body {
+  min-height: 100vh; }
+
+.form-container {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  .form-container form {
+    width: 16rem;
+    background: white;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    text-align: center; }
+    @media (min-width: 375px) {
+      .form-container form {
+        width: 18rem; } }
+    @media (min-width: 425px) {
+      .form-container form {
+        width: 20rem; } }
+    @media (min-width: 700px) {
+      .form-container form {
+        width: 30rem; } }
+    @media (min-width: 1200px) {
+      .form-container form {
+        width: 36rem;
+        padding: 1.5rem 2rem; } }
+    .form-container form h1 {
+      font-size: 1.5rem;
+      color: #0173b2; }
+    .form-container form .fields-container {
+      max-height: 65vh;
+      overflow-y: scroll; }
+      .form-container form .fields-container .input-container {
+        border: 2px solid #ebebeb;
+        overflow: hidden;
+        width: 96%;
+        margin: 1rem auto;
+        background: rgba(216, 238, 255, 0.5); }
+        .form-container form .fields-container .input-container:hover {
+          cursor: pointer;
+          box-shadow: 0.1rem 0.1rem 0.8rem rgba(0, 0, 0, 0.22); }
+        .form-container form .fields-container .input-container textarea::placeholder {
+          font-size: .8rem; }
+        .form-container form .fields-container .input-container input, .form-container form .fields-container .input-container textarea, .form-container form .fields-container .input-container select {
+          border: none;
+          width: 100%;
+          padding: 1rem 0 1rem .5rem;
+          background: transparent;
+          color: #2a2d3e;
+          font-size: 1.05rem;
+          box-shadow: none;
+          font-weight: 600; }
+          .form-container form .fields-container .input-container input::placeholder, .form-container form .fields-container .input-container textarea::placeholder, .form-container form .fields-container .input-container select::placeholder {
+            color: #2a2d3e;
+            font-size: 1rem; }
+        .form-container form .fields-container .input-container button {
+          width: 100%;
+          padding: 1rem 0;
+          color: white;
+          background-color: #2a2d3e;
+          font-size: 1.2rem;
+          font-family: "nexa-bold"; }
+      .form-container form .fields-container .time-input {
+        position: relative;
+        display: flex; }
+        .form-container form .fields-container .time-input input {
+          width: 90%;
+          padding-left: 1rem;
+          border-radius: none;
+          box-shadow: none; }
+        .form-container form .fields-container .time-input div {
+          position: absolute;
+          right: .2rem;
+          top: 1.1rem;
+          color: #acacac; }
+      .form-container form .fields-container .box-shadow {
+        box-shadow: 0 0 3px 0px red; }
+      .form-container form .fields-container .display-flex {
+        display: flex;
+        position: relative;
+        align-items: center;
+        overflow: visible; }
+        .form-container form .fields-container .display-flex input {
+          width: 8rem; }
+        .form-container form .fields-container .display-flex .suggestions {
+          position: absolute;
+          top: 2rem; }
+    .form-container form .form-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -0.1rem 0 0 #ebebeb;
+      padding: 1rem .2rem 0 .2rem; }
+      .form-container form .form-footer button {
+        padding: .7rem 1.2rem;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        color: white;
+        font-family: 'nexa-bold'; }
+      .form-container form .form-footer button[type="submit"] {
+        background-color: dodgerblue; }
+      .form-container form .form-footer .remover {
+        background: #f31010; }
+
+.show-popUp {
+  display: flex; }
+
+.add-schedule {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: #0173b2;
+  position: fixed;
+  right: 0rem;
+  border-radius: 100%;
+  top: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem; }
+  @media (min-width: 700px) {
+    .add-schedule {
+      height: 3rem;
+      width: 3rem;
+      right: .2rem;
+      top: 92vh;
+      font-size: 1.4rem; } }
+  @media (min-width: 1000px) {
+    .add-schedule {
+      height: 4rem;
+      width: 4rem;
+      right: 1rem;
+      font-size: 2rem;
+      top: 91vh; } }
+  .add-schedule:hover {
+    cursor: pointer; }
+
+.data-container {
+  max-height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .data-container .schedule-slot-box {
+    background: rgba(1, 126, 1, 0.3);
+    padding: 1rem .5rem;
+    margin-bottom: 1rem; }
+    @media (min-width: 700px) {
+      .data-container .schedule-slot-box {
+        padding: 2rem .5rem; } }
+    .data-container .schedule-slot-box .schedule-box {
+      margin-bottom: 1rem; }
+      @media (min-width: 700px) {
+        .data-container .schedule-slot-box .schedule-box {
+          display: flex;
+          justify-content: space-between; } }
+      .data-container .schedule-slot-box .schedule-box .information-container {
+        display: flex;
+        margin-bottom: 1rem;
+        letter-spacing: .05rem; }
+        @media (min-width: 700px) {
+          .data-container .schedule-slot-box .schedule-box .information-container {
+            margin-bottom: 0; } }
+        .data-container .schedule-slot-box .schedule-box .information-container .day {
+          background: white;
+          color: black;
+          width: 5rem;
+          height: 3rem;
+          font-family: "nexa-bold";
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          @media (min-width: 700px) {
+            .data-container .schedule-slot-box .schedule-box .information-container .day {
+              height: 4rem; } }
+        .data-container .schedule-slot-box .schedule-box .information-container .hospital-timing-container {
+          font-size: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between; }
+          .data-container .schedule-slot-box .schedule-box .information-container .hospital-timing-container .hospital {
+            font-family: "nexa-bold";
+            font-size: 1.2rem; }
+            @media (min-width: 1000px) {
+              .data-container .schedule-slot-box .schedule-box .information-container .hospital-timing-container .hospital {
+                font-size: 1.4rem; } }
+          .data-container .schedule-slot-box .schedule-box .information-container .hospital-timing-container .time {
+            font-family: "nexa-light";
+            font-weight: 600; }
+      .data-container .schedule-slot-box .schedule-box .actions {
+        display: flex;
+        align-items: center; }
+        .data-container .schedule-slot-box .schedule-box .actions button {
+          background: #0173b2;
+          border-radius: .2rem;
+          color: white;
+          font-family: "nexa-bold";
+          padding: .8rem .6rem;
+          margin-right: .5rem; }
+          @media (min-width: 700px) {
+            .data-container .schedule-slot-box .schedule-box .actions button {
+              font-size: 1.2rem;
+              padding: .9rem .7rem; } }
+        .data-container .schedule-slot-box .schedule-box .actions .checkbox {
+          position: relative; }
+          .data-container .schedule-slot-box .schedule-box .actions .checkbox input[type="checkbox"] {
+            position: relative;
+            z-index: 1;
+            opacity: 1;
+            height: 1.1rem;
+            width: 1.1rem;
+            box-shadow: none; }
+          .data-container .schedule-slot-box .schedule-box .actions .checkbox input[type="text"] {
+            display: none; }
+          .data-container .schedule-slot-box .schedule-box .actions .checkbox .box {
+            width: .8rem;
+            height: .8rem;
+            border-radius: .1rem;
+            background: white;
+            position: absolute;
+            top: 0;
+            border: 1px solid #acacac; }
+            .data-container .schedule-slot-box .schedule-box .actions .checkbox .box i {
+              display: none; }
+          .data-container .schedule-slot-box .schedule-box .actions .checkbox .box-checked {
+            border: 1px solid red; }
+            .data-container .schedule-slot-box .schedule-box .actions .checkbox .box-checked i {
+              display: unset;
+              color: red;
+              font-size: .8rem; }
+  .data-container .disabled-schedule {
+    background: #d10a1e56; }
+    .data-container .disabled-schedule .slots-container .slots .slot-checkbox-container .slot {
+      color: #850a0a;
+      border: 2px solid #660d0d; }
+  .data-container .cancelled-appointment {
+    background: #d10a1e56; }
+
+/*# sourceMappingURL=createSchedule.css.map */

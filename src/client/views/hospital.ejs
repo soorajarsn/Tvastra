@@ -10,14 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="body">
-        <nav class="nav">
+        <!-- <nav class="nav">
             <div class="logo-and-bar-container">
                 <div class="logo-container">
                     <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
                 </div>
-                <!-- <div class="bars"> -->
                     <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
-                <!-- </div>   -->
             </div>    
             <div class="nav-open">
                 <div class="nav-expanded">
@@ -38,12 +36,13 @@
                 </div>
             </div>        
         </nav>
-        <script src="../js/navigation.js"></script>
+        <script src="../js/navigation.js"></script> -->
+        <%- include('partials/navigation.ejs') %>
         <div class="location">
             <h1>You are viewing Hospitals in <a href="">Delhi</a></h1>
-        </div>
-        <div class="color">
+            <div class="color">
 
+            </div>
         </div>
        
         <div class="body-container">
@@ -353,44 +352,77 @@
             </div>
             </div>
             <div class="parent-container">    
-                <div class="doctor-container">
-                    <div class="info-button">
-                        <div class="info-container">
-                            <h2><span>____ </span>Apollo Hospital</h2>
-                                <div class="info-container-row" >
-                                    <div class="info-container-sub-row">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <p >Delhi Mathura Road, Sarita Vihar,Delhi 1100076</p>
-                                    </div >
-                                    <div class="info-container-sub-row">
-                                        <i class="fas fa-bed"></i>
-                                        <p >100 beds</p>
-                                    </div>
+                <% for(var i = 0; i < hospitals.length; i++) {%>
+                    <!-- <button class="doctor-container-button" style="background: none;"> -->
+                        <div class="doctor-container" id = "<%= hospitals[i]._id %>">
+                            <div class="info-button">
+                                <div class="info-container">
+                                    <h2><span>____ </span><%= hospitals[i].name %></h2>
+                                        <div class="info-container-row" >
+                                            <div class="info-container-sub-row">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <p > <%= hospitals[i].location %></p>
+                                            </div >
+                                            <div class="info-container-sub-row">
+                                                <i class="fas fa-bed"></i>
+                                                <p ><%= hospitals[i].noOfBeds %> beds</p>
+                                            </div>
+                                        </div>
+                                        <div class="info-container-row">
+                                            <div class="info-container-sub-row">
+                                                <i class="fas fa-stethoscope"></i>
+                                                <p><%= hospitals[i].treatments %></p>
+                                            </div>
+                                        </div>
                                 </div>
-                                <div class="info-container-row">
-                                    <div class="info-container-sub-row">
-                                        <i class="fas fa-stethoscope"></i>
-                                        <p>Famous Treatments</p>
-                                    </div>
+                                <div class="features">
+                                    <% var specialization = hospitals[i].specialization.split(','); %>
+                                    <% var length = specialization.length; %>
+                                    <% for(var j = 0; j < length; j++) { %>
+                                        <% if(j < 6)  {%>
+                                            <div><p><%= specialization[j] %></p></div>
+                                        <% } %>
+                                        <% if(j == 6) { %>
+                                            <div class="more-button"><p>+<%= length - j %>  more</p></div>    
+                                        <% } %>
+                                        <% if(j >= 6) {%>
+                                            <div class="hidden-treatments"><p><%= spec[j] %></p></div>
+                                        <% } %>
+                                    <% } %>
+                                    <!-- <div><p>MultiOrgan Transplant</p></div>
+                                    <div><p>Orthopedic Surgery</p></div>
+                                    <div><p>Infertility Treatment</p></div>
+                                    <div><p>Dentistry</p></div>
+                                    <div><p>Cardiology</p></div>
+                                    <div><p>Cancer</p></div>
+                                    <div><p>+40 more</p></div> -->
                                 </div>
+                                <button class='appointment-btn'>Call Now</button>    
+                            </div>
+                            <div class='img-container'>
+                                <!-- <img class="doctor-img" src="../assets/Apolo-HospitalCropped.jpg" alt=""> -->
+                                <img class='doctor-img' src="<%= hospitals[i].imgAddress %>" alt="img-duke-samson" >
+                            </div>
                         </div>
-                        <div class="features">
-                            <div><p>MultiOrgan Transplant</p></div>
-                            <div><p>Orthopedic Surgery</p></div>
-                            <div><p>Infertility Treatment</p></div>
-                            <div><p>Dentistry</p></div>
-                            <div><p>Cardiology</p></div>
-                            <div><p>Cancer</p></div>
-                            <div><p>+40 more</p></div>
-                        </div>
-                        <button class='appointment-btn'>Call Now</button>    
-                    </div>
-                    <div class='img-container'>
-                        <img class="doctor-img  tablet-view" src="../assets/Apolo-HospitalCropped.jpg" alt="">
-                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/Apolo-Hospital.jpg" alt="img-duke-samson" >
-                    </div>
-                </div>
-                <div class="doctor-container">
+                    <!-- </button> -->
+                <% } %>
+                <script>
+                    var viewMoreButton = document.getElementsByClassName('more-button');
+                    var l = viewMoreButton.length;
+                    for(var i = 0; i < l; i++){
+                        viewMoreButton[i].addEventListener('click',function(){
+                            var hiddenTreatments = this.nextElementSibling;
+                            this.style.display="none";
+                            // var container = document.getElementsByClassName('doctor-container')[i];
+                            console.log('the container div is ',container);
+                            while(hiddenTreatments){
+                                hiddenTreatments.classList.toggle('hidden-treatments');
+                                hiddenTreatments = hiddenTreatments.nextElementSibling;
+                            }
+                        });
+                    }
+                </script>
+                <!-- <div class="doctor-container">
                     <div class="info-button">
                         <div class="info-container">
                             <h2><span>____ </span>Fortis Hospital</h2>
@@ -423,8 +455,7 @@
                         <button class='appointment-btn'>Call Now</button>    
                     </div>
                     <div class='img-container'>
-                        <img class="doctor-img tablet-view" src="../assets/fortisCropped.jpg" alt="">
-                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/Fortis-Hospital-la-shalimar-bagh.jpg" alt="img-duke-samson" >
+                        <img class='doctor-img' src="../assets/Fortis-Hospital-la-shalimar-bagh.jpg" alt="img-duke-samson" >
                     </div>
                 </div>
                 <div class="doctor-container">
@@ -460,8 +491,7 @@
                         <button class='appointment-btn'>Call Now</button>    
                     </div>
                     <div class='img-container'>
-                        <img class="doctor-img tablet-view"src="../assets/rocklandCropped.jpg" alt="">
-                        <img class='doctor-img mobile-cum-desktop-view' src="../assets/rockland.jpg" alt="img-duke-samson" >
+                        <img class='doctor-img' src="../assets/rockland.jpg" alt="img-duke-samson" >
                     </div>
                 </div>
                 <div class="doctor-container">
@@ -497,10 +527,9 @@
                         <button class='appointment-btn'>Call Now</button>    
                     </div>
                     <div class='img-container'>
-                        <img class="doctor-img tablet-view" src="../assets/primusCropped.jpg" alt="">
-                        <img class='doctor-img mobile-cum-desktop-view' src="../assets/primus.jpg" alt="img-duke-samson" >
+                        <img class='doctor-img' src="../assets/primus.jpg" alt="img-duke-samson" >
                     </div>
-                </div>
+                </div> 
                 <div class="doctor-container">
                     <div class="info-button">
                         <div class="info-container">
@@ -534,11 +563,9 @@
                         <button class='appointment-btn'>Call Now</button>    
                     </div>
                     <div class='img-container'>
-                        <img class="doctor-img tablet-view" src="../assets/aiimsCropped.jpg" alt="">
-                        <img class='doctor-img  mobile-cum-desktop-view' src="../assets/aiims.jpg" alt="img-duke-samson" >
+                        <img class='doctor-img' src="../assets/aiims.jpg" alt="img-duke-samson" >
                     </div>
-                </div>
-    
+                </div> -->
             </div>    
         </div>
     </div>
@@ -549,30 +576,8 @@
             </div>
             <button onclick="location.href='/contactUs';">Submit your query</button>
         </div>
-        <footer>
-            <div class='footer-tablet'>
-                <div class="article-container" style="display:flex;">
-                    <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
-                    <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
-                    <div style="margin:0 10px;"><a href="">Treatment</a></div>
-                    <div style="margin:0 10px;"><a href="">Other Services</a></div>
-                    <div style="margin:0 10px;"><a href="">FAQs</a></div>
-                </div>
-                <div class="logo-container">
-                    <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
-                </div>
-             </div>
-             <div class='footer-tablet-end'>
-                 <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
-                 <div>
-                     <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
-                     <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
-                     <i class="fab fa-twitter" style="margin:auto 5px;"></i>
-                     <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
-                     <i class="fab fa-instagram" style="margin:auto 5px;"></i>
-                 </div>
-             </div>
-            </footer>
+        <%- include ('partials/footer.ejs') %>
             <script src="../js/filter.js"></script>
+            <script src="../js/hospital.js"></script>
     </body>
 </html>

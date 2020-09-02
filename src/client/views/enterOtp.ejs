@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/enterOtp.css">
+    <title>login</title>
+</head>
+<body>
+    <%- include('partials/navigation.ejs') %>
+    <div class="main-container">
+        <div class="form-container">
+            <h1>OTP</h1>
+            <hr>
+            <form id="otp-form" action="/verifyOtp" method="post">
+                <div class="field-set">
+                    <div class="input-container" style="border:0;">
+                        <input class="background-0" id="otp" type="text" name="otp" maxlength="4" autocomplete="off" onkeypress="return avoidSpace(event)" autofocus>
+                        <div class="content">
+                        </div>
+                    </div>
+                    <div class="resend">
+                       <p>Resend in <span id="sec">60</span>sec</p>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit">login</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </form>
+            <p class="redirect">Not Registered?<a href="/signup">Sign Up</a> </p>
+        </div>
+    </div>
+    <% if(msg)  { %>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>Error while verifying the OTP!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <% } else if(otpSentAgainMsg || otpSentMsg) { %>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error info';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='fas fa-info' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Info:</h4>
+                                <p style="max-width:16rem;display:inline-block;line-height:1.2rem;">Valid only for 60 seconds!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <% } %>
+    <script src="../js/enterOtp.js"></script>
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+</body>
+</html>

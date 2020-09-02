@@ -1,0 +1,50 @@
+body {
+  height: 100vh; }
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2.2rem; } }
+
+.main-container {
+  padding: 1rem;
+  margin: 5rem 1rem;
+  max-width: 1000px;
+  background: #faf9f9;
+  border: 1px solid #535353; }
+  @media (min-width: 700px) {
+    .main-container {
+      padding: 2rem;
+      padding-bottom: 1rem;
+      margin: 5rem 2.75rem; } }
+  @media (min-width: 1200px) {
+    .main-container {
+      margin: 5rem auto; } }
+  .main-container .details label {
+    font-weight: normal;
+    margin-right: 1rem;
+    line-height: 1.5rem; }
+  .main-container .details li {
+    font-weight: 600;
+    font-size: 1rem; }
+  .main-container .details .row {
+    display: flex;
+    margin: 1rem 0;
+    font-size: 1rem; }
+  @media (min-width: 500px) {
+    .main-container .details {
+      display: flex; }
+      .main-container .details .row {
+        display: block;
+        margin-right: 2rem; } }
+    @media (min-width: 500px) and (min-width: 600px) {
+      .main-container .details .row {
+        margin-right: 3.5rem; } }
+    @media (min-width: 500px) and (min-width: 700px) {
+      .main-container .details .row {
+        margin-right: 6rem; } }
+  @media (min-width: 500px) {
+      .main-container .details label, .main-container .details li {
+        font-size: 1.1rem;
+        line-height: 1.5rem; } }
+
+/*# sourceMappingURL=rescheduleAppointment.css.map */

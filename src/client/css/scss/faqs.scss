@@ -1,0 +1,84 @@
+@import "theme";
+.hero-section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width:1200px){
+        padding:0 7%;
+        align-items: flex-start;
+    }
+    justify-content: center;
+    height:20rem;
+    background: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png);
+    background-size: cover;
+    background-position: top;
+    h1{
+        color:$white;
+    }
+    span{
+        margin-top:1rem;
+        font-size:1.1rem;
+        font-family: "nexa-light";
+        font-weight:600;
+        color: $white;
+        a{
+            color:$white;
+            text-decoration: none;
+        }
+    }
+}
+.main-container{
+    padding:1rem .625rem;
+    @media (min-width:700px){
+        padding:2rem 2.75rem;
+    }
+    @media (min-width:1200px){
+        padding:2rem 7%;
+    }
+    .accordian-container{
+        .accordian{
+            background-color: $white;
+            cursor: pointer;
+            padding: 1rem 0;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 1.3rem;
+            font-family: "nexa-bold";
+            color:$blue;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            .icon-and-content{
+                // margin-right:1rem;
+                line-height:1.5rem;
+                display: inline-block;
+                width: 95%;
+            }
+            .drop-down{
+                border:solid 2px $lightGrey;
+                color:$blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size:.5rem;
+                border-radius:100%;
+                width:1.2rem;
+                height:1.2rem;
+                text-align:center;
+                background-color: rgb(229, 241, 247);
+            }
+        }
+        .panel{
+             max-height: 0;
+             text-align:left;
+             overflow: hidden;
+             transition: max-height 0.2s ease-out;
+             padding:0 .5rem;
+             background: rgb(229, 241, 247);
+             p{
+                 font-size:.94rem;
+             }
+         }
+    }
+}

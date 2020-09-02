@@ -10,19 +10,20 @@ body{
 	background-position: center;
 	display: flex;//to align the heading in the middle
 	align-items: center;
+	position:relative;
 	h1{
 		margin-left:.756rem;
 		font-size: 1.2rem;
 		position: relative;
 		z-index: 1;
 	}
-}
-.color{
-	width:100%;
-	height: 150px;
-	background-color: $opaqueBlue;
-	position: absolute;
-	top:3.96rem;
+	.color{
+		width:100%;
+		height: 100%;
+		background-color: $opaqueBlue;
+		position: absolute;
+		top:0;
+	}
 }
 .header {
 	display: flex;
@@ -200,7 +201,7 @@ body{
 					display: flex;
 					flex-wrap: nowrap;
 					flex-direction: column;
-					padding-left: .4rem;
+					padding-left: 1.5rem;
 					// padding-left: 1rem;
 					margin-bottom:1rem;
 					font-size:1rem;
@@ -251,6 +252,9 @@ body{
 						margin:0;
 					}
 				}
+				.hidden-treatments{
+					display:none;
+				}
 			}
 			.appointment-btn {
 				// margin: 3.4rem 0 2rem 0;
@@ -288,9 +292,6 @@ body{
 			font-size:1.3rem;
 		}
 	}
-	.color{
-		top:4.38rem;
-	}
 	
 	.header{
 		margin: 1.25rem 3.4rem .625rem 3.8rem;
@@ -308,9 +309,11 @@ body{
 			display: grid;
 			.info-button{
 				position: relative;
-			// 	.info-container{
-
-			// 	}
+				.info-container{
+					.info-container-row{
+						padding-left:2.2rem;
+					}
+				}
 			// 	.info-container-row{
 			// 		.info-container-sub-row{
 
@@ -323,16 +326,24 @@ body{
 					left:3.4rem;
 				}
 			}
+			.img-container{
+				overflow:hidden;
+				.doctor-img{
+					width:200%;
+					position:relative;
+					left:55%;
+				}
+			}
 		}
 	}
 }
 @media only screen and (min-width:1200px) {
-	.tablet-view{
-		display: none;
-	}
-	.mobile-cum-desktop-view{
-		display:unset;
-	}
+	// .tablet-view{
+	// 	display: none;
+	// }
+	// .mobile-cum-desktop-view{
+	// 	display:unset;
+	// }
 	.body-container{
 		padding:0  4% 0 5%;
 	}
@@ -344,10 +355,6 @@ body{
 			font-family:"nexa-bold";
 			margin-left:7.2rem;
 		}
-	}
-	.color{
-		height: 14rem;;
-		top:5.9rem;
 	}
 	.header{
 		margin-left:2.3rem;
@@ -376,6 +383,12 @@ body{
 							padding-left: 0rem;
 						}
 					}
+				}
+			}
+			.img-container{
+				.doctor-img{
+					width:120%;
+					left:20%;
 				}
 			}
 		}

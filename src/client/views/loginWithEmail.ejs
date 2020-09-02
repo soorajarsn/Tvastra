@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>login</title>
+    <style>
+        body{
+            position:relative;
+        }
+        .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <%- include('partials/navigation.ejs') %>
+ 
+    
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Login</h1>
+            <hr>
+
+
+            <form id="login-form" action="/loginWithEmail" method="post">
+                <div class="field-set"> 
+
+                    
+                    <!-- login With Email And password -->
+                    <div class="input-container login-with-email">
+                        <input type="email" name="email" placeholder="Enter Email Address">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="input-container login-with-email">
+                        <input type="password" name="password" placeholder="Enter the password">
+                        <i class="far fa-eye-slash password-eye eye"></i>
+                        <i class="far fa-eye eye password-eye active"></i>
+                    </div>
+
+                  
+                    <!-- to show alternative login method -->
+                    <div style="display:flex;justify-content: space-between;">
+                        <span id="try-another" onclick="location.href='/login/?method=loginWithOtp';">Try Another Method?</span>
+                        <span id="forget-password">Forget Password?</span>
+                    </div>
+                    
+                    
+                    <div class="btn-container">
+                        <button type="submit">Login</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </form>
+            
+
+            <p class="redirect">Not Registered?<a href="/signup">Sign Up</a></p>
+        </div>
+    </div>
+    
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+    
+    
+    <% if(errorMsg) { %>
+        <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'login-error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Failure:</h4>
+                                    <p>Something went wrong, Please try again!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 3000);
+        </script>
+    <% } else if(userNotFoundMsg) {%>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>User not found, Please check your credentials!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <% } else if(passwordChanged) {%>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error green';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-check-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Success:</h4>
+                                <p>Password Changed Successfully!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <% } %>
+
+
+    <script src="../js/loginWithEmail.js"></script>
+
+</body>
+</html>

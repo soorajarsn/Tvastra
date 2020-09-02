@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/adminHospital.css"> -->
+    <!-- <link rel="stylesheet" href="../css/admin.css"> -->
+    
+    <link rel="stylesheet" href="../css/userProfile.css">
+    <link rel="stylesheet" href="../css/adminProfile.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="pop-up inactive">
+        <div class="input-container">
+            <form action="/updateMobileNumber" method="post">
+                <input type="text" name="number" pattern="[0-9]{10}" placeholder="Enter Mobile Number" id="updateMobile">
+                <button type="button" id="mobileNumberSubmit">Proceed</button>
+            </form>
+            <div class="remove-pop-up">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+    </div>
+    <% if(success) {%>
+        <div class="pop-up otp-pop-up">
+            <div class="input-container">
+                <form action="/updateMobileNumber/verifyOtp" method="post">
+                    <input type="text" pattern="[0-9]{4}" placeholder="Enter the OTP" id="otp">
+                    <button type="button" id="otpSubmit">Proceed</button>
+                </form>
+                <div class="remove-pop-up">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('otpSubmit').addEventListener('click',function(){
+                const otpInput = document.getElementById('otp');
+                const otp = otpInput.value;
+                if(otp.length == 4 && !isNaN(otp)){
+                    document.querySelector('form[action="/updateMobileNumber/verifyOtp"]').submit();
+                }
+                else{
+                    popUpError('Please Enter the OTP');
+                    otpInput.classList.add('box-shadow');
+                }
+            });
+        </script>
+        <% if(otpError) {%>
+            <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Failure:</h4>
+                                    <p>Something went wrong, Please Try Again!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 5000);
+            </script>
+        <% } else if(invalidOtp) { %>
+            <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Failure:</h4>
+                                    <p>Please Check your OTP and try again!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 5000);    
+            </script>
+        <% } %>
+        
+    <% } %>
+    <% if (error) {%>
+        <script>
+            document.getElementsByClassName('pop-up')[0].classList.remove('inactive');
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>Something went wrong, Please Try Again!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 5000);
+            // popUpError('Something went wrong, Please Try Again!');
+        </script>
+    <% } else if(alreadyRegistered) {%>
+        <script>
+            document.getElementsByClassName('pop-up')[0].classList.remove('inactive');
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>This mobile Number is already Registered!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 5000);
+            // popUpError('This mobile Number is already Registered!');
+        </script>
+    <% } else if(invalidFormat) {%>
+        <script>
+            document.getElementsByClassName('pop-up')[0].classList.remove('inactive');
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>Please Enter the 10 digit mobile Number correctly!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 5000);
+            // popUpError('Please Enter the 10 digit mobile Number correctly!');
+        </script>
+    <% } %>
+    <div class="body-container-2">
+        <!-- <div class="menu-container">
+            <div class="icon-and-name-container">
+                <div class="icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h1>Medic<sup style="color:dodgerblue;">app</sup></h1>
+            </div>
+            <ul class="button-container">
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-thermometer"></i>Dashboard</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-stethoscope"></i>Appointments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-md"></i>Doctors</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-nurse"></i>Departments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-wheelchair"></i>Patients</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-hand-holding-usd"></i>Payments</a>
+                </li>
+            </ul>
+            <button class="add-patients">
+                <i class="fas fa-plus"></i>Add Patients
+            </button>
+        </div> -->
+        <%- include('partials/admin/menu.ejs') %>
+        <div class="main-container">
+            <%- include('partials/admin/adminNav.ejs') %>
+
+            <div class="doctor-container">
+                <h2>Accounts</h2>
+                <div class="doctor-cards">
+                    <div class="body-container" style="padding:0;width: 100%;display:block;">
+                        <div class="dashboard-container" style="display:none;">
+                            <div class="container">
+                                <h1>Dashboard</h1>
+                                <div class="active-menu">
+                                    Profile <i class="fas fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="menu-container inactive">
+                                <button class="menu-item">
+                                    <i class="fas fa-user-edit"></i>Profile
+                                </button>
+                                <button class="menu-item">
+                                    <i class="fas fa-hospital"></i>Appointments
+                                </button>
+                                <button class="menu-item">
+                                    <i class="fas fa-pen-alt"></i>Create / Edit Schedules
+                                </button>
+                            </div>
+                        </div>
+                        <form method="post" enctype="multipart/form-data" class="data-container" action="<%= '/updateProfile?id='+ userData._id %>">
+                            <div class="header">
+                                <h2>Profile</h2>
+                                <button type='submit'>Save Changes</button>
+                            </div>
+                            <div class="info-container profile-img-info">
+                                <div class="img-container">
+                                    <label for="">PROFILE PHOTO</label><br>
+                                    <div class="img">
+                                        <% if(userData.imgAddress) {%>
+                                            <img src="<%= userData.imgAddress %>" alt="">
+                                        <% } else if(userData.doctor) { %>
+                                            <img src="../assets/no-img.png" alt="">
+                                        <% } else { %>
+                                            <img src="../assets/no-user-img.png" alt="">
+                                        <% } %>   
+                                        <div class="profile-input">
+                                            <p>Pick a photo from your system</p>
+                                            <input type="file" name="profileImg" id="" accept="image/*" enctype="multipart/form-data">
+                                            <button type='button'>Add Photo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Name</label><br>
+                                    <input type="text" name="name" value="<%= userData.name %>">
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="input-container">
+                                    <div class="phone-label-and-button-container">
+                                        <label for="" class="first-label">Phone Number</label>
+                                        <button type='button' id="edit-button">Edit</button>
+                                    </div>
+                                    <input type="text" pattern="[0-9]{10}" name="mobileNumber" value="<%= userData.mobileNumber.toString().substring(2) %>" readonly>
+                                </div>
+                                <div class="input-container">
+                                    <label>Email</label>
+                                    <input type="email" name="email" value="<%= userData.email %>">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Gender</label><br>
+                                    <input type="text" name="gender" value="<%= userData.gender %>">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Date Of Birth</label><br>
+                                    <input type="date" name="dob" value="<%= userData.dob %>" style="background:white;">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Timezone</label><br>
+                                    <input type="text" name="timezone" value="<%= userData.timezone %>">
+                                </div>
+                            </div>
+                            <div class="info-container">
+                                <div class="input-container">
+                                    <label class="first-label">House No/Street Name/Area</label><br>
+                                    <input type="text" name="house" value="<%= userData.house %>">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Colony/Street/Locality</label><br>
+                                    <input type="text" name="colony" value="<%= userData.colony %>" >
+                                </div>
+                                <div class="input-container">
+                                    <label for="">City</label><br>
+                                    <input type="text" name="city" value="<%= userData.city %>">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">State</label><br>
+                                    <input type="text" name="state" value="<%= userData.state %>">
+                                </div>
+                                <div class="input-container">
+                                    <label for="">Country</label><br>
+                                    <input type="text" name="country" value="<%= userData.country.toUpperCase() %>">
+                                </div>
+                            </div>
+                            <% if(userData.doctor) {%>
+                                <div class="info-container">
+                                    <div class="input-container">
+                                        <label class="first-label">Speciality</label><br>
+                                        <div class="doctor-input">
+                                            <ul id="applied-speciality" class="filters-container">
+                                            </ul>
+                                            <input type="text" name="speciality" value="<%= userData.speciality %>" autocomplete="off">
+                                            <ul id="applicable-speciality" class="suggestions">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Qualification</label>
+                                        <div class="doctor-input">
+                                            <ul id="applied-qualification" class="filters-container">
+                                            </ul>
+                                            <input type="text" name="qualification" value="<%= userData.qualification %>" autocomplete="off">
+                                            <ul id="applicable-qualification" class="suggestions">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Treatments</label>
+                                        <div class="doctor-input">
+                                            <ul id="applied-treatmentList" class="filters-container">
+                                            </ul>
+                                            <input type="text" name="treatmentList" value='<%= userData.treatmentList %>' autocomplete="off">
+                                            <ul id="applicable-treatmentList" class="suggestions">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Hospitals</label>
+                                        <div class="doctor-input">
+                                            <ul id="applied-hospitalList" class="filters-container">
+                                            </ul>
+                                            <input type="text" name="hospitalList" value="<%= userData.hospitalList %>" autocomplete="off">
+                                            <ul id="applicable-hospitalList" class="suggestions">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Awards</label>
+                                        <input type="text" name="awards" value="<%= userData.awards %>">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Years Of Experience</label>
+                                        <input type="text" name="yearsOfExperience" value="<%= userData.yearsOfExperience %>">
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="">Avg Fees</label><br>
+                                        <input type="text" name="avgFees" value="<%= userData.avgFees %>">
+                                    </div>
+                                    <div class="input-container"><br> 
+                                        <label for="location">Location</label><br>
+                                        <input type="text" name="location" value="<%= userData.location %>">
+                                    </div>
+                                </div>
+                            <% } %>
+                        </form>
+                </div>
+            </div>
+            <%- include('partials/admin/adminFooter.ejs') %>
+        </div>
+    </div>
+    <script src="../js/userProfile.js"></script>
+</body>
+</html>

@@ -1,19 +1,10 @@
 var activeCarousals = ['slide-out-left','slide-out-left','active'];
-// window.addEventListener("resize",function(){
-//     if(screen.width>700){
-//         startCarousal(activeCarousals);
-//     }
-// });
-
-var cards,length = activeCarousals.length;
-console.log(activeCarousals,"logging from outside the function ");
+var cards,length = activeCarousals.length,mytimer;
 window.addEventListener('load',function(){
-    // window.setInterval(function(){
-        startCarousal(activeCarousals);
-    // },3000);
-})
-async function startCarousal(activeCarousals){
-    console.log("startCarousal called");
+        startCarousal(activeCarousals,0);
+});
+async function startCarousal(activeCarousals,call){
+    console.log("call " + call);
     var lastCardStatus = activeCarousals[length-1];
     var activeCarousals = activeCarousals.slice(0,length-1);
     activeCarousals.unshift(lastCardStatus);
@@ -23,13 +14,12 @@ async function startCarousal(activeCarousals){
         cards[i].classList.remove('inactive');
         cards[i].classList.remove('slide-out-left');
         cards[i].classList.add(activeCarousals[i]);
-        console.log(activeCarousals);
     }
-    window.setTimeout(function(){
-        return startCarousal(activeCarousals);
+    console.log('calling...');
+    mytimer = window.setInterval(function(){
+        return startCarousal(activeCarousals,call+1);
     },4000);
 }
 function sleep(time){
     return new Promise(resolve=>setTimeout(resolve,time));
 }
-// }

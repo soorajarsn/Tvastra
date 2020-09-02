@@ -8,15 +8,15 @@
         <link rel="stylesheet" href="../css/doctor.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body class="body">
-        <nav class="nav">
+    <body class="body"> 
+       <!-- <nav class="nav">
             <div class="logo-and-bar-container">
                 <div class="logo-container">
                     <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
                 </div>
-                <!-- <div class="bars"> -->
+                 <div class="bars">
                     <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
-                <!-- </div>   -->
+                 </div>  
             </div>    
             <div class="nav-open">
                 <div class="nav-expanded">
@@ -37,12 +37,13 @@
                 </div>
             </div>        
         </nav>
-        <script src="../js/navigation.js"></script>
-        <div class="location">
+        <script src="../js/navigation.js"></script> -->
+        <%- include ('partials/navigation.ejs') %>
+        <div class="hero-section">
             <h1>Cardiac Surgeons in <a href="">Delhi</a></h1>
-        </div>
-        <div class="color">
+            <div class="color">
 
+            </div>
         </div>
         <div class="body-container">
         <div class="header">
@@ -72,11 +73,11 @@
                         </div>
                     </div>
                     <div style="text-align:left;">
-                        <form action="/">
+                        <form action="/" id="location">
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="DLF Cyber City" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="DLF Cyber City">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">DLF Cyber City</label>
@@ -85,7 +86,7 @@
                             <div class="filter-form-row">
                                 <div class='box'>
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Dwaraka" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="Dwaraka">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Dwaraka</label>
@@ -94,7 +95,7 @@
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Lajpat Nagar" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="Lajpat Nagar">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Lajpat Nagar</label>
@@ -103,7 +104,7 @@
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Palam Vihar" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="Palam Vihar">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Palam Vihar</label>
@@ -112,7 +113,7 @@
                             <div class="filter-form-row">
                                 <div class="box"> 
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Punjabi Baag" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="Punjabi Baag">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Punjabi Baag</label>
@@ -121,7 +122,7 @@
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Pusa Road" style="opacity:0;">
+                                    <input type="checkbox" name="location" value="Pusa Road">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Pusa Road</label>
@@ -146,59 +147,59 @@
                         </div>
                     </div>
                     <div style="text-align:left;">
-                        <form action="/">
+                        <form action="/" id="treatment">
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                  <input type="checkbox" value="Multi Organ Transplant" style="opacity:0;">
+                                  <input type="checkbox" name="treatment" value="Chemotherapy">
                                 </div>
                               <div class="labet-container">
-                                  <label for="">Multi Organ Transplant</label>
+                                  <label for="">Chemotherapy</label>
                               </div>
                             </div>
                             <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Orthopedic Surgery" style="opacity:0;">
+                                    <input type="checkbox" name="treatment" value="Surgery">
                                 </div>
                                 <div class="labet-container">
-                                    <label for="">Orthopedic Surgery</label>
+                                    <label for="">Surgery</label>
                                 </div>
                             </div>
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Infertility Treatment" style="opacity:0;">
+                                    <input type="checkbox" name="treatment" value="Vaccine Therapy">
                                 </div>
                                 <div class="labet-container">
-                                    <label for="">Infertility Treatment</label>
+                                    <label for="">Vaccine Therapy</label>
                                 </div>
                             </div>
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Dentistry" style="opacity:0;">
+                                    <input type="checkbox" name="treatment" value="Palliative Care">
                                 </div>
                                 <div class="labet-container">
-                                    <label for="">Dentistry</label>
+                                    <label for="">Palliative Care</label>
                                 </div>
                             </div>
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Cardiology" style="opacity:0;">
+                                    <input type="checkbox" name="treatment" value="Blood Transfusion">
                                 </div>
                                 <div class="labet-container">
-                                    <label for="">Cardiology</label>
+                                    <label for="">Blood Transfusion</label>
                                 </div>
                             </div>
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Cancer" style="opacity:0;">
+                                    <input type="checkbox" name="treatment" value="Immunotherapy">
                                 </div>
                                 <div class="labet-container">
-                                    <label for="">Cancer</label>
+                                    <label for="">Immunotherapy</label>
                                 </div>
                             </div>
                            <div style="display:none;">
@@ -219,12 +220,12 @@
                         </div>
                     </div>
                     <div style="text-align:left;">
-                        <form action="/">
-                              <div class="filter-form-row">
+                        <form id="hospital" action="/">
+                            <div class="filter-form-row">
                               <div class="box">
                                 <i class="fas fa-check unchecked checked"></i>
-                                <input type="checkbox" value="Apollo Hospital" style="opacity:0;">
-                            </div>
+                                <input type="checkbox" name="hospital" value="Apollo Hospital">
+                              </div>
                               <div class="labet-container">
                                   <label for="">Apollo Hospital</label>
                               </div>
@@ -232,7 +233,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Manipal North Side Hospital" style="opacity:0;">
+                                    <input type="checkbox" name="hospital" value="Manipal Hospital">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Manipal Hospital</label>
@@ -241,7 +242,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="AIIMs" style="opacity:0;">
+                                    <input type="checkbox" name="hospital" value="AIIMs">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">AIIMs</label>
@@ -250,7 +251,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Fortis Hospital" style="opacity:0;">
+                                    <input type="checkbox" name="hospital" value="Fortis Hospital">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Fortis Hospital</label>
@@ -259,7 +260,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="Elbit Diagnostics" style="opacity:0;">
+                                    <input type="checkbox" name="hospital" value="Elbit Diagnostics">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">Elbit Diagnostics</label>
@@ -287,7 +288,7 @@
                               <div class="filter-form-row">
                               <div class="box">
                                   <i class="fas fa-check unchecked checked"></i>
-                                  <input type="checkbox" value="30+" style="opacity:0;">
+                                  <input type="checkbox" name="yearsOfExperience" value="30">
                                 </div>
                               <div class="labet-container">
                                   <label for="">30+</label>
@@ -296,7 +297,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="25+" style="opacity:0;">
+                                    <input type="checkbox" name="yearsOfExperience" value="25">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">25+</label>
@@ -305,7 +306,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="20+" style="opacity:0;">
+                                    <input type="checkbox" name="yearsOfExperience" value="20">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">20+</label>
@@ -314,7 +315,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="15+" style="opacity:0;">
+                                    <input type="checkbox" name="yearsOfExperience" value="15">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">15+</label>
@@ -323,7 +324,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="10+" style="opacity:0;">
+                                    <input type="checkbox" name="yearsOfExperience" value="10">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">10+</label>
@@ -332,7 +333,7 @@
                               <div class="filter-form-row">
                                 <div class="box">
                                     <i class="fas fa-check unchecked checked"></i>
-                                    <input type="checkbox" value="5+" style="opacity:0;">
+                                    <input type="checkbox" name="yearsOfExperience" value="5">
                                 </div>
                                 <div class="labet-container">
                                     <label for="">5+</label>
@@ -351,8 +352,258 @@
                 </div>
             </div>
             </div>
-            <div class="parent-container">    
-                <div class="doctor-container">
+            <% var noOfItemsPerPage = 3, i = 0,pageNumber = 0 %>
+            <% for(; i < doctors.length; i++) {%>
+            <div class="parent-container" id="page<%= pageNumber.toString() %>">
+                <% for(var count = 0 ; count < noOfItemsPerPage && i < doctors.length; count++) {%>
+                   <div class="doctor-and-slot-container">
+                       <div class="filtered-with">
+                           <p class='filtered-location'></p>
+                           <p class="filtered-treatment"></p>
+                           <p class="filtered-hospital"></p>
+                           <p class="filtered-yearsOfExperience"></p>
+                       </div>
+                        <div class="doctor-container" id=<%= doctors[i]._id %> >
+                            <div class="info-button">
+                                <div class="info-container">
+                                    <h2><span>___ </span><%= doctors[i].name %></h2>
+                                        <div class="info-container-row">
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-certificate"></i>
+                                                </div>
+                                                <p><%= doctors[i].doctor.qualification %></p>
+                                            </div>
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-award"></i>
+                                                </div>
+                                                <p><%= doctors[i].doctor.awards %></p>
+                                            </div>
+                                        </div>
+                                        <div class="info-container-row" >
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="far fa-clock"></i>
+                                                </div>
+                                                <p class="yearsOfExperience"><%= doctors[i].doctor.yearsOfExperience %> years of Experience</p>
+                                            </div >
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-notes-medical"></i>
+                                                </div>
+                                                <p class="hospital"><%= doctors[i].doctor.hospitalList %></p>
+                                            </div>
+                                        </div>
+                                        <div class="info-container-row">
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-map-marker-alt fa-map-marker-alt-doctor"></i>
+                                                </div>
+                                                <p class="location"><%= doctors[i].doctor.location %></p>
+                                            </div>
+                                        </div>
+                                        <div class="info-container-row" style="display:none;">
+                                            <div class="info-container-sub-row">
+                                                <div class="icon-container">
+                                                    <i class="fas fa-map-marker-alt fa-map-marker-alt-doctor"></i>
+                                                </div>
+                                                <p class="treatment"><%= doctors[i].doctor.treatmentList %></p>
+                                            </div>
+                                        </div>
+                                </div>
+                                <button class='appointment-btn'>Book an appointment</button>    
+                            </div>
+                            <div class='img-container'>
+                                <img class='doctor-img  img1' alt="img-duke-samson" src=<%= doctors[i].imgAddress %> >
+                            </div>      
+                        </div>
+                        <div class="slots-container slide-in-right">
+                            <div class="<%= doctors[i]._id %> cards-container">
+                                <div class="prev-button">
+                                        <i class="fas fa-angle-left"></i>
+                                </div>
+                                <% for(var k = 0; k < doctors[i].dateWiseSlots.length; k++) {%>
+                                    <div class="<%= k+1 %> card slide-in-right">
+                                        <div class="date">
+                                            <%= doctors[i].dateWiseSlots[k].date %>
+                                        </div>
+                                        <div class="no-of-slots">
+                                            <%= doctors[i].dateWiseSlots[k].noOfSlots %>
+                                        </div>
+                                    </div>
+                                <% } %>
+                                <!-- <div class="2 card slide-in-right">
+                                           Tomorrow
+                                           <div class="no-of-slots">
+                                               34 Slots Available
+                                           </div>
+                                </div>
+                                <div class="3 card slide-in-right">
+                                            30 May, 2020
+                                            <div class="no-of-slots">
+                                                4 Slots Available
+                                            </div>
+                                </div>
+                                <div class="4 card slide-in-right">
+                                    31 May, 2020
+                                    <div class="no-of-slots">
+                                        4 Slots Available
+                                    </div>
+                                </div>
+                                <div class="5 card slide-in-right">
+                                    01 June, 2020
+                                    <div class="no-of-slots">
+                                        4 Slots Available
+                                    </div>
+                                 </div>
+                                 <div class="6 card slide-in-right">
+                                    02 June, 2020
+                                    <div class="no-of-slots">
+                                        4 Slots Available
+                                    </div>
+                                </div>
+                                <div class="7 card slide-in-right">
+                                    03 June, 2020
+                                    <div class="no-of-slots">
+                                        4 Slots Available
+                                    </div>
+                                </div> -->
+                                <div class="next-button">
+                                        <i class="fas fa-angle-right"></i>
+                                </div>
+                            </div>
+                            <% for(var k = 0; k < doctors[i].dateWiseSlots.length; k++) {%>                            
+                                <div class="slot-main-hospital-container <%= doctors[i].dateWiseSlots[k].date.split(' ').join('-') %>">
+                                    <% var hospitalAndSlots = doctors[i].dateWiseSlots[k].hospitalAndSlots %>
+                                    <% for(var l = 0; l < hospitalAndSlots.length; l++) {%>
+                                    <% var hospitalAndSlot = hospitalAndSlots[l] %>
+                                        <div class="slot-main-container <%= hospitalAndSlot.hospital.split(' ').join('-') %>">
+                                            <div class="slots-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-sun"></i>Morning
+                                                </div>
+                                                <div class="slots">
+                                                    <% for(var m = 0; m < hospitalAndSlot.slots.Morning.length; m++) {%>
+                                                        <form action="/bookSlot" method="post" >
+                                                            <input type="text" name="date" value="<%= doctors[i].dateWiseSlots[k].date %>" style="display:none;">
+                                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Morning[m] %>" style="display:none;">
+                                                            <input type="email" name="email" value="<%= doctors[i].email %>" style="display:none;">
+                                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                                            <div class="slot"><%= hospitalAndSlot.slots.Morning[m] %></div>
+                                                        </form>
+                                                    <% } %>
+                                                    <!-- <div class="slot">01:00AM</div>
+                                                    <div class="slot">01:30AM</div>
+                                                    <div class="slot">02:00AM</div>
+                                                    <div class="slot">06:00AM</div>
+                                                    <div class="slot">06:30AM</div>
+                                                    <div class="slot">07:00AM</div>
+                                                    <div class="slot">07:30AM</div>
+                                                    <div class="slot">08:00AM</div>
+                                                    <div class="slot">08:30AM</div>
+                                                    <div class="slot">09:00AM</div>
+                                                    <div class="slot">09:30AM</div>
+                                                    <div class="slot">10:00AM</div>
+                                                    <div class="slot">10:30AM</div>
+                                                    <div class="slot">11:00AM</div>
+                                                    <div class="slot">11:30AM</div> -->
+                                                </div>
+                                            </div>
+                                            <div class="slots-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-sun"></i>Afternoon
+                                                </div>
+                                                <div class="slots">
+                                                    <% for(var m = 0; m < hospitalAndSlot.slots.Afternoon.length; m++) {%>
+                                                        <form action="/bookSlot" method="post">
+                                                            <input type="text" name="date" value="<%= doctors[i].dateWiseSlots[k].date %>" style="display:none;">
+                                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Afternoon[m] %>" style="display:none;">
+                                                            <input type="email" name="email" value="<%= doctors[i].email %>" style="display:none;">
+                                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                                            <div class="slot"><%= hospitalAndSlot.slots.Afternoon[m] %></div>
+                                                        </form>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <div class="slots-sub-container last-slot-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-moon"></i>Evening
+                                                </div>
+                                                <div class="slots">
+                                                    <% for(var m = 0; m < hospitalAndSlot.slots.Evening.length; m++) {%>
+                                                        <form action="/bookSlot" method="post">
+                                                            <input type="text" name="date" value="<%= doctors[i].dateWiseSlots[k].date %>" style="display:none;">
+                                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Evening[m] %>" style="display:none;">
+                                                            <input type="email" name="email" value="<%= doctors[i].email %>" style="display:none;">
+                                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                                            <div class="slot"><%= hospitalAndSlot.slots.Evening[m] %></div>
+                                                        </form>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                    <% if(hospitalAndSlots.length == 0) {%>
+                                        <div class="slot-main-container">
+                                            <div class="slots-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-sun"></i>Morning
+                                                </div>
+                                                <div class="slots">
+                                                    <!-- <div class="slot">01:00AM</div>
+                                                    <div class="slot">01:30AM</div>
+                                                    <div class="slot">02:00AM</div>
+                                                    <div class="slot">06:00AM</div>
+                                                    <div class="slot">06:30AM</div>
+                                                    <div class="slot">07:00AM</div>
+                                                    <div class="slot">07:30AM</div>
+                                                    <div class="slot">08:00AM</div>
+                                                    <div class="slot">08:30AM</div>
+                                                    <div class="slot">09:00AM</div>
+                                                    <div class="slot">09:30AM</div>
+                                                    <div class="slot">10:00AM</div>
+                                                    <div class="slot">10:30AM</div>
+                                                    <div class="slot">11:00AM</div>
+                                                    <div class="slot">11:30AM</div> -->
+                                                </div>
+                                            </div>
+                                            <div class="slots-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-sun"></i>Afternoon
+                                                </div>
+                                                <div class="slots">
+                                                    <button class='next-available'>Go To Next Available Slot</button>
+                                                </div>
+                                            </div>
+                                            <div class="slots-sub-container last-slot-sub-container">
+                                                <div class="time">
+                                                    <i class="fas fa-moon"></i>Evening
+                                                </div>
+                                                <div class="slots">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                    <div class="hospitals">
+                                        <% for(var l = 0; l < hospitalAndSlots.length; l++) {%>
+                                            <div class="hospital <%= hospitalAndSlots[l].hospital.split(' ').join('-') %>">
+                                                <div class="block"></div><%=  hospitalAndSlots[l].hospital %>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                           <% } %>
+                            <div class='img-container'>
+                                <img class='doctor-img  img1' alt="img-duke-samson" src=<%= doctors[i].imgAddress %> >
+                            </div>  
+                        </div>
+                   </div>
+                    <% i++ %>        
+                <% } %>  
+                <% pageNumber++ %>
+                <% i-- %>
+                <!-- <div class="doctor-container">
                     <div class="info-button">
                         <div class="info-container">
                             <h2><span>___ </span>Shubham Shinde</h2>
@@ -586,10 +837,26 @@
                     <div class='img-container'>
                         <img class='doctor-img  img1' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" alt="img-duke-samson" >
                     </div>
-                </div>
-    
-            </div>    
+                </div> -->
+                
+            </div>
+            <% } %>       
         </div>
+        <div class="pages">
+            <% for(var i = 0,count = 1; i < doctors.length; count++,i = i+noOfItemsPerPage) {%>
+                <div id="pageNumber<%= count %>"><%= count %></div>
+            <% } %>
+        </div>
+        <script>
+            document.getElementsByClassName('pages')[0].firstElementChild.classList.add('active');
+            console.log("<%= search %>");
+            console.log("<%= searchFor %>");
+            console.log("<%= location %>");
+            var location = "<%= location %>";
+            var searchFor = "<%= searchFor %>";
+            var search = "<%= search %>";
+            // document.querySelector('')
+        </script>
     </div>
         <div class="help">
             <div>
@@ -598,31 +865,27 @@
             </div>
             <button onclick="location.href='/contactUs';">Submit your query</button>
         </div>
-        <footer>
-            <div class='footer-tablet'>
-                <div class="article-container" style="display:flex;">
-                    <div style="margin:0 10px;"> <a href="/doctor" >Doctors</a></div >
-                    <div style="margin:0 10px;"><a href="/hospitals">Hospitals</a></div>
-                    <div style="margin:0 10px;"><a href="">Treatment</a></div>
-                    <div style="margin:0 10px;"><a href="">Other Services</a></div>
-                    <div style="margin:0 10px;"><a href="">FAQs</a></div>
-                </div>
-                <div class="logo-container">
-                    <a href="/"><img class ='logo' src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png" alt="logo"></a>
-                </div>
-             </div>
-             <div class='footer-tablet-end'>
-                 <p class="footer-end">All Rights Reserved &copy tvastra 2018</p>
-                 <div>
-                     <i class="fab fa-facebook-square" style="margin:auto 5px;"></i>
-                     <i class="fab fa-pinterest" style="margin:auto 5px;"></i>
-                     <i class="fab fa-twitter" style="margin:auto 5px;"></i>
-                     <i class="fab fa-google-plus-g" style="margin:auto 5px;"></i>
-                     <i class="fab fa-instagram" style="margin:auto 5px;"></i>
-                 </div>
-             </div>
-            </footer>
+        <%- include ('partials/footer.ejs') %>
         <script src = "../js/filter.js"></script>
         <script src="../js/doctor.js"></script>
+        <% if(appointmentCancelled) {%>
+            <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'submit-error submit-success';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Success:</h4>
+                                    <p>Your Appointment has been Cancelled!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 5000);
+            </script>
+        <% } %>
     </body>
 </html>

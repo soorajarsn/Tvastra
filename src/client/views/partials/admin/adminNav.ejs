@@ -1,0 +1,45 @@
+<nav class="navbar">
+                <div class="search-and-bar-container">
+                    <a href="/admin">
+                        <div class="icon-and-name-container">
+                            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="">
+                        </div>
+                    </a>
+                    <i class="bars fas fa-bars"></i>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Type page's title">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="notification-and-profile-container">
+                    <!-- <div class="notification-container">
+                        <i class="fas fa-bell"></i>
+                        <div class="no-of-notification">8</div>
+                    </div> -->
+                    <div class="profile">
+                        <div class="img-container">
+                            <img src="<%= user.imgAddress %>" alt="">
+                        </div>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="profile-open">
+                        <div class="img-section" id="<%= user.userId %>">
+                            <div class="img-container">
+                                <img src="<%= user.imgAddress %>" alt="">
+                            </div>
+                            <div class="name-container">
+                                User Profile
+                            </div>
+                        </div>
+                        <a href="/logout" class="img-section">
+                           <div class="icon-container">
+                                <i class="fas fa-sign-out-alt"></i>
+                           </div>
+                           <div class="a-container">
+                                Logout
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+<script src="../js/adminNav.js"></script>

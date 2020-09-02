@@ -1,0 +1,51 @@
+$yellowGreen:#B7CE63;
+$yello:#E9E165;
+$lightBlue:#64B5F6;
+$darkBlue:rgb(11, 33, 52);
+$blue:#3164E5;
+.body-container{
+    .main-container{
+        .doctor-container{
+            .doctor-cards{
+                .table-container{
+                    table{
+                        thead{
+                            tr{
+                                background:$blue;
+                                color:white;
+                            }
+                        }
+                        tbody{
+                            tr{
+                                td{
+                                    .action-container{
+                                        .profile{
+                                            background:black;
+                                            color:white;
+                                        }
+                                    }
+                                    .status{
+                                        padding:.5rem 1rem;
+                                        border-radius: 1.2rem;
+                                        color:$darkBlue;
+                                        line-height: 1.2rem;
+                                        width:fit-content;
+                                    }
+                                    .approved{
+                                        background:$yellowGreen;
+                                    }
+                                    .pending{
+                                        background:$yello;
+                                    }
+                                    .new{
+                                        background:$lightBlue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

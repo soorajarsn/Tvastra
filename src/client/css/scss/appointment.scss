@@ -1,0 +1,79 @@
+$lightGrey:rgb(235, 235, 235);
+$blue:rgb(1, 115, 178);
+.data-container{
+    .schedule-slot-box{
+        background:$lightGrey;
+        .schedule-box{
+            .information-container{
+                .day{
+                    font-size:1.5rem;
+                    flex-direction: column;
+                    height:5rem;
+                    width:5rem;
+                    @media (min-width:700px){
+                        font-size:1.8rem;
+                        height:6rem;
+                        width: 6rem;
+                    }
+                }
+                .hospital-timing-container{
+                    justify-content: flex-start;
+                    .doctor-name{
+                        margin-top:.4rem;
+                        font-family: "nexa-bold";
+                        color:$blue;
+                        letter-spacing: .05rem;
+                        font-size: 1rem;
+                    }
+                    .hospital{
+                        font-size:1rem;
+                        font-weight: 600;
+                    }
+                    .time{
+                        margin:.4rem 0;
+                        font-family: "nexa-bold";
+                    }
+                    .status{
+                        margin-top:.5rem;
+                        padding:.4rem .5rem;
+                        font-size:1.1rem;
+                        font-family: "nexa-bold";
+                        color:white;
+                        width:fit-content;
+                        border-radius: .5rem;
+                    }
+                    .confirmed-appointment{
+                        background:rgba(0, 128, 0, 0.49);
+                        color:rgb(5, 100, 5);
+                    }
+                    .cancelled-appointment{
+                        background:rgba(199, 9, 9, 0.551);
+                        color:rgb(90, 14, 14);
+                    }
+                }
+            }
+            .actions{
+                @media (max-width:375px){
+                    flex-direction: column;
+                    align-items: flex-start;
+                    form{
+                        margin-bottom: .7rem;
+                        width:100%;
+                    }
+                    button{
+                        width:100%;
+                    }
+                }
+                form{
+                    margin-right: .5rem;
+                }
+                button{
+                    @media (min-width:700px){
+                        font-size:1.1rem;
+                    }
+                    margin-right:0;
+                }
+            }
+        }
+    }
+}

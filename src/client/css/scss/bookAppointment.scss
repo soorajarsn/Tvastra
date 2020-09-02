@@ -4,104 +4,344 @@ body{
     display:flex;
     flex-direction: column;
     justify-content:space-between;
-    background: $opaqueBlue;
+    background: rgba(209, 140, 236, 0.09);
     text-align:center;
-    // align-items: center;
+}
+h2{
+    font-size:1.4rem;
+    @media (min-width:1000px){
+        font-size:1.8rem;
+    }
+}
+.pop-up{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    z-index:1;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    background:rgba(0, 0, 0,.3);
+    .field-area{
+        background: $white;
+        width:90%;
+        padding:1rem;
+        text-align: left;
+        box-shadow: 0 0 1rem 0 $darkBlue;
+        border-radius: .5rem;
+        @media (min-width:700px){
+            width:30rem;
+        }
+        .button-container{
+            display:flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size:1.2rem;
+            button{
+                color:$white;
+                font-family: "nexa-bold";
+            }
+            #yes{
+                background: #d10a1e71;
+                margin-right:1rem;
+            }
+            #no{
+                background: rgba(0, 128, 0, 0.545);
+            }
+        }
+    }
+}
+.show-pop-up{
+    display:flex;
 }
 .main-container{
     display:flex;
-    align-items: center;
-    justify-content: center;
-}
-.form-container{
-    background: $white;
-    width:90%;
-    box-shadow: 0px 0px 28px -2px $darkBlue;
-    max-width:28rem;
-    @media (min-width:700px){
-        max-width:32rem;
-    }
+    flex-direction: column;
     @media (min-width:1000px){
-        max-width:40rem;
+        flex-direction: row;
     }
-    margin-top:2rem;
-    h1{
-        font-size:1.5rem;
-        color:$blue;
-        margin:1.1rem 0 .8rem 0;
+    align-items: center;
+    justify-content: space-evenly;
+    padding:.825rem;
+    @media(min-width:700px){
+        padding:2.75rem;
     }
-    hr{
+    .appointment-card{
         width:100%;
-        margin:0;
-    }
-    form{
-        text-align:left;
-        padding:0 1rem;
-        p{
-            font-family: "nexa-bold";
-            font-size:1rem;
-            margin:1.3rem 0 .7rem 0;
+        @media (min-width:1000px){
+            width:30rem;
         }
-        .input-container{
-            border:solid 2px $lightGrey;
-            overflow: hidden;
-            margin: 0;
-            input,select,textarea{
-                border:0;
-                width:100%;
-                margin:0;
-                padding:.5rem 1rem;
-                background: transparent;
-                color:$darkGrey;
-                &::placeholder{
+        box-shadow: 0 0 .5rem 0 $darkBlue;
+        border-radius: 1rem;
+        background:$white;
+        h2{
+            margin-top:1rem;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding:1rem;
+            font-size:1.4rem;
+            @media (max-width:375px){
+                font-size:1rem;
+            }
+            font-family: "nexa-bold";
+            .date{
+                span{
+                    font-family: "nexa-light";
+                    i{
+                        margin-right:.5rem;
+                    }
+                }
+            }
+            .time{
+                i{
+                    margin-right:.5rem;
+                }
+            }
+        }
+        .doctor-details,.hospital-details{
+            display:grid;
+            grid-template-columns: 8rem auto;
+            @media (max-width:375px){
+                grid-template-columns: 5rem auto;
+            }
+            grid-column-gap: 1rem;
+            padding:0 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+            .img-container{
+                overflow: hidden;
+                border-radius: .5rem;
+                width:8rem;
+                height:8rem;
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+                @media (max-width:375px){
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+            .details{
+                font-family:"nexa-light";
+                font-size:1rem;
+                font-weight: 600;
+                letter-spacing: .08rem;
+                li{
+                    margin:.5rem 0;
+                    line-height: 1.2rem;
+                    @media (max-width:375px){
+                        line-height: 1rem;
+                        font-size: .8rem;
+                    }
+                }
+                .name{
+                    font-family: "nexa-bold";
+                    font-size:1.1rem;
+                    @media (max-width:375px){
+                        font-size:1rem;
+                    }
+                    margin-top:.1rem;
+                }
+            }
+        }
+    }
+    .appointment-details{
+        text-align:left;
+        width:100%;
+        margin-top:2rem;
+        @media (min-width:1000px){
+            margin-top:1rem;
+            width:22rem;
+            margin-left:1rem;
+        }
+        @media (min-width:1000px){
+            h2{
+                margin-bottom:2rem;
+            }
+        }
+        form{
+            text-align:left;
+            .input-container{
+                padding:.1rem .5rem;
+                background:$white;
+                border:1px solid $black;
+                input{
+                    color:$black;
+                    box-shadow: none;
+                    border:none;
+                    width:100%;
+                }
+                // @media (min-width:700px) and (max-width:1000px){
+                //     width:45%;
+                // }
+            }
+            .uneditable{
+                border:1px solid $grey;
+                input{
                     color:$grey;
                 }
             }
-            textarea{
-                height:3rem;
-                font-size:1.1rem;
+            .radio-input{
+                input{
+                    color:$blue;
+                    width:unset;
+                }
+                label{
+                    margin-left:.5rem;
+                    display:inline-block;
+                }
+
+                &:first-child{
+                    border-bottom:none;
+                }
             }
-            input[type~=date]{
-                width:95%;
-                @media(min-width:700px){
-                    width:97%;
+            label{
+                color:$blue;
+                font-size:1rem;
+                font-family: "nexa-bold";
+                display:inline-block;
+                margin:.5rem 0;
+            }
+            .heading{
+                color:$black;
+                margin:1rem 0;
+            }
+            .information{
+                margin-top:3rem;
+                label{
+                    margin-top:1rem;
+                }
+                .fields-container{
+                    @media (min-width:700px) and (max-width:1000px){
+                        label{
+                            margin:0 0 .5rem 0;
+                        }
+                        .input-and-label{
+                            margin:.8rem 0;
+                        }
+                    }
+                }
+            }
+            .btn-container{
+                position: relative;
+                margin-top: 2rem;
+                @media(min-width:700px) and(max-width:1000px){
+                    margin-top:1rem;
+                }
+                button{
+                    width:100%;
+                    background: $blue;
+                    color:$white;
+                    font-family: "nexa-bold";
+                    letter-spacing: 2px;
+                    font-size: 1.1rem;
+                    border-radius:.5rem;
+                    padding:.8rem 0;
+                    &:hover{
+                        box-shadow: 0 0 .5rem 0 $darkBlue;
+                    }
+                }
+                .fa-arrow-right{
+                    position: absolute;
+                    right:1rem;
+                    top:.75rem;
+                    color:$white;
+                }
+            }
+            @media (min-width:700px) and (max-width:1000px){
+                margin-top:1rem;
+                .fields-container{
+                    display:grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: 1rem;
+                    .radio-input{
+                        &:first-child{
+                            border-bottom: 1px solid $black;
+                        }
+                    }
+                }
+                .information{
+                    margin-top:1.5rem;
+                    .fields-container{
+                        label{
+                            margin:0 0 .5rem 0;
+                        }
+                        .input-and-label{
+                            margin:.8rem 0;
+                        }
+                    }
                 }
             }
         }
-       .radio-label-container{
-           margin:.5rem 0;
-           label{
-               font-family:"nexa-light";
-               font-weight: 600;
-               font-size:.9rem;
-               letter-spacing: .1rem;
-           }
-       }
-        // textarea{
-        //     width:97.5%;
-        //     // height:29rem;
-
-        // }
-        .btn-container{
-            position: relative;
-            margin:1rem 0;
+    }
+    .appointment-confirmation{
+        margin-top:2rem;
+        text-align: left;
+        width: 100%;
+        @media (min-width:1000px) and (max-width:1100px){
+            width:25rem;
+        }
+        @media (min-width:1100px){
+            width:unset;
+        }
+        .confirmation{
+            display:flex;
+            h2{
+                display:inline-block;
+            }
+            i{
+                color:green;
+                font-size:1.4rem;
+                align-items: center;
+                margin-right: .8rem;
+                margin-top: .1rem;
+                box-shadow: 0 0 1rem 0 $darkBlue;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 100%;
+                @media (min-width:1200px){
+                    margin-top:.7rem;
+                }
+            }
+        }
+        p{
+            font-family: "nexa-bold";
+            line-height: 1.2rem;
+            margin:0;
+            display: inline-block;
+        }
+        label{
+            display: inline-block;
+            margin:1rem 0 .5rem 0;
+            font-family: "nexa-light";
+            // font-weight: 600;
+        }
+        .button-container{
+            display:flex;
+            flex-direction: column;
+            @media (min-width:700px){
+                flex-direction: row;
+                margin-top:1.5rem;
+            }
             button{
                 width:100%;
-                background: $darkBlue;
-                color:$white;
-                font-family: "nexa-light";
-                font-weight: 600;
-                letter-spacing: 3px;
-                font-size: 1.1rem;
-                border-radius:0;
-                padding:.8rem 0;
-                margin:0;
-            }
-            .fa-arrow-right{
-                position: absolute;
-                right:1rem;
-                top:.75rem;
-                color:$white;
+                @media(min-width:700px){
+                    width:fit-content;
+                    margin-right:.5rem;
+                }
+                padding:.4rem .5rem;
+                background: none;
+                font-size:1.2rem;
+                font-family:"nexa-bold";
+                border:2px solid $blue;
+                color:$blue;
+                margin:.5rem 0;
+                &:hover{
+                    box-shadow: 0 0 .5rem 0 $darkBlue;
+                }
             }
         }
     }

@@ -11,7 +11,7 @@
     <title>Book Appointment</title>
 </head>
 <body>
-   <nav class="nav">
+   <!-- <nav class="nav">
         <div class="logo-and-bar-container">
             <div class="logo-container">
                 <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
@@ -36,63 +36,127 @@
                 <button class='nav-button'>Get a Quote</button>
             </div>
         </div>        
-    </nav>
-    <script src="../js/navigation.js"></script>
-    <div class="main-container">
-        <div class="form-container">
-            <h1>Book an Appointment</h1>
-            <hr>
-            <form action="/signup" method="post">
-                <!-- <div class="field-set"> -->
-                    <p>Select Appointment Date*</p>
-                    <div class="input-container">
-                        <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01">
-                    </div>
-                    <p>Time Interval*</p>
-                    <div class="radio-label-container">
-                        <input type="radio" id="morning" name="timeInterval" value="morning">
-                        <label for="morning">Morning</label><br>
-                    </div>
-                    <div class="radio-label-container">
-                        <input type="radio" name="timeInterval" id="afternoon" value="afternoon">
-                        <label for="afternoon">Afternoon</label><br>
-                    </div>
-                    <div class="radio-label-container">
-                        <input type="radio" name="timeInterval" id="evening" value="evening">
-                        <label for="evening">Evening</label><br>
-                    </div>
-                    <p>Appointment Status/Urgency*</p>
-                    <div class="radio-label-container">
-                        <input type="radio" id="routine" name="urgency" value="routine_check_up">
-                        <label for="routine">Routine Check-up</label><br>
-                    </div>
-                    <div class="radio-label-container">
-                        <input type="radio" name="urgency" id="non-urgent" value="non_urgent_check_up">
-                        <label for="non-urgent">Non Urgent Check-up</label><br>
-                    </div>
-                    <div class="radio-label-container">
-                        <input type="radio" name="urgency" id="urgent" value="urgent_check_up">
-                        <label for="urgent">Urgent Check-up</label><br>
-                    </div>
-                    <div class="radio-label-container">
-                        <input type="radio" name="urgency" id="surgical" value="surgical">
-                        <label for="surgical">Surgical Appointment</label><br>
-                    </div>
-                    <p>Upload Previous Health Record</p>
-                    <input type="file" name="healthRecord">
-                    <p>Appointment Details</p>
-                    <div class="input-container">
-                        <textarea name="appointmentDetails"></textarea>
-                    </div>
-                    <div class="btn-container">
-                        <button type="submit">BOOK APPOINTMENT</button>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                <!-- </div> -->
-            </form>
-            <!-- <p class="redirect">Not Registered?<a href="/signup">Sign Up</a> </p> -->
+    </nav> -->
+    <%- include ('partials/navigation.ejs') %>
+    <!-- <script src="../js/navigation.js"></script> -->
+    <div class="pop-up">
+        <div class="field-area">
+            <p>Are you sure you want the cancel the appointment : </p>
+            <div class="button-container">
+                <form action="/cancelAppointment?_id=<%= appointmentId %>" method="post">
+                    <button id="yes">YES</button>
+                </form>
+                <button id="no">CANCEL</button>
+            </div>
         </div>
     </div>
+    <div class="main-container">
+        <div class="appointment-card">
+            <h2>In Clinic Appointment</h2>
+            <hr>
+            <div class="header">
+                <div class="date"><span><i class="far fa-calendar-alt"></i>On</span> <%= date %></div>
+                <div class="time"><i class="far fa-clock"></i><%= time %></div>
+            </div>
+            <div class="doctor-details">
+                <div class="img-container">
+                    <img src="<%= doctor.imgAddress %>" alt="">
+                </div>
+                <ul class="details">
+                    <li class="name"><%= doctor.name %></li>
+                    <li class=""><%= doctor.hospital %></li>
+                    <li><%= doctor.treatments.split(',').join(', ') %></li>
+                    <li><%= doctor.qualification %></li>
+                </ul>
+            </div>
+            <div class="hospital-details">
+                <div class="img-container">
+                    <img src="<%= hospital.imgAddress %>" alt="">
+                </div>
+                <ul class="details">
+                    <li class="name"><%= hospital.name %></li>
+                    <li><%= hospital.location %></li>
+                </ul>
+            </div>
+        </div>
+       <% if(!bookingStatus) {%> 
+        <div class="appointment-details">
+            <h2>Patient Details</h2>
+            <form action="/bookAppointment" method="post">
+                <label class="heading">This Appointment is for : </label><br>
+                <div class="fields-container">
+                    <div class="radio-input input-container">
+                        <input type="radio" name="forWhome" value="patient" checked><label for=""><%= name %></label>
+                    </div>
+                    <div class="radio-input input-container">
+                        <input type="radio" name="forWhome" value="someoneElse"><label for="">Someone Else</label>
+                    </div>
+                </div>
+                <div class="information">
+                    <label class="heading">Please Provide the following information:</label><br>
+                    <div class="fields-container">
+                        <div style="display:none;">
+                            <input type="email" name="doctorEmail" value="<%= doctor.email %>">
+                            <input type="text" name="doctorName" value="<%= doctor.name %>">
+                            <input type="text" name="hospitalName" value="<%= hospital.name %>">
+                            <input type="text" name="date" value="<%= date %>">
+                            <input type="text" name="time" value="<%= time %>">
+                            <input type="text" name="treatments" value="<%= doctor.treatments %>">
+                            <input type="text" name="qualification" value="<%= doctor.qualification %>">
+                            <input type="text" name="location" value="<%= hospital.location %>">
+                            <input type="text" name="doctorImage" value="<%= doctor.imgAddress %>"> 
+                            <input type="text" name="hospitalImage" value="<%= hospital.imgAddress %>">
+                        </div>
+                        <div class="input-and-label">
+                            <label for="" style="margin-top:0;">Patient's Full Name</label><br>
+                            <div class="input-container">
+                                <input type="text" name="name" value="<%= name %>" placeholder="Enter Patient's Name">
+                            </div>
+                        </div>
+                       <div class="input-and-label">
+                            <label for="">Mobile</label><br>
+                            <div class="input-container uneditable">
+                                <input type="tel" name="mobileNumber" value="<%= mobileNumber.substring(2) %>" readonly>
+                            </div>
+                       </div>
+                        <div class="input-and-label">
+                            <label>Patient's Mobile</label><br>
+                            <div class="input-container">
+                                <input type="tel" name="patientMobileNumber" pattern="[0-9]{10}" value="<%= mobileNumber.substring(2) %>" placeholder="Enter 10 digit Mobile Number">
+                            </div>
+                        </div>
+                        <div class="input-and-label">
+                            <label for="">Patient's Email</label><br>
+                            <div class="input-container">
+                                <input type="email" name="patientEmail" value="<%= email %>" placeholder="Enter Patient's Email">
+                            </div>
+                        </div>
+                        <div class="btn-container">
+                            <button type="submit">Book Appointment</button>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <% }else { %>
+        <div class="appointment-confirmation">
+            <div class="confirmation">
+                <i class="fas fa-check-circle"></i><h2>Appointment Confirmed</h2>
+            </div>
+            <p style="margin:1rem 0;">We have send you and SMS with the details</p><br>
+            <label for="">Patient Name</label><br>
+            <p><%= name %></p><br>
+            <label for="">Mobile</label><br>
+            <p><%= mobileNumber %></p><br>
+            <div class="button-container">
+                <button id="cancel">Cancel Appointment</button>
+                <button onclick="location.href='/rescheduleAppointment?_id=<%= appointmentId %>'">Reshedule Appointment</button>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <script src="../js/bookAppointment.js"></script>
     <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
 </body>
 </html>

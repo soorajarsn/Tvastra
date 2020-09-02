@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Document</title>
+    <style>
+        .padded{
+            padding-left: 1rem;
+        }
+        .main-container .form-container form .field-set{
+            text-align:left;
+        }
+        .main-container .form-container form .field-set .input-container{
+            border:0;
+            margin:2rem 0;
+        }
+        .main-container .form-container form .field-set .input-container textarea{
+            padding:0;
+            margin-left:1rem;
+            width:90%;
+        }
+        .main-container .form-container form .field-set .input-container label{
+            display:inline-block;
+            margin:1rem 0;
+        }
+        .main-container .form-container form .field-set .input-container label:first-child{
+            font-size:1.4rem;
+            font-family: "nexa-bold";
+            margin-left:.2rem;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation.ejs') %>
+    <% if(msg) {%>
+        <p style="color:red;"><%= msg %></p>
+    <% } %>
+    <div class="main-container">
+        <div class="form-container" style="max-width: unset;">
+            <h1>Enter Hospital Data</h1>
+            <hr>
+            <form action="/createHospital" method="post" enctype='multipart/form-data' style="width:100%;">
+                <div class="field-set" style="width:90%;">
+                    <div class="input-container">
+                        <label for="">Name</label><br>
+                        <input type="text" name="name" style='border:1px solid rgb(168, 168, 168);width:85%;margin-left: 1rem;' required value=<%= name %>>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Image Address</label><br>
+                        <input type="text" name="imgAddress" style='border:1px solid rgb(168, 168, 168);width:85%;margin-left: 1rem;'  value=<%= imgAddress %>>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Or upload Image</label><br>
+                        <input type="file" name="imgFile" style='width:85%;margin-left: 1rem;' formenctype="multipart/form-data" value=<%= name %>>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Specialization</label><br>
+                        <label for="" class="padded">for Hospital Profile:</label>
+                        <textarea name="specialization" id="" cols="30" rows="10" ><%= specialization %></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Famous Treatments</label><br>
+                        <label for="" class="padded">for Hospital Page: ( <strong style="font-family:nexa-bold;font-size:1.1rem;">comma seperated like : </strong> MultiOrgan Transplant, Orthopadic Surgery, Infertility Treatments, Dentistry)</label>
+                        <textarea name="hospitalPageTreatments" id="" cols="30" rows="10"><%= hospitalPageTreatments %></textarea> 
+                        <label for="" class="padded">for Hospital profile:</label>
+                        <textarea name="hospitalProfileTreatments" id="" cols="30" rows="10"><%= hospitalProfileTreatments %></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Famous Doctors</label><br>
+                        <label for="" class="padded">for Hospital profile:</label>
+                        <textarea name="doctors" id="" cols="30" rows="10"><%= doctors %></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">No. of Beds</label><br>
+                        <label for="" style="padding-left:1rem;">For Hospital Page:</label>
+                        <input type="text" name="noOfBeds" style='border:1px solid rgb(168, 168, 168);width:85%;margin-left: 1rem;' value=<%= noOfBeds %>>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Infrastructure</label><br>
+                        <label for="" class="padded">for Doctor profile:</label>
+                        <textarea name="infrastructure" id="" cols="30" rows="10"><%= infrastructure %></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Hospital Packages</label><br>
+                        <label for="" class="padded">for Hospital profile:</label>
+                        <textarea name="packag" id="" cols="30" rows="10"><%= packag %></textarea>
+                    </div>
+                    <div class="input-container" >
+                        <label for="">Location</label><br>
+                        <label for="" class="padded">for Hospital Page:</label>
+                        <textarea name="hospitalPageLocation" id="" cols="30" rows="10"><%= hospitalPageLocation %> </textarea><br>
+                        <label for="" class="padded">for Hospital profile:</label>
+                        <textarea name="hospitalProfileLocation" id="" cols="30" rows="10"><%= hospitalProfileLocation %> </textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Hospital Charge</label><br>
+                        <label for="">for Hospital profile:</label><br>
+                        <textarea name="charge" id="" cols="30" rows="10"><%= charge %> </textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="">Membership</label><br>
+                        <label for="">for Hospital profile:</label><br>
+                        <textarea name="membership" id="" cols="30" rows="10"><%= membership %> </textarea>
+                    </div>
+                    <!-- <div class="input-container select-container">
+                        <Select name="gender">
+                            <option value="">Select Your Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </Select>
+                        <div class="styled-arrow"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01">
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="mobileNumber" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="input-container city-state-input-container" style="display:flex;">
+                        <input type="text" name="city" placeholder="Enter City" style="margin-right:.15rem;border:2px solid rgb(235, 235, 235);">
+                        <input type="text" name="state" placeholder="Enter State" style="margin-left:.15rem;border:2px solid rgb(235, 235, 235);">
+                    </div>
+                    <div class="input-container select-container">
+                        <select name="" id="">
+                            <option value="">Select Your Country</option>
+                            <option value="india">India</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                            <option value="england">England</option>
+                            <option value="australia">Astralia</option>
+                            <option value="china">China</option>
+                            <option value="russia">Russia</option>
+                        </select>
+                    </div>-->
+                    <div class="btn-container">
+                        <button type="submit">SIGN UP</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div> 
+            </form>
+            <p class="redirect">Already Registered?<a href="/login">Login</a> </p>
+        </div>
+    </div>
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+    <!-- <%- include ('partials/footer.ejs') %> -->
+</body>
+</html>

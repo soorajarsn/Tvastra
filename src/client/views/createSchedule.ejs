@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/userProfile.css">
+        <link rel="stylesheet" href="../css/createSchedule.css">
+        <title>User Profile</title>
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+        <div class="add-schedule">
+            <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="form-container">
+            <form action="/createSchedule?_id=<%= user.userId %>" method="post" enctype="multipart/form-data">
+                <div class="fields-container">
+                    <h1>Create Schedule</h1>
+                    <div class="input-container">
+                        <select name="day">
+                            <option value="">Select Available Days</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <select name="hospital">
+                            <option value="">Select The Hospital</option>
+                            <% for(var i = 0; i < hospital.length; i++) {%>
+                                <option value="<%= hospital[i] %>"><%= hospital[i] %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="input-container time-input">
+                        <input type="time" name="timeFrom" placeholder="from">
+                        <div>
+                            <i class="fas fa-question-circle"></i>
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="input-container time-input">
+                        <input type="time" name="timeTo" placeholder="to">
+                        <div>
+                            <i class="fas fa-question-circle"></i>
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="interval" placeholder="Enter Intervals in minutes">
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="button" class="remover">
+                        Cancel
+                    </button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <% if(invalidTiming) {%>
+            <script>
+                document.getElementsByClassName('form-container')[0].classList.add('show-popUp')
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'submit-error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Error:</h4>
+                                    <p>The timings you have given overlaps with other Schedules!</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-times"></i>
+                                </div>
+                                `;
+                document.querySelector('body').appendChild(div);
+                setTimeout(function(){
+                    document.querySelector('body').removeChild(div);
+                },5000);
+            </script>
+        <% } %>
+        <div class="body-container">
+            <div class="dashboard-container">
+                <div class="container">
+                    <h1>Dashboard</h1>
+                    <div class="active-menu">
+                        Create / Edit Schedules <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="menu-container inactive">
+                    <a href="/userProfile?_id=<%= user.userId %>">
+                        <button class="menu-item">
+                            <i class="fas fa-user-edit"></i>Profile
+                        </button>
+                    </a>
+                    <a href="/appointments">
+                        <button class="menu-item">
+                            <i class="fas fa-hospital"></i>Appointments
+                        </button>
+                    </a>
+                    <% if(user.isDoctor) {%>
+                        <a href="/createSchedule">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Create / Edit Schedules
+                            </button>
+                        </a>
+                    <% } else {%>
+                        <a href="/medicalHistory">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Medical History
+                            </button>
+                        </a>
+                    <% } %>
+                    <a href="/settings">
+                        <button class="menu-item">
+                            <i class="fas fa-user-cog"></i>Settings
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="data-container">
+                <% for(var i = 0; i < schedule.length; i++) {%>
+                    <% var day = schedule[i].day %>
+                    <% var timeFrom = schedule[i].timing.timeFrom %>
+                    <% var timeTo = schedule[i].timing.timeTo %>
+                    <% var hospital = schedule[i].hospital %>
+                    <div class="schedule-slot-box <%= schedule[i].status %>-schedule">
+                        <div class="schedule-box">
+                            <div class="information-container">
+                                <div class="day">
+                                   <%= day.substring(0,3).toUpperCase() %>
+                                </div>
+                                <div class="hospital-timing-container">
+                                    <div class="hospital">
+                                        <%= hospital %>
+                                    </div>
+                                    <div class="time">
+                                        <%= [timeFrom,timeTo].join(' - ') %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a href="/removeSchedule?day=<%= day %>&timeFrom=<%= timeFrom %>&timeTo=<%= timeTo %>&hospital=<%= hospital %>">
+                                    <button>
+                                        Remove Slots
+                                    </button>
+                                </a>
+                                <button class="view-slots-button">
+                                    View Slots
+                                </button>
+                                <div class="checkbox">
+                                    <form action="/disableSchedule" method="post">
+                                        <input type="text" name="day" value="<%= day %>">
+                                        <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                        <input type="text" name="timeTo" value="<%= timeTo %>">
+                                        <input type="checkbox" name="disabled">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slots-container <%= [day,timeFrom.split(' ').join(''),timeTo.split(' ').join('')].join('-') %> hide-slots">
+                           <!-- <div class="slot-main-container"> -->
+                                <!-- <div class="slots-sub-container last-slot-sub-container"> -->
+                                    <div class="slots">
+                                        <% for(var j = 0; j < schedule[i].slots.length ; j++) {%>
+                                            <div class="slot-checkbox-container <%= schedule[i].slots[j].status %>-slot">
+                                                <div class="slot"><%= schedule[i].slots[j].slot %></div>
+                                                <form action="/disableSlot" method="post">
+                                                    <input type="checkbox" name="disabled">
+                                                    <input type="text" name="day" value="<%= day %>">
+                                                    <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                    <input type="text" name="timeTo" value="<%= timeTo %>">
+                                                    <input type="text" name="slot" value="<%= schedule[i].slots[j].slot %>">
+                                                </form>
+                                            </div>
+                                        <% } %>
+                                        <!-- <div class="slot-checkbox-container">
+                                            <div class="slot">06:30PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">07:00PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">07:30PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">08:00PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">08:30PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">09:00PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">09:30PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">10:00PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div>
+                                        <div class="slot-checkbox-container">
+                                            <div class="slot">10:30PM</div>
+                                            <form action="">
+                                                <input type="checkbox" name="disabled">
+                                                <input type="text" name="day" value="<%= day %>">
+                                                <input type="text" name="hospital" value="<%= hospital %>">
+                                                <input type="text" name="timeFrom" value="<%= timeFrom %>">
+                                                <input type="text" name="timeTo" value="<%= timeTo %>">
+                                            </form>
+                                        </div> -->
+                                    </div>
+                                <!-- </div> -->
+                           <!-- </div> -->
+                        </div>
+                    </div>
+                <% } %>
+                <!-- <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            TUE
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Apollo
+                            </div>
+                            <div class="time">
+                                02:00 PM - 04:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            WED
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Lilavati
+                            </div>
+                            <div class="time">
+                                01:00 PM - 03:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            FRI
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Lilavati
+                            </div>
+                            <div class="time">
+                                09:00 AM - 011:00 AM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            SAT
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Apollo
+                            </div>
+                            <div class="time">
+                                02:00 PM - 04:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <% if(shownSlotList) {%>
+            <script>
+                var shownSlotList = "<%= shownSlotList %>";
+                console.log(shownSlotList);
+                document.getElementsByClassName(shownSlotList)[0].classList.remove('hide-slots');
+            </script>
+        <% } %>
+        <script src="../js/createSchedule.js"></script>
+    </body>
+</html>

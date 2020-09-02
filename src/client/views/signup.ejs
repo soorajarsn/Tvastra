@@ -6,51 +6,34 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/signup.css">
-    <title>login</title>
+    <title>SignUp</title>
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo-and-bar-container">
-            <div class="logo-container">
-                <a href="/"><img class="logo" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="logo"></a>
-            </div>
-                <button class="bars"><i class="fas fa-bars mobile-view mobile-cum-tablet-view"></i></button>
-        </div>    
-        <div class="nav-open">
-            <div class="nav-expanded">
-                <a href="/doctor">Doctors</a>
-                <hr>
-                <a href="/hospitals">Hospitals</a>
-                <hr>
-                <a href="/treatment">Treatment</a>
-                <hr>
-                <a href="/">Other Services</a>
-                <hr>
-               <a href="/">About</a>
-               <hr>
-            </div>
-            <div class="nav-btn-container">
-                <button class='nav-button-white' onclick="location.href='/login';">Login / Sign Up</button>
-                <button class='nav-button'>Get a Quote</button>
-            </div>
-        </div>        
-    </nav>  
-    <script src="../js/navigation.js"></script>
+    <%- include('partials/navigation.ejs') %>
     <div class="main-container">
+        <p id="empty-fields" class="error"></p>
         <div class="form-container">
             <h1>Sign Up</h1>
             <hr>
-            <form action="/signup" method="post">
+            <form action="/signup" method="post" id="signup-form">
                 <div class="field-set">
                     <div class="input-container">
-                        <input type="text" name="name" placeholder="Enter Name" required>
+                        <input type="text" name="name" placeholder="Enter Name" >
                     </div>
                     <div class="input-container">
-                        <input type="email" name="email" placeholder="Enter Email" required>
+                        <input type="email" name="email" placeholder="Enter Email">
                     </div>
                     <div class="input-container">
-                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <input type="password" name="password" placeholder="Enter Password">
+                        <i class="far fa-eye-slash password-eye eye"></i>
+                        <i class="far fa-eye eye password-eye active"></i>
                     </div>
+                    <div class="input-container">
+                        <input type="password" name="confirmPassword" placeholder="Confirm Password">
+                        <i class="far fa-eye eye confirm-password-eye active"></i>
+                        <i class="far fa-eye-slash eye confirm-password-eye"></i>
+                    </div>
+                    <p id="password-error" class="error"></p>
                     <div class="input-container select-container">
                         <Select name="gender">
                             <option value="">Select Your Gender</option>
@@ -58,20 +41,19 @@
                             <option value="female">Female</option>
                             <option value="others">Others</option>
                         </Select>
-                        <div class="styled-arrow"></div>
                     </div>
                     <div class="input-container">
-                        <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01">
+                        <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01" style="width:96%;">
                     </div>
                     <div class="input-container">
-                        <input type="text" name="mobileNumber" placeholder="Enter Phone Number">
+                        <input type="tel" name="mobileNumber" pattern="[0-9]{10}||[0-9]{11}||[0-9]{12}" placeholder="Enter 10 digit Phone Number">
                     </div>
                     <div class="input-container city-state-input-container" style="display:flex;">
-                        <input type="text" name="city" placeholder="Enter City" style="margin-right:.15rem;border:2px solid rgb(235, 235, 235);">
-                        <input type="text" name="state" placeholder="Enter State" style="margin-left:.15rem;border:2px solid rgb(235, 235, 235);">
+                        <input type="text" name="city" placeholder="Enter City">
+                        <input type="text" name="state" placeholder="Enter State">
                     </div>
                     <div class="input-container select-container">
-                        <select name="" id="">
+                        <select name="country" id="countrySelect">
                             <option value="">Select Your Country</option>
                             <option value="india">India</option>
                             <option value="canada">Canada</option>
@@ -82,6 +64,13 @@
                             <option value="russia">Russia</option>
                         </select>
                     </div>
+                    <div class="checkbox-input">
+                        <input type="checkbox" name="doctor" id="">
+                        <div class="checkbox">
+                            <i class="fas fa-check" ></i>
+                        </div>
+                    </div>
+                    <label for="doctor" style="margin:.5rem 0 1rem 0;">Are you a doctor?</label>
                     <div class="btn-container">
                         <button type="submit">SIGN UP</button>
                         <i class="fas fa-arrow-right"></i>
@@ -91,6 +80,62 @@
             <p class="redirect">Already Registered?<a href="/login">Login</a> </p>
         </div>
     </div>
+    <% if(errorMsg) { %>
+        <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'login-error';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Failure:</h4>
+                                    <p>Something went wrong, Please try again!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 3000);
+        </script>
+    <%} else if(emailErrorMsg) { %>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>This email is already registered!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <%} else if(mobileNumberErrorMsg) {%>
+        <script>
+            var div = document.createElement('div');
+            var cls = document.createAttribute('class');
+            cls.value = 'login-error';
+            div.setAttributeNode(cls);
+            div.innerHTML = `<div>
+                                <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                            </div>
+                            <div>
+                                <h4>Failure:</h4>
+                                <p>This mobile Number is already registered!</p>
+                            </div>`;
+            document.querySelector('body').appendChild(div);
+            setTimeout(() => {
+                document.querySelector('body').removeChild(div);
+            }, 3000);
+        </script>
+    <% } %>
     <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+    <script src="../js/signup.js"></script>
 </body>
 </html>

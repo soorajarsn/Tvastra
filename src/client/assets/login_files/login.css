@@ -1,0 +1,33 @@
+.main-container {
+  height: 68vh; }
+  @media (min-width: 700px) {
+    .main-container {
+      height: 75vh; } }
+  @media (min-width: 1000px) {
+    .main-container {
+      height: 60vh; } }
+  .main-container .form-container {
+    display: block;
+    text-align: center; }
+    .main-container .form-container hr {
+      position: relative;
+      right: 1px; }
+    .main-container .form-container form .field-set .input-container {
+      margin: .7rem 0;
+      position: relative; }
+      .main-container .form-container form .field-set .input-container input {
+        font-size: 1.2rem;
+        padding: 1.2rem 1rem; }
+      .main-container .form-container form .field-set .input-container .fa-question-circle {
+        position: absolute;
+        right: 1rem;
+        top: 1.27rem;
+        color: #acacac; }
+      .main-container .form-container form .field-set .input-container ::placeholder {
+        font-size: 1.1rem; }
+    .main-container .form-container form .field-set .btn-container button {
+      padding: 1.2rem 1rem; }
+    .main-container .form-container form .field-set .btn-container .fa-arrow-right {
+      top: 1.15rem; }
+
+/*# sourceMappingURL=login.css.map */

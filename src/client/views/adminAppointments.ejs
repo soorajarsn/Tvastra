@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/adminAppointments.css">
+    <title>Admin</title>
+</head>
+<body>
+    <div class="body-container">
+
+
+        <!-- <div class="menu-container">
+            <div class="icon-and-name-container">
+                <div class="icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h1>Medic<sup style="color:dodgerblue;">app</sup></h1>
+            </div>
+            <ul class="button-container">
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-thermometer"></i>Dashboard</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-stethoscope"></i>Appointments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-md"></i>Doctors</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-nurse"></i>Departments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-wheelchair"></i>Patients</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-hand-holding-usd"></i>Payments</a>
+                </li>
+            </ul>
+            <button class="add-patients">
+                <i class="fas fa-plus"></i>Add Patients
+            </button>
+        </div> -->
+        <%- include('partials/admin/menu.ejs') %>
+
+        <div class="main-container">
+
+
+            <%- include('partials/admin/adminNav.ejs') %>
+
+            <div class="doctor-container">
+                <h2>Appointments</h2>
+                <div class="doctor-cards">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                 <tr>
+                                     <th>Photo</th>
+                                     <th>Name</th>
+                                     <th>Email</th>
+                                     <th>Date</th>
+                                     <th>Visit time</th>
+                                     <th>Number</th>
+                                     <th>Doctor</th>
+                                     <th>Injury / Condition</th>
+                                     <th>Actions</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user1.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Liam
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1.1rem;">@</span> liam@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         10 Feb 2018
+                                     </td>
+                                     <td class="gray">
+                                         9:15-9:45
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9123809489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Benjamin
+                                     </td>
+                                     <td>
+                                         mumps
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user2.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Emma
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> emma@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         5 Dec 2018
+                                     </td>
+                                     <td class="gray">
+                                         9:00-9:30
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Liam
+                                     </td>
+                                     <td>
+                                         arthritis
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user3.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Olivia
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> olivia@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         13 Oct 2018
+                                     </td>
+                                     <td class="gray">
+                                         12:00-12:30
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Noah
+                                     </td>
+                                     <td>
+                                         depression
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user4.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Ava
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> ava@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         26 Dec 2018
+                                     </td>
+                                     <td class="gray">
+                                         14:00-14:30
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Emma
+                                     </td>
+                                     <td>
+                                         disrrhoea
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user5.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Noah
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> noah@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         15 June 2018
+                                     </td>
+                                     <td class="gray">
+                                         9:15-9:45
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. James
+                                     </td>
+                                     <td>
+                                         dyslexia
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user6.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Isabella
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> isabella@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         5 Dec 2018
+                                     </td>
+                                     <td class="gray">
+                                         9:00-9:30
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Noah
+                                     </td>
+                                     <td>
+                                         flu
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user7.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Sophia
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> sophia@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         8 Oct 2018
+                                     </td>
+                                     <td class="gray">
+                                         10:00-10:30
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Olivia
+                                     </td>
+                                     <td>
+                                         fracture
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user8.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         Mia
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> mia000@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         29 Mar 2018
+                                     </td>
+                                     <td class="gray">
+                                         11:15-11:45
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Emma
+                                     </td>
+                                     <td>
+                                         hypothermia
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user9.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         William
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> emma@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         18 Apl 2018
+                                     </td>
+                                     <td class="gray">
+                                         12:15-12:45
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Olivia
+                                     </td>
+                                     <td>
+                                         sunburn
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>
+                                         <div class="img-container">
+                                             <img src="../assets/user10.jpg" alt="">
+                                         </div>
+                                     </td>
+                                     <td class="name">
+                                         James
+                                     </td>
+                                     <td class="blue">
+                                         <span style="font-size:1rem;">@</span> emma@gmail.com
+                                     </td>
+                                     <td class="gray">
+                                         6 Apl 2018
+                                     </td>
+                                     <td class="gray">
+                                         16:00-16:00
+                                     </td>
+                                     <td class="blue">
+                                         <i class="fas fa-mobile" style="margin-right:.3rem;"></i>9293239489
+                                     </td>
+                                     <td style="white-space: normal;">
+                                         Dr. Logan
+                                     </td>
+                                     <td>
+                                         mumps
+                                     </td>
+                                     <td>
+                                         <div class="action-container">
+                                             <button class="round edit">
+                                                 <i class="fas fa-pencil-alt"></i>
+                                             </button>
+                                             <button class="round delete">
+                                                 <i class="far fa-trash-alt"></i>
+                                             </button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                            </tbody>
+                         </table>
+                    </div>
+                    <div class="button-container">
+                        <div class="show-new">
+                            <i class="fas fa-angle-left"></i>
+                        </div>
+                        <div class="show-new active">1</div>
+                        <div class="show-new">2</div>
+                        <div class="show-new">3</div>
+                        <div class="show-new">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('partials/admin/adminFooter.ejs') %>
+
+        </div>
+    </div>
+</body>
+</html>

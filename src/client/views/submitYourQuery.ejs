@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/submitYourQuery.css">
+    <title>Submit Your Query</title>
+    <style>
+        body{
+            position:relative;
+        }
+        .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <%- include('partials/navigation.ejs') %>
+ 
+    
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Submit Your Query</h1>
+            <hr>
+
+
+            <form id="login-form" action="/loginWithEmail" method="post">
+                <div class="field-set"> 
+
+                    
+                    <!-- login With Email And password -->
+                    <div class="input-container login-with-email">
+                        <input type="text" name="name" placeholder="Enter Name ">
+                    </div>
+                    <div class="input-container login-with-email">
+                        <input type="tel" name="mobileNumber" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="input-container">
+                        <input type="email" name="email" placeholder="Enter Email">
+                    </div>
+                    <!-- <div class='input-container'> -->
+                        <textarea name="query" id="" rows="20" placeholder="Enter your Query"></textarea>
+                    <!-- </div> -->
+
+                  
+                    <!-- to show alternative login method -->
+                    <!-- <div style="display:flex;justify-content: space-between;">
+                        <span id="try-another" onclick="location.href='/login/?method=loginWithOtp';">Try Another Method?</span>
+                        <span id="forget-password">Forget Password?</span>
+                    </div> -->
+                    
+                    
+                    <div class="btn-container" style="margin-top:1rem;">
+                        <button type="submit">SUBMIT</button>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    
+    <p class="copyright">All Rights Reserved. &copy; tavstra 2018</p>
+
+
+
+</body>
+</html>

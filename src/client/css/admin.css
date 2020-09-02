@@ -1,0 +1,512 @@
+@font-face {
+  font-family: "nexa-light";
+  src: url("../../assets/Nexa-Light.otf"); }
+@font-face {
+  font-family: "nexa-bold";
+  src: url("../../assets/Nexa-Bold.otf"); }
+h1 {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  font-family: 'nexa-light';
+  font-weight: 800; }
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  font-family: "nexa-bold"; }
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  letter-spacing: 0;
+  font-family: 'nexa-bold'; }
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-family: "nexa-bold"; }
+
+p {
+  font-size: .9rem;
+  font-family: "nexa-light";
+  line-height: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: .05rem;
+  font-weight: 600; }
+
+button {
+  border: 0;
+  width: fit-content;
+  padding: .5rem 1rem;
+  background: none;
+  margin: 0; }
+  button:hover {
+    cursor: pointer; }
+
+input {
+  border: 0;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  color: black;
+  font-size: 1rem;
+  font-family: 'nexa-light';
+  font-weight: 600; }
+
+::placeholder {
+  color: grey;
+  font-family: 'nexa-light';
+  font-weight: 600;
+  font-size: 1rem; }
+
+a:hover {
+  font-family: "nexa-bold"; }
+
+.hidden {
+  display: none; }
+
+sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+.login-success {
+  padding: 1.2rem 1rem;
+  width: fit-content;
+  background: #eeeeee;
+  font-size: 1.2rem;
+  font-family: "nexa-bold";
+  color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 1rem;
+  top: 4rem;
+  box-shadow: -.3rem 0 0 0 green;
+  text-align: left; }
+  .login-success h4 {
+    line-height: unset; }
+  .login-success p {
+    line-height: unset;
+    margin: .5rem  0 0 0;
+    margin-top: .5rem; }
+  .login-success i {
+    font-size: 2rem; }
+  @media (min-width: 375px) {
+    .login-success {
+      left: .625rem;
+      top: 4.5rem; } }
+  @media (min-width: 425px) {
+    .login-success {
+      top: 5rem; } }
+  @media (min-width: 700px) {
+    .login-success {
+      left: 2.8rem;
+      top: 6rem; } }
+  @media (min-width: 1000px) {
+    .login-success {
+      font-size: 1.3rem;
+      left: unset;
+      top: 8rem;
+      right: 1rem; } }
+
+.body-container {
+  font-family: "nexa-light";
+  font-weight: 600;
+  letter-spacing: .1rem; }
+  .body-container .menu-container {
+    display: none;
+    width: 10rem;
+    padding: 0 3rem;
+    box-shadow: 0.1rem 0.5rem 0.3rem 0 #d8d8d8;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    z-index: 2;
+    background: white; }
+    .body-container .menu-container .menu-remover {
+      position: absolute;
+      right: 0;
+      font-size: 2rem; }
+      .body-container .menu-container .menu-remover .fa-times {
+        color: #727272; }
+    .body-container .menu-container .icon-and-name-container {
+      display: flex;
+      align-items: center; }
+      .body-container .menu-container .icon-and-name-container img {
+        height: 4rem;
+        width: 10rem;
+        margin: 1rem 0; }
+      .body-container .menu-container .icon-and-name-container .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: dodgerblue;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .body-container .menu-container .icon-and-name-container .icon i {
+          font-size: 1rem;
+          color: #aa0000; }
+      .body-container .menu-container .icon-and-name-container h1 {
+        display: inline-block;
+        margin: 1rem 0; }
+    .body-container .menu-container .button-container {
+      margin-top: 1rem; }
+      .body-container .menu-container .button-container .menu-button {
+        width: 100%;
+        font-size: 1.1rem;
+        letter-spacing: .05rem;
+        padding-left: 0;
+        text-align: left;
+        font-family: "nexa-bold";
+        margin: 1.1rem 0;
+        color: #2a2d3e; }
+        .body-container .menu-container .button-container .menu-button a {
+          color: inherit;
+          text-decoration: none;
+          display: flex; }
+          .body-container .menu-container .button-container .menu-button a i {
+            margin-right: 1rem;
+            font-size: 1.1rem; }
+        .body-container .menu-container .button-container .menu-button:hover {
+          color: #0173b2;
+          transform: scale(1.1);
+          transition-duration: 200ms; }
+    .body-container .menu-container .add-patients {
+      background: #1081f3;
+      color: white;
+      font-family: 'nexa-bold';
+      border-radius: 1rem;
+      width: 100%;
+      margin-top: 2rem; }
+      .body-container .menu-container .add-patients i {
+        font-size: 1.1rem;
+        margin-right: .3rem; }
+  .body-container .show {
+    display: block; }
+  .body-container .main-container .navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 4rem;
+    background: white; }
+    .body-container .main-container .navbar .icon-and-name-container {
+      display: none; }
+    .body-container .main-container .navbar .search-bar {
+      display: none;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      position: relative; }
+      .body-container .main-container .navbar .search-bar input {
+        background: #eeeeee;
+        width: 100%;
+        padding: 1rem;
+        font-size: .8rem; }
+        .body-container .main-container .navbar .search-bar input::placeholder {
+          font-size: .8rem; }
+      .body-container .main-container .navbar .search-bar:hover {
+        box-shadow: 0px 3px 0.9rem 0px rgba(0, 0, 0, 0.2); }
+      .body-container .main-container .navbar .search-bar .fa-search {
+        position: absolute;
+        top: .75rem;
+        right: .7rem;
+        color: #afafaf; }
+    .body-container .main-container .navbar .bars {
+      padding: 0;
+      font-size: 2.5rem; }
+    .body-container .main-container .navbar .notification-and-profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative; }
+      .body-container .main-container .navbar .notification-and-profile-container .notification-container {
+        position: relative; }
+        .body-container .main-container .navbar .notification-and-profile-container .notification-container i {
+          font-size: 1.6rem;
+          color: grey;
+          transform: rotate(30deg); }
+        .body-container .main-container .navbar .notification-and-profile-container .notification-container .no-of-notification {
+          background: #c70000;
+          font-size: .7rem;
+          font-weight: 600;
+          border-radius: 100%;
+          color: white;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          width: .9rem;
+          height: .9rem;
+          position: absolute;
+          top: -.1rem;
+          right: 0rem;
+          box-shadow: 0 0 0 2px white; }
+      .body-container .main-container .navbar .notification-and-profile-container .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .body-container .main-container .navbar .notification-and-profile-container .profile .img-container {
+          height: 2.5rem;
+          width: 2.5rem;
+          margin: 0 .2rem 0 1rem;
+          border-radius: 100%;
+          overflow: hidden; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile .img-container img {
+            height: 2.5rem;
+            width: 2.5rem; }
+        .body-container .main-container .navbar .notification-and-profile-container .profile i {
+          font-size: 1rem; }
+        .body-container .main-container .navbar .notification-and-profile-container .profile:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+          transition-duration: 300ms; }
+      .body-container .main-container .navbar .notification-and-profile-container .profile-open {
+        position: absolute;
+        right: -.3rem;
+        top: 3rem;
+        z-index: 3;
+        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+        display: none;
+        border-radius: .3rem;
+        overflow: hidden;
+        width: 16rem; }
+        .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section {
+          height: 4rem;
+          background: white;
+          display: flex;
+          align-items: center;
+          padding-left: 1rem;
+          width: 16rem; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section:first-child {
+            border-bottom: 1px solid #ebebeb; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section .img-container {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 100%;
+            overflow: hidden; }
+            .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section .img-container img {
+              width: 100%;
+              height: 100%; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section .icon-container {
+            color: #2b2b2b;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #acacac; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section .name-container {
+            font-size: .9rem;
+            font-family: "nexa-light";
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 1rem; }
+            .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section .name-container .number {
+              display: inline-block;
+              margin-top: .3rem;
+              color: #0173b2;
+              letter-spacing: .1rem; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open .img-section:hover {
+            cursor: pointer;
+            box-shadow: inset 0.2rem 0 0 0 #0173b2;
+            background: #ebebeb; }
+        .body-container .main-container .navbar .notification-and-profile-container .profile-open a {
+          text-decoration: none; }
+          .body-container .main-container .navbar .notification-and-profile-container .profile-open a .a-container {
+            text-align: left;
+            background: transparent;
+            padding: 1.3rem 1rem;
+            font-size: 1rem;
+            color: rgba(54, 54, 54, 0.9);
+            font-family: "nexa-light";
+            font-weight: 600; }
+      .body-container .main-container .navbar .notification-and-profile-container .active {
+        display: block; }
+  .body-container .main-container .doctor-container {
+    margin: 4rem 0;
+    padding: 1rem; }
+    .body-container .main-container .doctor-container .doctor-cards {
+      position: relative;
+      margin-top: 2rem; }
+      @media (max-width: 400px) {
+        .body-container .main-container .doctor-container .doctor-cards {
+          height: 70vh; } }
+      @media (max-width: 700px) {
+        .body-container .main-container .doctor-container .doctor-cards {
+          height: 50vh; } }
+  .body-container .main-container .footer-container {
+    box-shadow: 0 -0.05rem 0.2rem 0 lightgray;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white; }
+    .body-container .main-container .footer-container footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 4rem;
+      padding: 0 1rem; }
+      .body-container .main-container .footer-container footer .page-details {
+        display: none;
+        font-size: .9rem; }
+      .body-container .main-container .footer-container footer .settings {
+        font-size: .9rem; }
+        .body-container .main-container .footer-container footer .settings i {
+          color: #1081f3;
+          font-size: 1.5rem; }
+        .body-container .main-container .footer-container footer .settings:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          transition-duration: 300ms; }
+
+@media (min-width: 750px) {
+  h1 {
+    font-size: 1.7rem;
+    line-height: 3rem;
+    font-family: 'nexa-light';
+    font-weight: 800; }
+
+  h2 {
+    font-size: 2.7rem;
+    line-height: 2rem;
+    font-family: "nexa-bold"; }
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0; }
+
+  .body-container .main-container .navbar .search-and-bar-container {
+    display: flex;
+    align-items: center; }
+    .body-container .main-container .navbar .search-and-bar-container .search-bar {
+      display: block;
+      margin-left: 1rem; }
+      .body-container .main-container .navbar .search-and-bar-container .search-bar input {
+        height: 2.5rem;
+        padding: 0;
+        padding-left: 1rem;
+        width: 22rem; }
+  .body-container .main-container .doctor-container h2 {
+    margin-top: .5rem; }
+  .body-container .main-container .footer-container footer {
+    justify-content: space-between; }
+    .body-container .main-container .footer-container footer .page-details {
+      display: unset; }
+      .body-container .main-container .footer-container footer .page-details span {
+        color: gray; }
+    .body-container .main-container .footer-container footer .settings {
+      display: flex;
+      align-items: center; }
+      .body-container .main-container .footer-container footer .settings .fa-cogs {
+        margin-left: .5rem; } }
+@media (min-width: 1000px) {
+  .body-container .menu-container {
+    display: block;
+    background: white; }
+    .body-container .menu-container .menu-remover {
+      display: none; }
+  .body-container .main-container {
+    margin-left: 18rem; }
+    .body-container .main-container .navbar {
+      left: 18rem;
+      max-width: 1200px;
+      margin: auto; }
+      .body-container .main-container .navbar .search-and-bar-container .bars {
+        display: none; }
+      .body-container .main-container .navbar .search-and-bar-container .search-bar {
+        margin: 0; }
+    .body-container .main-container .doctor-container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; }
+    .body-container .main-container .footer-container {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 16.1rem; }
+      .body-container .main-container .footer-container footer {
+        position: unset;
+        padding-left: 3rem;
+        max-width: 1200px;
+        max-width: 1200px;
+        margin: auto;
+        padding-right: 1rem; }
+
+  .version-101 .main-container .navbar {
+    max-width: unset; }
+  .version-101 .main-container .doctor-container {
+    max-width: unset; }
+    .version-101 .main-container .doctor-container .doctor-cards {
+      margin-left: 3rem;
+      justify-items: center; }
+      .version-101 .main-container .doctor-container .doctor-cards .card {
+        max-width: 25rem; }
+  .version-101 .main-container .footer-container footer {
+    max-width: unset;
+    position: unset;
+    margin-left: 3rem;
+    padding-left: 0; }
+
+  .version-102 .menu-container {
+    top: 3.9rem;
+    bottom: unset;
+    left: 0;
+    right: 0;
+    max-width: 1200px;
+    margin: auto;
+    width: unset;
+    padding: 0;
+    z-index: 1;
+    box-shadow: unset; }
+    .version-102 .menu-container .icon-and-name-container {
+      display: none; }
+      .version-102 .menu-container .icon-and-name-container img {
+        height: 4rem;
+        width: 10rem; }
+    .version-102 .menu-container .button-container {
+      display: flex;
+      justify-content: space-between; }
+    .version-102 .menu-container .add-patients {
+      display: none; }
+  .version-102 .main-container {
+    margin-left: 0; }
+    .version-102 .main-container .navbar {
+      left: 0; }
+      .version-102 .main-container .navbar .icon-and-name-container {
+        display: unset; }
+        .version-102 .main-container .navbar .icon-and-name-container img {
+          height: 4rem;
+          width: 12rem;
+          margin-right: 1rem; }
+    .version-102 .main-container .doctor-container {
+      margin-top: 8rem; }
+    .version-102 .main-container .footer-container {
+      left: 0; }
+      .version-102 .main-container .footer-container footer {
+        margin: auto;
+        padding: 0; }
+
+  .version-101-102 .menu-container {
+    max-width: unset;
+    padding: 0 1rem; }
+    .version-101-102 .menu-container .button-container {
+      justify-content: flex-start; }
+      .version-101-102 .menu-container .button-container .menu-button {
+        width: unset;
+        margin-right: 3rem; }
+  .version-101-102 .footer-container {
+    padding: 0 1rem; } }
+
+/*# sourceMappingURL=admin.css.map */

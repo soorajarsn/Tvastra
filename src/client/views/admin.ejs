@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- <link rel="stylesheet" href="../css/adminHospital.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <div class="body-container">
+        <!-- <div class="menu-container">
+            <div class="icon-and-name-container">
+                <div class="icon">
+                    <i class="fas fa-capsules"></i>
+                </div>
+                <h1>Medic<sup style="color:dodgerblue;">app</sup></h1>
+            </div>
+            <ul class="button-container">
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-thermometer"></i>Dashboard</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-stethoscope"></i>Appointments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-md"></i>Doctors</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-user-nurse"></i>Departments</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-wheelchair"></i>Patients</a>
+                </li>
+                <li class="menu-button">
+                    <a href=""><i class="fas fa-hand-holding-usd"></i>Payments</a>
+                </li>
+            </ul>
+            <button class="add-patients">
+                <i class="fas fa-plus"></i>Add Patients
+            </button>
+        </div> -->
+        <%- include('partials/admin/menu.ejs') %>
+        <% if(signUpOrLoginSuccess){ %>
+            <div class="login-success">
+                 <div>
+                     <i class="far fa-check-circle" style="margin-right:.5rem;"></i>
+                 </div>
+                 <div>
+                     <h4><%= signUpOrLoginSuccess %></h4>
+                 </div>
+            </div>
+            <script>
+                setTimeout(() => {
+                     document.querySelector('.login-success').parentNode.removeChild(document.querySelector('.login-success'));
+                }, 2000);
+            </script>
+         <% } %>
+        <div class="main-container">
+            <%- include('partials/admin/adminNav.ejs') %>
+
+            <div class="doctor-container">
+                <h2>DashBoard</h2>
+
+                <div class="doctor-cards">
+                    <h3 style="margin-top:1rem;">Hospital Survey</h3>
+                    <div id="myChart" style="width:100%;"> </div>
+                    <h3 style="margin-top:2rem;">Patients</h3>
+                    <div id="dounutChart" style="width:100%;"></div>
+                    <!-- <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/noah.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. Noah</h3>
+                            <span>Nursing</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/emma.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. Emma</h3>
+                            <span>Gynecologist</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/james.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. James</h3>
+                            <span>Physical Therapy</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/olivia.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. Olivia</h3>
+                            <span>Dentist</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/benjamin.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. Benjamin</h3>
+                            <span>Nursing</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="../assets/mason.jpg" alt="">
+                        </div>
+                        <div class="info-container">
+                            <h3>Dr. Mason</h3>
+                            <span>Dentist</span>
+                            <div class="social-media-links">
+                                <i class="fab fa-instagram" style="margin:auto 5px;"></i>
+                                <i class="fab fa-facebook-f" style="margin:auto 5px;"></i>
+                                <i class="fab fa-twitter" style="margin:auto 5px;"></i>
+                            </div>
+                            <div class='address'>
+                                795 Folsom Ave, Suite 600 San Francisco, CADGE 94107
+                            </div>
+                            <div class="view-profile-button">
+                                <button>View profile</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <%- include('partials/admin/adminFooter.ejs') %>
+        </div>
+    </div>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

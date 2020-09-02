@@ -1,0 +1,28 @@
+.main-container {
+  height: unset; }
+  @media (min-width: 700px) {
+    .main-container {
+      height: unset; } }
+  @media (min-width: 1000px) {
+    .main-container {
+      height: unset; } }
+  @media (min-width: 650px) {
+    .main-container .form-container form .field-set .input-container {
+      margin: 1rem 0; } }
+  .main-container .form-container textarea {
+    height: 10rem;
+    width: 95%;
+    padding: 1rem 0 1rem 1rem;
+    border: solid 2px #ebebeb; }
+  @media (min-width: 650px) {
+    .main-container .form-container {
+      width: 35rem; }
+      .main-container .form-container textarea {
+        width: 96.5%; } }
+  @media (min-width: 1000px) {
+    .main-container .form-container {
+      width: 50rem; }
+      .main-container .form-container textarea {
+        width: 97.2%; } }
+
+/*# sourceMappingURL=submitYourQuery.css.map */

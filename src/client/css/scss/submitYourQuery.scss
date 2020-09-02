@@ -1,0 +1,39 @@
+.main-container{
+    height:unset;//set in login.scss
+    @media (min-width:700px){
+        height:unset;// since set in login.scss
+    }
+    @media (min-width:1000px){
+        height:unset;// since set in login.scss
+    }
+    .form-container{
+        form{
+            .field-set{
+                .input-container{
+                    @media (min-width:650px){
+                        margin:1rem 0;
+                    }
+                }
+            }
+        }
+        textarea{
+            height:10rem;
+            width:95%;
+            padding:1rem 0 1rem 1rem;
+            border:solid 2px rgb(235, 235, 235);
+        }
+        @media (min-width:650px){
+            width:35rem;
+            textarea{
+                width:96.5%;
+            }
+        }
+        @media (min-width:1000px){
+            width:50rem;
+            textarea{
+                width:97.2%;
+            }
+        }
+        
+    }
+}

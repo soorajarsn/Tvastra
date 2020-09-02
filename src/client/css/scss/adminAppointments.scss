@@ -1,0 +1,179 @@
+//colors
+$lightBlue:rgb(112, 112, 251);
+$lightierBlue:rgb(52, 158, 243);
+$blue:rgb(39, 89, 250);
+$darkBlue:rgb(11, 33, 52);
+$darkGray:rgb(128, 128, 128);
+$gray:rgb(231, 230, 230);
+$lightGray:rgb(248, 248, 248);
+$black:black;
+$white:white;
+.body-container{
+    .main-container{
+        .doctor-container{
+            h2{
+                margin:1rem 0;
+            }
+            .doctor-cards{
+                display: block;
+                .table-container{
+                    overflow:auto;
+                    position:relative;
+                    display:block;
+                    width:100%;
+                    table{
+                        min-width:100%;
+                        thead{
+                            tr{
+                                text-align: left;
+                                font-family: "nexa-bold";
+                                font-size: .9rem;
+                                @media(min-width:1000px){
+                                    font-size:1rem;
+                                }
+                                background:$gray;
+                                letter-spacing: 0;
+                                border-bottom:2px solid $white;
+                                th{
+                                    padding:.9rem .5rem;
+                                    vertical-align: middle;
+                                    &:first-child{
+                                        padding-left: 1rem;;
+                                    }
+                                    // &:last-child{
+                                    //     padding-right: 1rem;
+                                    // }
+                                }
+                            }
+                        }
+                        tbody{
+                            tr{
+                                text-align:left;
+                                background: $lightGray;
+                                font-size:.72rem;
+                                @media(min-width:1000px){
+                                    font-size:.9rem;
+                                }
+                                line-height: 1rem;
+                                border-bottom: 2px solid $white;
+                                &:hover{
+                                    box-shadow: 0 0 10px rgba(0,0,0,.22);
+                                    transform: scale(1);
+                                    border-bottom: .2rem solid $white;
+                                }
+                                td{
+                                    padding:.9rem .5rem;
+                                    white-space: nowrap;
+                                    vertical-align: middle;
+                                    &:first-child{
+                                        padding-left: 1rem;;
+                                    }
+                                    &:last-child{
+                                        padding-right: 1rem;
+                                    }
+                                    .img-container{
+                                        height:2rem;
+                                        width:2rem;
+                                        overflow: hidden;
+                                        border-radius: 100%;
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+                                    .action-container{
+                                        display:flex;
+                                        .round{
+                                            width:2rem;
+                                            height:2rem;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            border-radius:100%;
+                                            margin-right:.3rem;
+                                            &:last-child{
+                                                margin-right:0;
+                                            }
+                                        }
+                                        .edit{
+                                            background:$lightierBlue;
+                                            color:$darkBlue;
+                                        }
+                                        .delete{
+                                            background:rgb(168, 0, 0);
+                                            color:white;
+                                        }
+                                    }
+                                }
+                                .name{
+                                    font-family: "nexa-bold";
+                                }
+                                .blue{
+                                    color:$blue;
+                                }
+                                .gray{
+                                    color:rgb(124, 124, 124);
+                                }
+                            }
+                        }
+                    }
+                }
+                .button-container{
+                    display:flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin:1.3rem 0;
+                    font-size:.9rem;
+                    line-height: 1.2rem;
+                    .show-new{
+                        height:1.8rem;
+                        width: 1.8rem;
+                        border-radius: 100%;
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        color:$white;
+                        background:rgb(204, 204, 204);
+                        margin-right:.3rem;
+                        &:hover{
+                            background:$blue;
+                            cursor: pointer;
+                        }
+                        &:first-child:hover{
+                            background:rgb(204, 204, 204);
+                        }
+                        &:last-child:hover{
+                            background:rgb(204, 204, 204)
+                        }
+                    }
+                    .active{
+                        background: $blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar{
+    height:.2rem;
+    width:.2rem;
+    background-color: $white;
+}
+::-webkit-scrollbar-track{
+    border:1px solid $white;
+    border-radius: .3rem;
+}
+::-webkit-scrollbar-thumb{
+    background:rgb(202, 202, 202);
+    border-radius:.3rem;
+}
+.version-101{
+    .main-container{
+        .doctor-container{
+            .doctor-cards{
+                margin-left:0;
+            }
+        }
+    }
+}

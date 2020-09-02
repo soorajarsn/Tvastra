@@ -1,0 +1,64 @@
+.body-container .data-container {
+  margin-top: 2rem;
+  max-height: unset;
+  overflow: visible; }
+  @media (min-width: 1200px) {
+    .body-container .data-container {
+      margin-top: 0; } }
+  .body-container .data-container form .field-set {
+    display: grid; }
+    @media (min-width: 700px) {
+      .body-container .data-container form .field-set {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1rem;
+        align-items: center; } }
+    .body-container .data-container form .field-set .input-container {
+      border: solid 2px #acacac;
+      overflow: hidden;
+      margin: .6rem 0;
+      height: 3rem;
+      position: relative; }
+      .body-container .data-container form .field-set .input-container input, .body-container .data-container form .field-set .input-container select {
+        border: 0;
+        width: 100%;
+        margin: 0;
+        padding: .8rem 1rem;
+        height: 1.4rem;
+        font-size: 1.2rem;
+        box-shadow: none;
+        background: transparent; }
+      .body-container .data-container form .field-set .input-container .eye {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        color: #0173b2;
+        display: none; }
+        .body-container .data-container form .field-set .input-container .eye:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+          transition-duration: 100ms;
+          transition-timing-function: ease-in; }
+      .body-container .data-container form .field-set .input-container .active {
+        display: unset; }
+    .body-container .data-container form .field-set .btn-container {
+      position: relative;
+      height: 3.2rem; }
+      .body-container .data-container form .field-set .btn-container button {
+        width: 100%;
+        background: #2a2d3e;
+        color: white;
+        height: 100%;
+        font-family: "nexa-light";
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+        border-radius: 0;
+        padding: .8rem 0;
+        margin: 0; }
+      .body-container .data-container form .field-set .btn-container .fa-arrow-right {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        color: white; }
+
+/*# sourceMappingURL=settings.css.map */

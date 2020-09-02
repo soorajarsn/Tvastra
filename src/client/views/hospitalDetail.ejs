@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/doctorDetails.css">
+    <title>Document</title>
+    <style>
+        .info-container-row {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            /* padding: 1.6rem; */
+            margin: .5rem 0 1.5rem 1.6rem;
+            font-size: 1rem;
+            letter-spacing: .05rem; 
+        }
+        .info-container-row .info-container-sub-row {
+          display: flex;
+          align-items: center; }
+         .info-container-row .info-container-sub-row i {
+            color: #0173b2; }
+         .info-container-row .info-container-sub-row p {
+            display: inline-block;
+            padding-left: 1rem;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: left;
+            line-height: 1.5rem; }
+         .info-container-row .info-container-sub-row:nth-child(2) {
+            margin-top: 1rem; }
+            @media (min-width:700px){
+                .info-container-row{
+                    /* margin-left:1rem; */
+                    flex-direction: row;
+                }
+                .info-container-sub-row{
+                    width:45%;
+                }
+                .info-container-row .info-container-sub-row:nth-child(2){
+                    margin:0;
+                }
+            }
+            @media(min-width:1200px){
+                .info-container-row{
+                    margin-left:.5rem;
+                }
+            }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation.ejs') %>
+   <div class="hero-section">
+       <h1>About <%= hospital.name %></h1>
+       <span><a href="/">Home</a> / Hospital Profile</span>
+   </div>
+   <div class="main-container">
+    <div class="info-accordian">
+        <div class="img-button mobile-view">
+             <div class="img-container">
+                 <img src="<%= hospital.imgAddress %>" alt="John Nission Image">
+             </div>
+             <button class='appointment-btn'>Call Now</button>
+         </div>
+        <div class="info-container">
+            <h2><%= hospital.name %></h2>
+            <div class="info-container-row" >
+                <div class="info-container-sub-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p ><%= hospital.location.hospitalPage %></p>
+                </div >
+                <div class="info-container-sub-row">
+                    <i class="fas fa-bed"></i>
+                    <p ><%= hospital.noOfBeds %></p>
+                </div>
+            </div>
+            <p><%= hospital.name %> has emerged as Asia's foremost integrated
+ healthcare services provider and has a robust presence across the 
+ healthcare ecosystem, including Hospitals, Pharmacies, Primary Care & Diagnostic
+ Clinics and several retail health models. The Group also has Telemedicine facilities
+ across several countries. Health Insurance Services, Global Projects
+ Consultancy, Medical Colleges, Medavarsity for E-Learning. Colleges of Nursing
+ and Hospital Management and a Research Foundation. In addition, "ASK Apollo" - an
+ online consultation portal and Apollo Home Health provide the care countinuum.
+            </p>
+        </div>
+        <div class="accordian-container">
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        Specialization
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.specialization %>
+                </p>
+            </div>
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        Famous Treatments
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.treatments.hospitalProfile %>
+                </p>
+            </div>
+            <button class="accordian">
+               <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        Famous Doctors
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+               </div>
+               
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.doctors %>
+                </p>
+            </div>
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        Infrastructure
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>   
+            <div class="panel">
+                <p>
+                    <%= hospital.infrastructure %>
+                </p>
+            </div>
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        Complete Address
+                    </div>
+                    <div class="drop-down">                    
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.location.hospitalProfile %>
+                </p>
+            </div>
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-h-square"></i>
+                        </div>
+                        Hospital Packages
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.package %>
+                </p>
+            </div>
+            <button class="accordian">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        Hospital Charges
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.charge %>
+                </p>
+            </div>
+            <button class="accordian" style="border-bottom:solid 2px rgb(235, 235, 235);">
+                <div class="btn-content">
+                    <div class="icon-and-content">
+                        <div class="icon-container">
+                            <i class="fas fa-address-card"></i>
+                        </div>
+                        Membership
+                    </div>
+                    <div class="drop-down">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </button>
+            <div class="panel">
+                <p>
+                    <%= hospital.membership %>
+                </p>
+            </div>
+        </div>
+    </div>
+        <div class="img-button tablet-view">
+            <button class='appointment-btn'>Call Now</button>
+             <div class="img-container">
+                 <img src="<%= hospital.imgAddress %>" alt="John Nission Image">
+             </div>
+         </div>
+   </div>
+   <div class="help">
+        <div>
+            <h1>Need Help?</h1>
+            <p>Just let us know. We will be happy to assist you</p>
+        </div>
+        <button onclick="location.href='/contactUs';">Submit your query</button>
+    </div>
+    <%- include ('partials/footer.ejs') %>
+   <!-- <script src="../js/navigation.js"></script> -->
+   <script src="../js/doctorDetails.js"></script>
+</body>
+</html>

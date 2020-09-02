@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/userProfile.css">
+        <link rel="stylesheet" href="../css/settings.css">
+        <!-- <link rel="stylesheet" href="../css/signup.css"> -->
+        <!-- <link rel="stylesheet" href="../css/createSchedule.css"> -->
+        <title>User Profile</title>
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+        <div class="body-container">
+            <div class="dashboard-container">
+                <div class="container">
+                    <h1>Dashboard</h1>
+                    <div class="active-menu">
+                        Settings <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="menu-container inactive">
+                    <a href="/userProfile?_id=<%= user.userId %>">
+                        <button class="menu-item">
+                            <i class="fas fa-user-edit"></i>Profile
+                        </button>
+                    </a>
+                    <a href="/appointments">
+                        <button class="menu-item">
+                            <i class="fas fa-hospital"></i>Appointments
+                        </button>
+                    </a>
+                    <% if(user.isDoctor) {%>
+                        <a href="/createSchedule">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Create / Edit Schedules
+                            </button>
+                        </a>
+                    <% } else {%>
+                        <a href="/medicalHistory">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Medical History
+                            </button>
+                        </a>
+                    <% } %>
+                    <a href="/settings">
+                        <button class="menu-item">
+                            <i class="fas fa-user-cog"></i>Settings
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="data-container">
+                <form id="login-form" action="/settings" method="post">
+                    <div class="field-set"> 
+    
+                        <div class="input-container">
+                            <input type="password" name="password" placeholder="Enter New Password">
+                            <i class="far fa-eye-slash password-eye eye"></i>
+                            <i class="far fa-eye eye password-eye active"></i>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="confirmPassword" placeholder="Confirm Password">
+                            <i class="far fa-eye eye confirm-password-eye active"></i>
+                            <i class="far fa-eye-slash eye confirm-password-eye"></i>
+                        </div>
+                        
+                        <div class="btn-container">
+                            <button type="submit">Change Password</button>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% if(passwordChanged) {%>
+            <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'submit-error green';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-check-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Success:</h4>
+                                    <p>Password Changed Successfully!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 5000);
+            </script>
+        <% } %>
+    
+        
+        <script src="../js/settings.js"></script>
+    </body>
+</html>

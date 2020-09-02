@@ -11,5 +11,22 @@
     "url": "git@workspace.konfinity.com:html-css/css.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "busboy": "^0.3.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.1",
+    "express-session": "^1.17.0",
+    "formidable": "^1.2.2",
+    "mongodb": "^3.5.5",
+    "morgan": "^1.9.1",
+    "nexmo": "^2.6.0",
+    "nodemon": "^2.0.2"
+  }
 }

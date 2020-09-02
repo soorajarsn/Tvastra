@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/userProfile.css">
+        <link rel="stylesheet" href="../css/createSchedule.css">
+        <link rel="stylesheet" href="../css/appointment.css">
+        <title>User Profile</title>
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+        <div class="body-container">
+            <div class="dashboard-container">
+                <div class="container">
+                    <h1>Dashboard</h1>
+                    <div class="active-menu">
+                        Appointments <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="menu-container inactive">
+                    <a href="/userProfile?_id=<%= user.userId %>">
+                        <button class="menu-item">
+                            <i class="fas fa-user-edit"></i>Profile
+                        </button>
+                    </a>
+                    <a href="/appointments">
+                        <button class="menu-item">
+                            <i class="fas fa-hospital"></i>Appointments
+                        </button>
+                    </a>
+                    <% if(user.isDoctor) {%>
+                        <a href="/createSchedule">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Create / Edit Schedules
+                            </button>
+                        </a>
+                    <% } else {%>
+                        <a href="/medicalHistory">
+                            <button class="menu-item">
+                                <i class="fas fa-pen-alt"></i>Medical History
+                            </button>
+                        </a>
+                    <% } %>
+                    <a href="/settings">
+                        <button class="menu-item">
+                            <i class="fas fa-user-cog"></i>Settings
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="data-container">
+                <% for(var i = 0; i < appointments.length; i++) {%>
+                    <% var date = appointments[i].slot.date %>
+                    <% var day = appointments[i].slot.day %>
+                    <% var time= appointments[i].slot.time %>
+                    <% var doctor = appointments[i].doctor %>
+                    <% var hospital = appointments[i].hospital %>
+                    <% var status = appointments[i].status %>
+                    <% if(status == 'booked') {%>
+                        <% status = 'confirmed' %>
+                    <% } %>
+                    <% var _id = appointments[i]._id %>
+                    <div class="schedule-slot-box <%= status %>-appointment">
+                        <div class="schedule-box">
+                            <div class="information-container">
+                                <div class="day">
+                                   <span><%= date.split(' ')[1].substring(0,3) %></span>
+                                   <span style="margin-top:.2rem;"><%= date.split(' ')[0] %></span>
+                                </div>
+                                <div class="hospital-timing-container">
+                                    <% if(!user.isDoctor) {%>
+                                        <span class="doctor-name">Dr. <%= doctor.name %></span>
+                                    <% } %>
+                                    <div class="time">
+                                        <%= day.substring(0,3) %>, <%= time %>
+                                    </div>
+                                    <div class="hospital">
+                                        <span><%= hospital %></span>
+                                    </div>
+                                    <div class="status <%= status %>-appointment">
+                                        <%= status %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% if(status != 'cancelled') {%>
+                                <div class="actions">
+                                    <form method="post" action="/cancelAppointment?_id=<%= _id %>&page=appointments">
+                                        <button>
+                                            Cancel Appointment
+                                        </button>
+                                    </form>
+                                    <button class="view-slots-button" onclick="location.href='/rescheduleAppointment?_id=<%= _id %>'">
+                                        Reschedule Appointment
+                                    </button>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+                <!-- <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            TUE
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Apollo
+                            </div>
+                            <div class="time">
+                                02:00 PM - 04:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            WED
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Lilavati
+                            </div>
+                            <div class="time">
+                                01:00 PM - 03:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            FRI
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Lilavati
+                            </div>
+                            <div class="time">
+                                09:00 AM - 011:00 AM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-box">
+                    <div class="information-container">
+                        <div class="day">
+                            SAT
+                        </div>
+                        <div class="hospital-timing-container">
+                            <div class="hospital">
+                                Apollo
+                            </div>
+                            <div class="time">
+                                02:00 PM - 04:00 PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button>
+                            Remove Slots
+                        </button>
+                        <button>
+                            View Slots
+                        </button>
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <% if(appointmentCancelled) {%>
+            <script>
+                var div = document.createElement('div');
+                var cls = document.createAttribute('class');
+                cls.value = 'submit-error submit-success';
+                div.setAttributeNode(cls);
+                div.innerHTML = `<div>
+                                    <i class='far fa-times-circle' style='margin-right:1rem;'></i>
+                                </div>
+                                <div>
+                                    <h4>Success:</h4>
+                                    <p>Your Appointment has been Cancelled!</p>
+                                </div>`;
+                document.querySelector('body').appendChild(div);
+                setTimeout(() => {
+                    document.querySelector('body').removeChild(div);
+                }, 5000);
+            </script>
+        <% } %>
+        <script src="../js/appointments.js"></script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+.body-container .main-container .doctor-container .doctor-cards .table-container table thead tr {
+  background: #3164E5;
+  color: white; }
+.body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .action-container .profile {
+  background: black;
+  color: white; }
+.body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .status {
+  padding: .5rem 1rem;
+  border-radius: 1.2rem;
+  color: #0b2134;
+  line-height: 1.2rem;
+  width: fit-content; }
+.body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .approved {
+  background: #B7CE63; }
+.body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .pending {
+  background: #E9E165; }
+.body-container .main-container .doctor-container .doctor-cards .table-container table tbody tr td .new {
+  background: #64B5F6; }
+
+/*# sourceMappingURL=adminPatients.css.map */

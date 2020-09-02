@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/doctor.css">
+    <link rel="stylesheet" href="../css/rescheduleAppointment.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reschedule Appointment</title>
+</head>
+<body>
+    <%- include ('partials/navigation.ejs') %>
+    <div class="main-container">
+        <h1>Reschedule Appointment</h1>
+        <ul class="details">
+            <div class="row">
+                <label>Practitioner</label>
+                <li>Stephen</li>
+            </div>
+            <div class="row">
+                <label>Date</label>
+                <li>May 28, 2020</li>
+            </div>
+            <div class="row">
+                <label>Time</label>
+                <li>06:30 AM</li>
+            </div>
+        </ul>
+        <div class="slots-container slide-in-right">
+            <div class="<%= doctor._id %> cards-container">
+                <div class="prev-button">
+                        <i class="fas fa-angle-left"></i>
+                </div>
+                <% for(var k = 0; k < doctor.dateWiseSlots.length; k++) {%>
+                    <div class="<%= k+1 %> card slide-in-right">
+                        <div class="date">
+                            <%= doctor.dateWiseSlots[k].date %>
+                        </div>
+                        <div class="no-of-slots">
+                            <%= doctor.dateWiseSlots[k].noOfSlots %>
+                        </div>
+                    </div>
+                <% } %>
+                <!-- <div class="2 card slide-in-right">
+                           Tomorrow
+                           <div class="no-of-slots">
+                               34 Slots Available
+                           </div>
+                </div>
+                <div class="3 card slide-in-right">
+                            30 May, 2020
+                            <div class="no-of-slots">
+                                4 Slots Available
+                            </div>
+                </div>
+                <div class="4 card slide-in-right">
+                    31 May, 2020
+                    <div class="no-of-slots">
+                        4 Slots Available
+                    </div>
+                </div>
+                <div class="5 card slide-in-right">
+                    01 June, 2020
+                    <div class="no-of-slots">
+                        4 Slots Available
+                    </div>
+                 </div>
+                 <div class="6 card slide-in-right">
+                    02 June, 2020
+                    <div class="no-of-slots">
+                        4 Slots Available
+                    </div>
+                </div>
+                <div class="7 card slide-in-right">
+                    03 June, 2020
+                    <div class="no-of-slots">
+                        4 Slots Available
+                    </div>
+                </div> -->
+                <div class="next-button">
+                        <i class="fas fa-angle-right"></i>
+                </div>
+            </div>
+            <% for(var k = 0; k < doctor.dateWiseSlots.length; k++) {%>                            
+                <div class="slot-main-hospital-container <%= doctor.dateWiseSlots[k].date.split(' ').join('-') %>">
+                    <% var hospitalAndSlots = doctor.dateWiseSlots[k].hospitalAndSlots %>
+                    <% for(var l = 0; l < hospitalAndSlots.length; l++) {%>
+                    <% var hospitalAndSlot = hospitalAndSlots[l] %>
+                        <div class="slot-main-container <%= hospitalAndSlot.hospital.split(' ').join('-') %>">
+                            <div class="slots-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-sun"></i>Morning
+                                </div>
+                                <div class="slots">
+                                    <% for(var m = 0; m < hospitalAndSlot.slots.Morning.length; m++) {%>
+                                        <form action="/rescheduleAppointment?_id=<%= appointmentId %>" method="post" >
+                                            <input type="text" name="date" value="<%= doctor.dateWiseSlots[k].date %>" style="display:none;">
+                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Morning[m] %>" style="display:none;">
+                                            <input type="email" name="email" value="<%= doctor.email %>" style="display:none;">
+                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                            <div class="slot"><%= hospitalAndSlot.slots.Morning[m] %></div>
+                                        </form>
+                                    <% } %>
+                                    <!-- <div class="slot">01:00AM</div>
+                                    <div class="slot">01:30AM</div>
+                                    <div class="slot">02:00AM</div>
+                                    <div class="slot">06:00AM</div>
+                                    <div class="slot">06:30AM</div>
+                                    <div class="slot">07:00AM</div>
+                                    <div class="slot">07:30AM</div>
+                                    <div class="slot">08:00AM</div>
+                                    <div class="slot">08:30AM</div>
+                                    <div class="slot">09:00AM</div>
+                                    <div class="slot">09:30AM</div>
+                                    <div class="slot">10:00AM</div>
+                                    <div class="slot">10:30AM</div>
+                                    <div class="slot">11:00AM</div>
+                                    <div class="slot">11:30AM</div> -->
+                                </div>
+                            </div>
+                            <div class="slots-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-sun"></i>Afternoon
+                                </div>
+                                <div class="slots">
+                                    <% for(var m = 0; m < hospitalAndSlot.slots.Afternoon.length; m++) {%>
+                                        <form action="/rescheduleAppointment?_id=<%= appointmentId %>" method="post">
+                                            <input type="text" name="date" value="<%= doctor.dateWiseSlots[k].date %>" style="display:none;">
+                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Afternoon[m] %>" style="display:none;">
+                                            <input type="email" name="email" value="<%= doctor.email %>" style="display:none;">
+                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                            <div class="slot"><%= hospitalAndSlot.slots.Afternoon[m] %></div>
+                                        </form>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <div class="slots-sub-container last-slot-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-moon"></i>Evening
+                                </div>
+                                <div class="slots">
+                                    <% for(var m = 0; m < hospitalAndSlot.slots.Evening.length; m++) {%>
+                                        <form action="/rescheduleAppointment?_id=<%= appointmentId %>" method="post">
+                                            <input type="text" name="date" value="<%= doctor.dateWiseSlots[k].date %>" style="display:none;">
+                                            <input type="text" name="time" value="<%= hospitalAndSlot.slots.Evening[m] %>" style="display:none;">
+                                            <input type="email" name="email" value="<%= doctor.email %>" style="display:none;">
+                                            <input type="text" name="hospital" value="<%= hospitalAndSlot.hospital %>" style="display:none;">
+                                            <div class="slot"><%= hospitalAndSlot.slots.Evening[m] %></div>
+                                        </form>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% if(hospitalAndSlots.length == 0) {%>
+                        <div class="slot-main-container">
+                            <div class="slots-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-sun"></i>Morning
+                                </div>
+                                <div class="slots">
+                                    <!-- <div class="slot">01:00AM</div>
+                                    <div class="slot">01:30AM</div>
+                                    <div class="slot">02:00AM</div>
+                                    <div class="slot">06:00AM</div>
+                                    <div class="slot">06:30AM</div>
+                                    <div class="slot">07:00AM</div>
+                                    <div class="slot">07:30AM</div>
+                                    <div class="slot">08:00AM</div>
+                                    <div class="slot">08:30AM</div>
+                                    <div class="slot">09:00AM</div>
+                                    <div class="slot">09:30AM</div>
+                                    <div class="slot">10:00AM</div>
+                                    <div class="slot">10:30AM</div>
+                                    <div class="slot">11:00AM</div>
+                                    <div class="slot">11:30AM</div> -->
+                                </div>
+                            </div>
+                            <div class="slots-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-sun"></i>Afternoon
+                                </div>
+                                <div class="slots">
+                                    <button>Go To Next Available Slot</button>
+                                </div>
+                            </div>
+                            <div class="slots-sub-container last-slot-sub-container">
+                                <div class="time">
+                                    <i class="fas fa-moon"></i>Evening
+                                </div>
+                                <div class="slots">
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                    <div class="hospitals">
+                        <% for(var l = 0; l < hospitalAndSlots.length; l++) {%>
+                            <div class="hospital <%= hospitalAndSlots[l].hospital.split(' ').join('-') %>">
+                                <div class="block"></div><%=  hospitalAndSlots[l].hospital %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+           <% } %>
+        </div>
+    </div>
+    <script src="../js/rescheduleAppointment.js"></script>
+</body>
+</html>
