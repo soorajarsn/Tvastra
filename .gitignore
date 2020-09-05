@@ -1,0 +1,6 @@
+task.js
+task5.js
+.env
+.sass-cache
+node_modules
+.gitignore.swp
